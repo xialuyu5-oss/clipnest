@@ -1,0 +1,16 @@
+<view class="page {{locale === 'ar' ? 'rtl' : ''}}">
+  <view class="header"><view class="brand">↓ ClipNest.</view><picker range="{{languageNames}}" value="{{languageIndex}}" bindchange="language"><view class="language">{{languageNames[languageIndex]}}⌄</view></picker></view>
+  <view class="eyebrow">{{text.onDevice}}</view><view class="hero">{{text.hero}} <text class="accent">{{text.heroAccent}}</text></view>
+  <view class="hint">{{text.preview}}</view>
+  <view class="card"><view class="title">{{text.start}}</view><textarea value="{{url}}" bindinput="input" placeholder="https://media.example/video.mp4" maxlength="4096" auto-height="true"/><button bindtap="analyze" disabled="{{busy}}" loading="{{busy}}">{{text.analyze}}</button></view>
+  <view wx:if="{{error}}" class="error" role="alert">{{error}}</view>
+  <view wx:if="{{media}}" class="card"><view class="title">{{media.title}}</view><view class="quality">MP4 · {{media.options[0].label}}<view class="hint">{{mediaDetails}}</view><view class="hint">{{text.duration}}: {{mediaDuration}}</view><view class="hint">{{mediaSize}} · {{media.ranges ? text.resumeSource : text.restartSource}}</view></view>
+    <checkbox-group bindchange="rights"><label class="consent"><checkbox value="rights" checked="{{rights}}" color="#267456"/><text>{{text.rights}}</text></label></checkbox-group><button bindtap="review">{{text.confirm}}</button>
+  </view>
+  <view class="title">{{text.downloads}}</view>
+  <view wx:for="{{jobs}}" wx:key="id" class="card"><view class="job-title">{{item.title}}</view><view class="hint">{{item.stateLabel}} · {{item.size}}</view><progress wx:if="{{item.state === 'downloading'}}" percent="{{item.progress}}" activeColor="#267456" stroke-width="4"/><view wx:if="{{item.state === 'downloading'}}" class="hint">{{item.remaining}}</view><view wx:if="{{item.error_code}}" class="error">{{item.error_code}}</view>
+    <view class="actions"><button wx:if="{{item.actions.pause}}" class="quiet" data-id="{{item.id}}" data-action="pause" bindtap="action">{{text.pause}}</button><button wx:if="{{item.actions.resume}}" class="quiet" data-id="{{item.id}}" data-action="resume" bindtap="action">{{text.resume}}</button><button wx:if="{{item.actions.save}}" data-id="{{item.id}}" data-action="save" bindtap="action">{{text.save}}</button><button class="quiet" data-id="{{item.id}}" data-action="remove" bindtap="action">{{text.remove}}</button></view>
+  </view>
+  <view class="footer hint">{{text.storage}}<view>OpenAI Vibe Coding · Development preview</view></view>
+  <view wx:if="{{confirmation}}" class="backdrop"><view class="modal card"><view class="title">{{text.confirm}}</view><view class="row"><text>{{text.duration}}</text><text>{{summary.duration}}</text></view><view class="row"><text>{{text.size}}</text><text>{{summary.size}}</text></view><view class="row"><text>{{text.estimate}}</text><text>{{summary.time}}</text></view><view class="hint">{{text.estimateNote}}</view><view class="actions"><button class="quiet" bindtap="close">{{text.cancel}}</button><button bindtap="start">{{text.confirm}}</button></view></view></view>
+</view>
