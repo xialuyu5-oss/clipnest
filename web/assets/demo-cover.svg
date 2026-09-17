@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#cad6aa"/><stop offset="1" stop-color="#809b74"/></linearGradient><linearGradient id="sphere" x1=".17" y1=".05" x2=".84" y2=".94"><stop stop-color="#edf0c4"/><stop offset=".45" stop-color="#bfcf8c"/><stop offset="1" stop-color="#748950"/></linearGradient><linearGradient id="arch" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7edcc"/><stop offset="1" stop-color="#ded5ad"/></linearGradient><linearGradient id="ground" x2="0" y2="1"><stop stop-color="#769167"/><stop offset="1" stop-color="#3d6450"/></linearGradient><radialGradient id="glow"><stop stop-color="#eef0d4" stop-opacity=".9"/><stop offset="1" stop-color="#c1cf9d" stop-opacity="0"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="18"/></filter><pattern id="grid" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0H0V90" stroke="#ffffff" stroke-opacity=".09" fill="none"/></pattern></defs>
+<rect width="1920" height="1080" fill="url(#bg)"/><rect width="1920" height="1080" fill="url(#grid)"/><circle cx="480" cy="240" r="650" fill="url(#glow)"/>
+<path d="M0 832Q710 733 1920 704V1080H0Z" fill="url(#ground)"/>
+<ellipse cx="1265" cy="892" rx="420" ry="52" fill="#264a38" opacity=".17" filter="url(#blur)"/>
+<path d="M1115 830V454a253 253 0 0 1 506 0v376h-152V454a101 101 0 0 0-202 0v376Z" fill="#879b6a" opacity=".7" transform="translate(26 19)"/>
+<path d="M1100 810V438a253 253 0 0 1 506 0v372h-152V438a101 101 0 0 0-202 0v372Z" fill="url(#arch)"/>
+<circle cx="1126" cy="700" r="189" fill="url(#sphere)"/><ellipse cx="785" cy="916" rx="139" ry="19" fill="#234c36" opacity=".2" filter="url(#blur)"/>
+<path d="m716 899 40-308 150 53-40 307Z" fill="#d89978"/><path d="m756 591 41-21 151 53-42 21Z" fill="#e7bb91"/><path d="m906 644 42-21-40 307-42 21Z" fill="#b67d63"/>
+<circle cx="1640" cy="224" r="14" fill="#e7eac8"/>
+<path d="M1640 155v-17m0 172v-17m-86-69h-17m189 0h-17m-120-51-12-12m126 126-12-12m-102 0-12 12m126-126-12 12" fill="none" stroke="#e3e8c3" stroke-width="4" stroke-linecap="round"/>
+<g fill="#f3f3dd" font-family="Arial,sans-serif"><text x="137" y="144" font-size="22" letter-spacing="8" opacity=".8">CLIPNEST ORIGINAL</text><text x="131" y="350" font-size="117" letter-spacing="-5" font-weight="600">A little</text><text x="131" y="474" font-size="117" letter-spacing="-5" font-weight="600">motion.</text><text x="139" y="550" font-size="22" letter-spacing="5" opacity=".7">KEEP THE GOOD PART.</text><text x="139" y="969" font-size="17" letter-spacing="5" opacity=".6">GENERATED DEMO / CC0</text></g>
+<path d="M149 620v60m-22-22 22 22 22-22" stroke="#eef0d0" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+</svg>
