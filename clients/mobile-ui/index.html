@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'self' data:; object-src 'none'; base-uri 'none'">
+<title>ClipNest</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="brand"><span class="mark">↓</span> ClipNest<span class="dot">.</span></div><select id="language" aria-label="Language"></select></header>
+<main><p class="eyebrow" data-i18n="A PLACE FOR YOUR FAVORITE MOMENTS"></p><h1><span data-i18n="Keep the videos"></span><br><em data-i18n="you love."></em></h1>
+<p id="engine" role="status" data-i18n="Starting on-device engine…"></p>
+<section class="card"><h2 data-i18n="Start with a video link"></h2><form id="analyze-form"><label class="sr" for="url" data-i18n="Start with a video link"></label><input id="url" type="url" inputmode="url" autocomplete="off" data-i18n-placeholder="Paste a video link" required>
+<button id="analyze" type="submit" data-i18n="Analyze video"></button></form><button class="quiet" id="demo" data-i18n="Try a demo"></button>
+<p class="hint" data-i18n="Only download content you own or may use. Signing in does not remove DRM."></p></section>
+<p id="notice" role="status" aria-live="polite"></p>
+<section class="card" id="result" hidden><p class="eyebrow" data-i18n="Choose your quality"></p><h2 id="title"></h2><p id="meta" class="hint"></p><div id="qualities" role="radiogroup" data-i18n-aria-label="Choose video quality"></div>
+<label class="consent"><input id="consent" type="checkbox"><span data-i18n="I have permission to download or use this video and will follow the source platform's terms."></span></label>
+<button id="start" data-i18n="Add to downloads"></button></section>
+<section><div class="section-head"><h2 data-i18n="Downloads"></h2><button class="quiet" id="refresh" data-i18n="Refresh"></button></div><div id="jobs"></div>
+<p class="hint" data-i18n="Pause to keep your progress. Cancel to delete cached files."></p></section>
+<footer><p id="local-note" data-i18n="Analysis and downloads run on this device. No ClipNest server is used."></p><small>OpenAI Vibe Coding · Android preview</small></footer></main>
+<dialog id="confirm"><h2 data-i18n="Confirm download"></h2><dl id="summary"></dl><p class="hint" data-i18n="Time estimates depend on source speed; merging takes extra time. Pause keeps progress. Cancel deletes cached files. Resume depends on source support."></p><div class="actions"><button class="quiet" id="no" data-i18n="Cancel"></button><button id="yes" data-i18n="Confirm download"></button></div></dialog>
+<script src="i18n-catalogs.js"></script><script src="mobile-i18n.js"></script><script src="i18n.js"></script><script src="core.js"></script><script src="bridge.js"></script><script src="app.js"></script></body></html>
