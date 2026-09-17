@@ -1,0 +1,8 @@
+{
+  "appid": "touristappid",
+  "projectname": "ClipNest",
+  "description": "ClipNest on-device media downloader — development preview",
+  "miniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "setting": {"es6": true, "minified": true, "urlCheck": true}
+}
