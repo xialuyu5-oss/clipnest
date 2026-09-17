@@ -1,0 +1,29 @@
+services:
+  clipnest:
+    build: .
+    init: true
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /app/data
+      # Inside a container the client peer is the Docker bridge, never loopback, so the
+      # local-only member mode would reject every request with LOCAL_ONLY 403.
+      ENABLE_MEMBER_LOGIN: "false"
+    # Deliberately binds to localhost; do not change casually to 0.0.0.0.
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - clipnest_data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 192
+    mem_limit: 2g
+    cpus: 2
+    stop_grace_period: 10s
+volumes:
+  clipnest_data:

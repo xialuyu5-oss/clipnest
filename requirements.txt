@@ -1,0 +1,8 @@
+# Rebuild periodically: source platforms change their interfaces frequently.
+fastapi>=0.128.0,<1.0
+uvicorn[standard]>=0.34.0,<1.0
+python-dotenv>=1.0,<2.0
+httpx>=0.27,<1.0
+qrcode[png]>=8.2,<9.0
+# The default extra installs matching EJS components for YouTube.
+yt-dlp[default]>=2026.8.19
