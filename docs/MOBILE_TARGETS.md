@@ -42,7 +42,7 @@ iOS cannot use Android's binary/process launcher or foreground service. It needs
 - Node tests exercise shared URL/format logic and the Mini Program downloader with a **real local HTTP server**: pause, persistence/reload, Range offsets, exact final bytes, changed source identity, ignored Range and cancellation deletion.
 - MP4 metadata tests inspect original 480p, 720p and 1080p fixtures and confirm duration, dimensions, 24 fps, AVC video and AAC audio.
 - Mini Program adapter tests are not WeChat Developer Tools compilation or phone tests. No current official WeChat policy/limit verification is claimed: official documentation access was blocked in this session.
-- No external source publication, CI upload, production signing, app-store submission or Mini Program publication has occurred.
+- No cloud CI run, production signing, app-store submission or Mini Program publication is claimed. Repository tags and Releases record the actual source/package publication state.
 
 ## Remaining gates before production distribution
 
