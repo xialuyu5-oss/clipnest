@@ -1,0 +1,2157 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-09-17",
+  "dependency": "io.github.junkfood02.youtubedl-android:library/ffmpeg:0.18.1",
+  "upstream": "https://github.com/yausername/youtubedl-android/tree/0.18.1",
+  "corresponding_source_complete": false,
+  "abis": [
+    {
+      "abi": "arm64-v8a",
+      "apk": "clipnest-v1.4.0-alpha.1-android-arm64-debug.apk",
+      "apk_sha256": "eabd25051cf4843451dbcd3e13d74742dad73a37323db44506a077a8f2942af9",
+      "containers": [
+        {
+          "name": "libffmpeg.zip.so",
+          "sha256": "4664a895283f9f31786be39b0c484c1f96631f02c7c7f9c70a4a4a2da324a092",
+          "shared_object_paths": 113,
+          "notice_or_package_metadata_paths": [],
+          "files": [
+            {
+              "path": "usr/lib/libswscale.so",
+              "sha256": "8ac0b788369ce46f2281b0afb2e4056a56c2f23398596cfa48e3e370ead0915d"
+            },
+            {
+              "path": "usr/lib/libavformat.so",
+              "sha256": "b65d6c7abc59b42490497a03de3a4ef2501ee66e5451248f534c1375af27f510"
+            },
+            {
+              "path": "usr/lib/libass.so",
+              "sha256": "1a55a435495f4037f0fd4fa0a39d1dde9a142d6fd4a672a762bab004969909b0"
+            },
+            {
+              "path": "usr/lib/libz.so",
+              "sha256": "46864e8d25ddd80dc43da8562fa96acef6190fbf91ad99951981265f07287eea"
+            },
+            {
+              "path": "usr/lib/libffi.so",
+              "sha256": "8855ba6dc12e9abf40729481a7a99aa391ac7b2e77bad4fbe0bb51cd66216c0e"
+            },
+            {
+              "path": "usr/lib/libtheoradec.so",
+              "sha256": "edac7a9b4e5fdbcc602221babfb94b0a56255632dd01b76d0d209b16af4ea0e3"
+            },
+            {
+              "path": "usr/lib/libx264.so",
+              "sha256": "d1c8befdcb30d8ab6ac4450124f25859e02372e861dfef2862763cbcb7cfac8c"
+            },
+            {
+              "path": "usr/lib/libmediandk.so",
+              "sha256": "b054282ea78095019d966fed99a4019970bf48b2439688ece652badd6f02d0f9"
+            },
+            {
+              "path": "usr/lib/libv4l1.so",
+              "sha256": "437ec4417f0d983ff8fb4437109bc573af500b5a8698ec459d9d80618c4d37bb"
+            },
+            {
+              "path": "usr/lib/libgme.so",
+              "sha256": "662dafbc5218642b47e04479095b052ce13ab5f3965573a956e31197bc205cd9"
+            },
+            {
+              "path": "usr/lib/libv4l2rds.so",
+              "sha256": "7fd38e1b882134664676e2fcfdfce4950784ea29716c10a15b2fdff1a2baf88a"
+            },
+            {
+              "path": "usr/lib/libglib-2.0.so",
+              "sha256": "0555b9c18782838ba696f39f9ab253c105bce121f4c38c806691b0d6fb1b2b11"
+            },
+            {
+              "path": "usr/lib/librav1e.so",
+              "sha256": "fffb8fea16ecfede6898cd8f04af4fd9103f26dc4fb3a7e8f2706372cab0637a"
+            },
+            {
+              "path": "usr/lib/libxvidcore.so",
+              "sha256": "30bdc41a63fdb96d1c6394487f7414fb8f0bd104c89942438575164d55b69413"
+            },
+            {
+              "path": "usr/lib/liblzma.so",
+              "sha256": "a42feea4600eeecda8ac5f20390c97e1b82ad95b51c3e1e212d1fbe736632c15"
+            },
+            {
+              "path": "usr/lib/libandroid-glob.so",
+              "sha256": "e47405b23e40aea9bd5aad4c3cbf518065cba8ef1c4e24c8aae7fd77e10fe850"
+            },
+            {
+              "path": "usr/lib/libout123.so",
+              "sha256": "e872c42e797f4a823d0ac9dcb28cba2165cf31cbe3d5cb7df1c3af8764ef4cec"
+            },
+            {
+              "path": "usr/lib/libfftw3f_threads.so",
+              "sha256": "9ba4d8738bd290762bc5d57025a0d0113890679e41c274acd92661275361a30a"
+            },
+            {
+              "path": "usr/lib/liblcms2.so",
+              "sha256": "5cfd64b58988046a947daeccdcd7bdfa981ad8a74eb7e0adae078d825dd62d42"
+            },
+            {
+              "path": "usr/lib/libnettle.so",
+              "sha256": "c96cd936d9b4a4765062c2c9424c516ab200f24d94f7a050e64a8d56e677f055"
+            },
+            {
+              "path": "usr/lib/libvpx.so",
+              "sha256": "c940e5facb4d60dfc52d57558b0ba1ba3a92cf57dbb6b06e636db227b37e8e39"
+            },
+            {
+              "path": "usr/lib/libsrt.so",
+              "sha256": "794c31da2a5896808aa9c599dbcf262b7e61a03c7f8e34153b669d43ee5d8ec7"
+            },
+            {
+              "path": "usr/lib/libogg.so",
+              "sha256": "bf430f65013e219a867ff927249022ee900edbd6642fa9c4f36104b7c681beaa"
+            },
+            {
+              "path": "usr/lib/v4l1compat.so",
+              "sha256": "df2544ca3ae1a77887e9379a9dcbd7b1358b60506321eff926f03f8f4a2971b6"
+            },
+            {
+              "path": "usr/lib/libpcre2-16.so",
+              "sha256": "1853248276204f6f62bddb9b4946d71e6aa04dbb809cf543fbcfb143a39f3052"
+            },
+            {
+              "path": "usr/lib/libfftw3f.so",
+              "sha256": "ca12efa269884d31a9377ee8e6445d45a1b9c1b63b3a9ffce6002cdb437ab01f"
+            },
+            {
+              "path": "usr/lib/libharfbuzz-cairo.so",
+              "sha256": "ae5ed90b7d12447447d195947fe110bad3cb6b5629e9a21896dadfcc11757efe"
+            },
+            {
+              "path": "usr/lib/libmp3lame.so",
+              "sha256": "1b38fc64b5ed67b84c7b89b3b034a969b460a657a0d496eddccde8511faa56b1"
+            },
+            {
+              "path": "usr/lib/libfftw3_threads.so",
+              "sha256": "c426c2027a0d92ad0fbaadd0822ac8ac7289aa2c672f9d93585b4888aaddf3a8"
+            },
+            {
+              "path": "usr/lib/libfftw3l_threads.so",
+              "sha256": "17ced1df5376d96344be68b72d9e3098e9843a4c8e62c825dcb53ba7e53ba35d"
+            },
+            {
+              "path": "usr/lib/libpng16.so",
+              "sha256": "d956bdd37915a1150099aa341281e2366a4ca2a8778a4a1a89e1e1c2865b47f3"
+            },
+            {
+              "path": "usr/lib/libsharpyuv.so",
+              "sha256": "685901b3ad5896ceb176f35d831a41de14a43164c06b206da9925cfa6e1e099b"
+            },
+            {
+              "path": "usr/lib/libOpenCL.so",
+              "sha256": "8309467107b6600b7abf5e234b6e33f5706de3b636873a4b760a15dc9259d833"
+            },
+            {
+              "path": "usr/lib/libharfbuzz-subset.so",
+              "sha256": "c2580bfc592c135f5c9cc166b121629cd03f0586904b98a30f0545b3066b399d"
+            },
+            {
+              "path": "usr/lib/libwebpdecoder.so",
+              "sha256": "ba39154a99271485c26d8e16954b866dae0873caaef92b132d412bf1f2fe52b4"
+            },
+            {
+              "path": "usr/lib/libgobject-2.0.so",
+              "sha256": "30df714068f79a5a5a1e55e26127baaec93e049187c89afdda3001a2c2a744c1"
+            },
+            {
+              "path": "usr/lib/libv4lconvert.so",
+              "sha256": "b86b38df9ebd65a20a54edc0ccfa3c3c764cd36f41d25d984fa9abf4cb739235"
+            },
+            {
+              "path": "usr/lib/libfontconfig.so",
+              "sha256": "2d0c95e2affe5f5a8f23ecee75b38806b998b23bf661f3b22fd77cb22effc89b"
+            },
+            {
+              "path": "usr/lib/libvmaf.so",
+              "sha256": "eb6cca1fb0f88396a9bae57b91b27198054477feb298b05d6ac34b958d6d22eb"
+            },
+            {
+              "path": "usr/lib/libbrotlidec.so",
+              "sha256": "00dad00ae8f7fe8b01f8b8baf5087b55575744ccb44eaa289e4e54da6e5efaac"
+            },
+            {
+              "path": "usr/lib/libaom.so",
+              "sha256": "95dec6c1ed57bd206a504af0749d34bc57273173e5a3991ceba246a8bc6e3c74"
+            },
+            {
+              "path": "usr/lib/libfftw3l.so",
+              "sha256": "d2d0213ff17c7ab9f5b17fa285086583bbeae87e8644194727d0f857067290ec"
+            },
+            {
+              "path": "usr/lib/libzimg.so",
+              "sha256": "1a44f9ccd9c55723981158035e4bd36456e906869f7987597b9a13794526d097"
+            },
+            {
+              "path": "usr/lib/libpcre2-32.so",
+              "sha256": "8d43fac1743379ab30f31a823a377fe86dc53905d6e10c87927c9ebc70ccd388"
+            },
+            {
+              "path": "usr/lib/libvorbis.so",
+              "sha256": "8d0b6676b7ae54287021095cd2210f8241741f3cfee0702c8ecd7eb8a9474f45"
+            },
+            {
+              "path": "usr/lib/libbrotlicommon.so",
+              "sha256": "4004b3cfde0710493cd03ce3766bf8fd425a818f5caec50f5fa02ba0e49daff0"
+            },
+            {
+              "path": "usr/lib/libbz2.so",
+              "sha256": "7136a6a39c8e423501e3cefc44a552170b1e996ffd43185357640572e3d38394"
+            },
+            {
+              "path": "usr/lib/libopenmpt.so",
+              "sha256": "78ed9a1f28a53542530b5b6301dc335bfab948a5ee70843cd99d665d702de6fd"
+            },
+            {
+              "path": "usr/lib/libgthread-2.0.so",
+              "sha256": "8fd68aec60f247f697befe3e141d2e426e50010e369c7db84ea30383c92d900f"
+            },
+            {
+              "path": "usr/lib/libavutil.so",
+              "sha256": "9f3ea37152ba764ed09bb70bf9f3ff2e41c7187165afa8d0cb52c21413509e57"
+            },
+            {
+              "path": "usr/lib/libwebp.so",
+              "sha256": "ed4a82653eac41767ea809fa9e85df7dfb97ad3801f4323ffceb65697def7d6e"
+            },
+            {
+              "path": "usr/lib/libpostproc.so",
+              "sha256": "fc2def8538083151b4df2cd76c4f958e3d78f2ff22e4762ff7b3bf7d2399d4be"
+            },
+            {
+              "path": "usr/lib/libbluray.so",
+              "sha256": "73ce9ae21939026f834eccf1f07e6d432ee95a50a7b9a0dcbd268bfbcc848f79"
+            },
+            {
+              "path": "usr/lib/libvorbisfile.so",
+              "sha256": "f66c7b549af6f23b01e2242ab49129641e1fcba516827e7031a1a81c54fd3da0"
+            },
+            {
+              "path": "usr/lib/libssh.so",
+              "sha256": "ad6fea4895a740718ca71634ecda4124eaeac44ecf5d448bc4d486828b3b8f48"
+            },
+            {
+              "path": "usr/lib/libv4l2.so",
+              "sha256": "419eb35b88b406fd6aa1c1b8c4413fe3716c04840b2cd53d6d24a6fc909e0fd0"
+            },
+            {
+              "path": "usr/lib/libgnutlsxx.so",
+              "sha256": "8b44a730ee8c5af4b662e9e63ebfaa3f84b5210f27f73bcfd8caae4f9b4566de"
+            },
+            {
+              "path": "usr/lib/libgio-2.0.so",
+              "sha256": "9ade29f2d511fac8310c8bca7c15af64fa271176855e7ad0e98429c1759001f8"
+            },
+            {
+              "path": "usr/lib/libpng.so",
+              "sha256": "f8460226dfbf1e2e4cdfdfb63ee81924558ccc9685671c49ad979df5fe2920a7"
+            },
+            {
+              "path": "usr/lib/libgnutls.so",
+              "sha256": "b384015e574b53649ce8e885ca24d6e5572210492f02a3eb38e0761661d3f982"
+            },
+            {
+              "path": "usr/lib/libpcre2-8.so",
+              "sha256": "dc5918f1daedc8d576b315b193b1366c825bc18c2189248478945a64505350dd"
+            },
+            {
+              "path": "usr/lib/libgirepository-2.0.so",
+              "sha256": "8c44836ae61c6d69542e57bd045b714ef1fa57c694adff3f11df57fa7397a3d1"
+            },
+            {
+              "path": "usr/lib/libgmodule-2.0.so",
+              "sha256": "dc112bc1dcbfa2f04231114020af5617fb79a0c1d87f3277c8b2ccdb41e0ff3b"
+            },
+            {
+              "path": "usr/lib/libOpenSLES.so",
+              "sha256": "d9375bfca453b595bf5e58e0031d31ce3dd6b00cb4011c58fadc2dba57d102ff"
+            },
+            {
+              "path": "usr/lib/libgmp.so",
+              "sha256": "d3a7002e8fb504301bc12278260e36eae34c81d15cf8afe72cf4a769832b6f92"
+            },
+            {
+              "path": "usr/lib/libvidstab.so",
+              "sha256": "66df637c6f092fb30829fcfbf3c57c487fc72aaef045a8dad47f8d134cccf1dd"
+            },
+            {
+              "path": "usr/lib/libzmq.so",
+              "sha256": "ed605151724f538478d1bdfe1f5b7111f87df2996ddf1e1982d2c96a124f4065"
+            },
+            {
+              "path": "usr/lib/libsyn123.so",
+              "sha256": "5cc5aad89cda900b9f781c802164623c71fc704c647aec1dc63e1c822ba2c8c8"
+            },
+            {
+              "path": "usr/lib/libv4l/plugins/libv4l-mplane.so",
+              "sha256": "2adc0f746a0ed9c4a26c0a98edd8396b067134b2c3b2d86e1e1d0f4cc80696f8"
+            },
+            {
+              "path": "usr/lib/libv4l/v4l1compat.so",
+              "sha256": "92a17ebcc0aa4f6d2e48309ab510cb587cbae6baa5d323a76db8b0bd035779c2"
+            },
+            {
+              "path": "usr/lib/libv4l/v4l2convert.so",
+              "sha256": "8378c80b9d61f80a746248b8e7e088dadf453ee9d2453daaec15c5e9329cdfb3"
+            },
+            {
+              "path": "usr/lib/libopencore-amrwb.so",
+              "sha256": "15c1eb89ad7368899090e951535c1b3f7cc9136aa771c3e410ba76f3e29acdd6"
+            },
+            {
+              "path": "usr/lib/librubberband-jni.so",
+              "sha256": "fe01ae2e0af77fa6b16909a376b36f7daf870d356a58758ad825f5b7ef2aeea4"
+            },
+            {
+              "path": "usr/lib/libsoxr.so",
+              "sha256": "57381eeaeb85f85a0ec046d428af91fc1f46ecbf7f1dd1ee21d04c8609c89fb7"
+            },
+            {
+              "path": "usr/lib/libpcre2-posix.so",
+              "sha256": "335ebe1d900d1e85f32e25134a484f36721577f6e72bd631f708bb9808bc8b0e"
+            },
+            {
+              "path": "usr/lib/libsodium.so",
+              "sha256": "2ec7c9f7ee91bf39bf0f11ea761b144adc87ff33352f65f23f9c060c52be562b"
+            },
+            {
+              "path": "usr/lib/libavdevice.so",
+              "sha256": "7e5eb8db46c591a15468a4c67982146b530409c4546edd6e8be71237072a446f"
+            },
+            {
+              "path": "usr/lib/libx265.so",
+              "sha256": "be2f09ed547b935ae6b785474d02c41a92e270b6210b3001c30976c150819720"
+            },
+            {
+              "path": "usr/lib/libopus.so",
+              "sha256": "7a9f64c9db51e646b5ca27037fef1399475a360d697cb551937a3ca8a6900b6e"
+            },
+            {
+              "path": "usr/lib/libdav1d.so",
+              "sha256": "a5af4607960ba470c29754f9f9a0173a67f641db0ae163cfeaa874258a06acb6"
+            },
+            {
+              "path": "usr/lib/libgraphite2.so",
+              "sha256": "da3b2920f064faef1f86a841a6e19eb176e977eaf43128b61168fb20b07a57e5"
+            },
+            {
+              "path": "usr/lib/libavcodec.so",
+              "sha256": "cb4b34bd54a7058d70b504899431cab5271f0a80977428d488e9111115182801"
+            },
+            {
+              "path": "usr/lib/libudfread.so",
+              "sha256": "bfb58649e5dd3d7504c449b8258cb3962537df7a9b46ba5db6b7746424df9c63"
+            },
+            {
+              "path": "usr/lib/libharfbuzz.so",
+              "sha256": "a220b49c8d60974b04ef3cc1496637004b3175a016780efe83ff3ad3b5b1bf76"
+            },
+            {
+              "path": "usr/lib/libfftw3.so",
+              "sha256": "3357e90a5413a5395407aa292202006318005a55178cbcef68de1bbdfd9fd6f4"
+            },
+            {
+              "path": "usr/lib/libavfilter.so",
+              "sha256": "804bba94681d6b5884ea6ca355ae4dcf63ba2a17a6b85a96756d9ab40dda5ca0"
+            },
+            {
+              "path": "usr/lib/libharfbuzz-gobject.so",
+              "sha256": "67eb61069cfd7c492d5ec99acb1a5560c2edaacb87d612d2866636151aff6509"
+            },
+            {
+              "path": "usr/lib/libsamplerate.so",
+              "sha256": "d141090c9cfd5067d90ccadeb3ff63daec26f5439c03358f3e49d671fac734dc"
+            },
+            {
+              "path": "usr/lib/libgnutls-dane.so",
+              "sha256": "f4ed4dcf79110ac01be2ce6a114b438c5dbd92e42152a4ad63db64f9c2e69fcd"
+            },
+            {
+              "path": "usr/lib/libcharset.so",
+              "sha256": "b124fbadb2fa1009b49c72ce6c8bf51948aca0ed9731f03d0f8be9c16c00f48c"
+            },
+            {
+              "path": "usr/lib/libunistring.so",
+              "sha256": "e993b775f8ce105e5217c39639c33038e071daf15abbf73e2d7214d3205e15c9"
+            },
+            {
+              "path": "usr/lib/libsoxr-lsr.so",
+              "sha256": "f1c4c660c092d678ab455e335b1dfab3c91e5c82b67d7640481a9a277c04adac"
+            },
+            {
+              "path": "usr/lib/libidn2.so",
+              "sha256": "f5efe369f31db41c3bde8629eaa7788b69f8250b512b743cdc88e648679215fd"
+            },
+            {
+              "path": "usr/lib/libopencore-amrnb.so",
+              "sha256": "aaf88c632c7b19a7e21a02c5a155088dad0acd3dab79cabfc87b2411c3f8052b"
+            },
+            {
+              "path": "usr/lib/libbrotlienc.so",
+              "sha256": "0db43df85660fe5e8aa6339b9a4a13cf99358e5a96e6236aa2f3ecbe4a0dcebe"
+            },
+            {
+              "path": "usr/lib/libvo-amrwbenc.so",
+              "sha256": "9642dbb80434dcbc8e4de9696ac8977656bd2c3a28fa07067afed33c45bf2a45"
+            },
+            {
+              "path": "usr/lib/libmpg123.so",
+              "sha256": "8d41657e9cfccbb203f5f552911c942b5ea5e3e4b7cd61c7abbeca2418d62584"
+            },
+            {
+              "path": "usr/lib/libwebpdemux.so",
+              "sha256": "7be0df22a61922d7f63d2b2563c0916fb058d4f2d9939586a2c71292b6d7bca2"
+            },
+            {
+              "path": "usr/lib/libtheora.so",
+              "sha256": "d984179bfbaf0ffee913ec0a971de2e0983ae3bbe08e662d2231901f812b6660"
+            },
+            {
+              "path": "usr/lib/libxml2.so",
+              "sha256": "aae44216ea48f9e58de065fb19fbec6a0357bb2404c9a1b25042f4beb0e86cad"
+            },
+            {
+              "path": "usr/lib/v4l2convert.so",
+              "sha256": "b3a38809571d25cf394f64f53324d62df15df2cb509db0d62fd9844f45a8f4da"
+            },
+            {
+              "path": "usr/lib/libiconv.so",
+              "sha256": "53349c7a84ad06da53c3976754c742d6a79f3297562f0fbe61b7ee620f783667"
+            },
+            {
+              "path": "usr/lib/libandroid.so",
+              "sha256": "95826d928992523240dc3e54cf7c4ecf4508c6ed16003209e9f7bb5263a98737"
+            },
+            {
+              "path": "usr/lib/libgmpxx.so",
+              "sha256": "da1a4c6a9a7e5ddd7f006b80d8394aaa563f905ed3330720f0b817e42579f085"
+            },
+            {
+              "path": "usr/lib/libfreetype.so",
+              "sha256": "1f8f7b76aed2094b39a89cd11f1abcca1dbc67e6b006a4bc89bf9ada3b8112e7"
+            },
+            {
+              "path": "usr/lib/libwebpmux.so",
+              "sha256": "e6cca7833dd88679c5b09c1468c61cb75834bc24138e50d064f5f00375ca520c"
+            },
+            {
+              "path": "usr/lib/libswresample.so",
+              "sha256": "0fbbf34bfc91cb9de7c6e8a1f14c2a37ed6fee19f86fd9c8cb7bb4257b631a05"
+            },
+            {
+              "path": "usr/lib/libtheoraenc.so",
+              "sha256": "290c7387cd8feeb3d6a5853098885830bbf9cb8a05d1332f40d27f8969d46ec9"
+            },
+            {
+              "path": "usr/lib/libSvtAv1Enc.so",
+              "sha256": "7aa195ef296abfa1b35d4fdb0b8f3fd5573b860cfafdd1527e3e71ec9ec83072"
+            },
+            {
+              "path": "usr/lib/librubberband.so",
+              "sha256": "46800126ada5fcd73da29d76ac6650aea60988b19e57e7cc38e7a5b7c07724a8"
+            },
+            {
+              "path": "usr/lib/libvorbisenc.so",
+              "sha256": "5aff8bb63cd4690364629e3b6024a8eb449277259406781cac3b726160bc0e36"
+            },
+            {
+              "path": "usr/lib/libfribidi.so",
+              "sha256": "ea97adc21ffd686ee33a2446a7fa674926902c429163e212f9ab6716c0cbf4d9"
+            },
+            {
+              "path": "usr/lib/libhogweed.so",
+              "sha256": "2e5f9c937cc0ad59b7ae791f515928607e53c7ab07e2e500c3af4e201f1b6c76"
+            }
+          ]
+        },
+        {
+          "name": "libpython.zip.so",
+          "sha256": "7edecb6c9bd3a94456168d44911d8aea9f917bedef90c320a29500d92ac3eb62",
+          "shared_object_paths": 148,
+          "notice_or_package_metadata_paths": [],
+          "files": [
+            {
+              "path": "usr/lib/libform.so",
+              "sha256": "42f305680690a32f24a190011142cf3c93e3d0928670d33e739b352d95fe1006"
+            },
+            {
+              "path": "usr/lib/libz.so",
+              "sha256": "46864e8d25ddd80dc43da8562fa96acef6190fbf91ad99951981265f07287eea"
+            },
+            {
+              "path": "usr/lib/libffi.so",
+              "sha256": "8855ba6dc12e9abf40729481a7a99aa391ac7b2e77bad4fbe0bb51cd66216c0e"
+            },
+            {
+              "path": "usr/lib/libtermcap.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libgdbm_compat.so",
+              "sha256": "f6c80e0bb1dcdf470d64a89f114fc21a7e018a520232fd635c261843f0573b18"
+            },
+            {
+              "path": "usr/lib/engines-3/loader_attic.so",
+              "sha256": "78cbdece9fed8f28a94921c24db57ad239c9142936f53170557765061f92ef85"
+            },
+            {
+              "path": "usr/lib/engines-3/capi.so",
+              "sha256": "252cbb89f522dfd14f187d3eb3c4163bfe8583621f65b721002a7b94d51ebc20"
+            },
+            {
+              "path": "usr/lib/libtic.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libcurses.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/liblzma.so",
+              "sha256": "a42feea4600eeecda8ac5f20390c97e1b82ad95b51c3e1e212d1fbe736632c15"
+            },
+            {
+              "path": "usr/lib/libandroid-support.so",
+              "sha256": "739cf829511d71dafd6c67fdbb70f3f0c6048642ea2e1967790ee961fde14430"
+            },
+            {
+              "path": "usr/lib/libsqlite3.so",
+              "sha256": "5a59146ea68be003bcc44168e160974607c3dfd4804c8f0856fe779b97c6e1af"
+            },
+            {
+              "path": "usr/lib/libexpat.so",
+              "sha256": "100ea952172ab8b71339e99bbf5c7a919394a1e985212a0e35aecb729ec92d24"
+            },
+            {
+              "path": "usr/lib/libandroid-posix-semaphore.so",
+              "sha256": "bee8c749ff4a87c06c4f6316a380f179f607de7d904418a20d879eea74be345e"
+            },
+            {
+              "path": "usr/lib/libpanelw.so",
+              "sha256": "453fd99a71594fa16d57b5238d0bd2050807a794532590905c55267f46ec0d70"
+            },
+            {
+              "path": "usr/lib/libssl.so",
+              "sha256": "765238cfff0078de21e4c2dc9d832e25171fa901959082e75346910ec84e2eef"
+            },
+            {
+              "path": "usr/lib/ossl-modules/legacy.so",
+              "sha256": "1633affb938cec4647a1f92e00b98087989cc3a17bab2eeb99721d8269166c6c"
+            },
+            {
+              "path": "usr/lib/libformw.so",
+              "sha256": "aeb8edfddce0fb2ee4005e3271c6a92065fff7e4be629364b1e8ff278ac6a23d"
+            },
+            {
+              "path": "usr/lib/libbz2.so",
+              "sha256": "7136a6a39c8e423501e3cefc44a552170b1e996ffd43185357640572e3d38394"
+            },
+            {
+              "path": "usr/lib/libmenu.so",
+              "sha256": "0ba002163e7e4843d96f9c84c88f30ac2417a6f3013414dc15f5d236ea8cbb91"
+            },
+            {
+              "path": "usr/lib/libreadline.so",
+              "sha256": "48e617ea05edc4a6c282bcfefba9fbf9c8a426982095a2aa335a81c0cd78e6e9"
+            },
+            {
+              "path": "usr/lib/libmenuw.so",
+              "sha256": "7bfd5bee830313ac18fed6293ae3ec9f9fe3bc0081d1c5fe67064638c4fb44da"
+            },
+            {
+              "path": "usr/lib/libpython3.so",
+              "sha256": "a2af9b07c3db7b2caf687ef4e24908028457923a6f98f18e02f4223f3ab46b10"
+            },
+            {
+              "path": "usr/lib/libncursesw.so",
+              "sha256": "78b0ddd615556d69be49739f365c5eb654e4272b2bf28f768626ea00d6189386"
+            },
+            {
+              "path": "usr/lib/libcrypt.so",
+              "sha256": "bf078ced08880508974c8ab9d68d12d320842e422fb6ec496f5b892e5d701262"
+            },
+            {
+              "path": "usr/lib/libcrypto.so",
+              "sha256": "5a8500343a9ea477898fb881a6c5bb97ba6774032b148ce6ea121b28cdcc04c2"
+            },
+            {
+              "path": "usr/lib/libc++_shared.so",
+              "sha256": "e2c8b96cca9bd385a5eafda4648b5d8434fa84ce3f836f4d5790a0307b1728af"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_posixshmem.cpython-312.so",
+              "sha256": "964e8a1553b6b661d3d2c4dcfa9b90097fa58043e8e4c8705877ca55a51d3301"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testbuffer.cpython-312.so",
+              "sha256": "91a1a656e358af1fe3163db997870b9195f512c65533689605fea9ccbb91981c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_multibytecodec.cpython-312.so",
+              "sha256": "b454a969f085203835941cc755776fc65ec89c279805e8f611f1ec8650d79df0"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/select.cpython-312.so",
+              "sha256": "2dfaea3b6a2bf6ce51e3034d96870d92f169a6206b150aa60d7238b095f23830"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_opcode.cpython-312.so",
+              "sha256": "d5d2fd1bf82b4d3a0e1e2b77b66fa1a628681af9ee06d915e82a9a5f850747cb"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sha3.cpython-312.so",
+              "sha256": "8ea75ef09c521a4ca3defafdbd33a7ae7b4689839fec1585664aee806cfcddb4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_dbm.cpython-312.so",
+              "sha256": "dcd178b0d4dec575069ea57a7e3d544b854389cb39e81b4ad8d0b90d9537ab83"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_iso2022.cpython-312.so",
+              "sha256": "1bd2297b5df053694d0afa8b5b5e2af8237304325a84102224ed2ebb8d8e154e"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_json.cpython-312.so",
+              "sha256": "f7d88cf3ba5233b17b68ffaab0d0b5e2117da93cc0cbb0e62bcf9001d56111d0"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_cn.cpython-312.so",
+              "sha256": "3e1203d6e1673ab99073ab9747f4dffc1f3b2671b87f86a489a513a6808b2eb6"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_elementtree.cpython-312.so",
+              "sha256": "c33e5ff9b6ed8e44066733f1f81cf0826e2de1272ead0a8ef501e12bad8845bb"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_tw.cpython-312.so",
+              "sha256": "4e558fb283686139e50abb9973ea2e53c88dc9342032143819ac673dafe6c286"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/grp.cpython-312.so",
+              "sha256": "6cc8ebd2df4fa06dfba8457113c415389500ae19bbb278c36a7f394f3c5fa566"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_bisect.cpython-312.so",
+              "sha256": "7127f24057b086b68ff84805a268a127e34b495163e08701756f48b8a116ed02"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_ssl.cpython-312.so",
+              "sha256": "e6e4c10c627097aa152ec39e1c0996427dd868fff4d3085e558eb0ca7021681a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_csv.cpython-312.so",
+              "sha256": "95d4073137c9472e9c50082b09da6948e594ce5344d356fe7331dca4b9cfa6d4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_lzma.cpython-312.so",
+              "sha256": "914b20ecbcd9eaf7ce9c3732b9c05a774aadc5a621e089fee2682ea281794f7e"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/ossaudiodev.cpython-312.so",
+              "sha256": "5b90fc13f97b8c1eacef5a9477a202e7654e90ec5a2d98e20e2078561df60850"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_contextvars.cpython-312.so",
+              "sha256": "d9b60f82be27fd4cca78c2f257845275837813796811c4a116829c3a1c03dbe7"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/mmap.cpython-312.so",
+              "sha256": "eba09dc4c1204e8a67ba540984a15a651f00751cfdc9e29234463382df9c2e04"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_md5.cpython-312.so",
+              "sha256": "04800447bcc2ac6d282129681c828d47277e9a12a41aa8b4e2414ce1de8e47ec"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_kr.cpython-312.so",
+              "sha256": "54619837424ef8f60f4b452091ecd925a1b78ad9e914037f7feafb66fb9f9622"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_asyncio.cpython-312.so",
+              "sha256": "50abbdae88a26f870c8d5e8c8e0d825b192fe7222caec47a605ae66c22b2d2c4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_datetime.cpython-312.so",
+              "sha256": "80f565d8ba073418e4dd32bff6622548ec8ccd51d7341e956803eda098a3d5bf"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/array.cpython-312.so",
+              "sha256": "d63f526eebf5e90e4b3e090f050399b6fb1a74d72b9279ac41ac62966bc022dd"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/resource.cpython-312.so",
+              "sha256": "991d7b1155d12683d2dd8489d8bf20b1495b379e662f628437f1903689aba936"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/audioop.cpython-312.so",
+              "sha256": "652473011627886bb3606ec22918463793555fb78ecfc75b087bd99d549a77ca"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/xxsubtype.cpython-312.so",
+              "sha256": "ed7ff661638dd66aaec876ed3295136c6bee66f395169f59684c7ffb30bfcd19"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/fcntl.cpython-312.so",
+              "sha256": "36256419c46780c0a3be2c3fb3bc74929c5cc1ab06847b46c1fc91a9dd6f2b84"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_hashlib.cpython-312.so",
+              "sha256": "000426da137f665fe6ac5859deae33c6f6b71c04c46c6ad8fea2c04726f61d2e"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_posixsubprocess.cpython-312.so",
+              "sha256": "a1c985cd0127d1d93cba1c0e09c0827542b57e6aa011d82c03f3ce7e749a94b5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testcapi.cpython-312.so",
+              "sha256": "d01be27d58bbf65640429783c9ddb7b80d25af94d4e77dffe92bc137e76a37de"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_xxtestfuzz.cpython-312.so",
+              "sha256": "daeffd1b64ae110e62eb0b0d8d2f2f9d53119818d70e6b353bb595011e6a463c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/syslog.cpython-312.so",
+              "sha256": "dce1f6ffce31cb1e8a06a469bbb06e64164affad837d0f6285fc5d1ef7777074"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/xxlimited_35.cpython-312.so",
+              "sha256": "372e5389776326810d08054f4591e2f238690982158545c762e3fc49c0cf13f5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sha1.cpython-312.so",
+              "sha256": "11167512ece62f093191e3f8dbc9deb74f82726d2bee80bce8b768602b119cf8"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/cmath.cpython-312.so",
+              "sha256": "9fc1f3611a0477fcc6c9f80215cd7534bc29699b8a68e7f6baf71020a20aee24"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_pickle.cpython-312.so",
+              "sha256": "a4a6e997395086f7b70c3689a38762433481be342e6c4f90df9f6fdef45dc755"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/termios.cpython-312.so",
+              "sha256": "3f2302cd290587c706be532e4642ef20fa1afca22e333e3fc37ce3b4db1349d2"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/xxlimited.cpython-312.so",
+              "sha256": "9d8ca6528f01e5b855d3aa76dccb98b212d5134a716f678eccfbe4a97cc19ada"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_curses.cpython-312.so",
+              "sha256": "eb4160afb94f39d358f0a33e4ea0d12ea2670557a242e2a1e2c35351ce325be6"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sha2.cpython-312.so",
+              "sha256": "2235248e088ec1f2018d927ab4800f5d47003eb68f5414cd7c0a1445a2419e37"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_ctypes.cpython-312.so",
+              "sha256": "3e3502b9cd6ed468b91b2377e716a20cf13bd7d1204ee74c668eab81b4ce8987"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_socket.cpython-312.so",
+              "sha256": "734dea085393f2c6d6f8f4ce72218590de8d85df18ffc491851d57dd9926ecfd"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_xxsubinterpreters.cpython-312.so",
+              "sha256": "02c989e77573db366593031a5088fe75385184c716ac08f0abca6ff3c938d03c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testsinglephase.cpython-312.so",
+              "sha256": "449097c2e32ac4dfff5cfc7669c7dad44dc39fa1daa1e62c4d4dd8587d983f6b"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_zoneinfo.cpython-312.so",
+              "sha256": "091e16b39571c238159711398d142950fc609199803317f7784a5f2b83c11edb"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testimportmultiple.cpython-312.so",
+              "sha256": "a3f763ba551fb66292d1c7b3f54622b060e597cc2ed28147e0e56298c5387474"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/math.cpython-312.so",
+              "sha256": "9be9f975afa294022b6cfe9bdba1b83ed1ba6bd5ecd80d12d38c072e7f44311a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_queue.cpython-312.so",
+              "sha256": "df1bf266877734ead556db28a7b81b7d572e33079a221f964d6948a2ee86e19a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/unicodedata.cpython-312.so",
+              "sha256": "ee2822f2fcdc109fb4e9821f048fb09029a561aaff11246fb73acfb726869be2"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/pyexpat.cpython-312.so",
+              "sha256": "3cba3872bace50894023b0c3a259f1a38c82d33502221a6ec8c15dc5eb3e16ca"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_statistics.cpython-312.so",
+              "sha256": "24c0b89c74b8497378e6a2f6cabae4f9bbc94597f0a350f71186f80e823af002"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_decimal.cpython-312.so",
+              "sha256": "0b7d536e6387ad7d06071f080b747015cc2c6ce4519f7ef2c1e97b2141e182c4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_lsprof.cpython-312.so",
+              "sha256": "bd7a48ac70934d2e7cdbd5fe75ccf2470d180b2e236f5db1b0695a03de9ec673"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_ctypes_test.cpython-312.so",
+              "sha256": "6c507953dba20aa66a778e1a8793666c64d0495f46c0dbb5594ae3337d8aad5a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_curses_panel.cpython-312.so",
+              "sha256": "805b649f553252b6dcf12d29c9e9ba346c8dc4e9ed73165c93ce97f33904e1bb"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testclinic.cpython-312.so",
+              "sha256": "b822ffae4418a8eea1992bd3900fa76b5cc7b2c9b0a79613c6569c4cfdf381f5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_multiprocessing.cpython-312.so",
+              "sha256": "e3074f25da5535e11e61ea729a86951f6400b6faa66551ac106a4d16c8b07fc6"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_struct.cpython-312.so",
+              "sha256": "b221819a4387aff62c189bd65416fb075bf0de5933b820a545f08c2a4873d413"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_heapq.cpython-312.so",
+              "sha256": "badeefb3684846297ef2e641869c1ecb5b47a531668c6088ccf73c00faf3785a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/readline.cpython-312.so",
+              "sha256": "1c9668317cb1a9869ae2c2580b1d57001d12aabcd63c1b367e0c3f083be96047"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_random.cpython-312.so",
+              "sha256": "fd71aee21706c2281da4ad7dc262ebbbc32bc871f9005c821ec3205877de237d"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/zlib.cpython-312.so",
+              "sha256": "dd18086fb5040f6c32cd4dc31d31cc673ccc5c0d170efbe94c1ad9d44c016eb0"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sqlite3.cpython-312.so",
+              "sha256": "c3c1a22cb29d49198f26b400c2a7cc6f64840c08686efe9b708a0ee39d855413"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_hk.cpython-312.so",
+              "sha256": "38c84ae6265cc540f467d523b745809c953ac92b724c730cf2fdac6c2cf73da7"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_crypt.cpython-312.so",
+              "sha256": "b8e504b91f2069d9be2f9ea02365b6620afb8503933fcb33bdf76f697403e650"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/binascii.cpython-312.so",
+              "sha256": "8306d9fd66b816d0bbaf1bff309d2c089fc8e14beb4cff15a5dfc769ca93ade6"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testinternalcapi.cpython-312.so",
+              "sha256": "0e0f0d7dbabdb7e0967fda8cceccbdcbcc2cd20b40b3679aed9060765b940c5f"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_blake2.cpython-312.so",
+              "sha256": "24b847b3adddf1dda1e3f5a79494f229b0b1324789632b95f59688c30546d644"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testmultiphase.cpython-312.so",
+              "sha256": "3e3b74f9cf5e2ca0e340ffeea1728f669a663bc1d01fc6d2a9b57c95af4b521d"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_bz2.cpython-312.so",
+              "sha256": "0cc9281ce4681b2f88495a8090dad214370d5a7c5308790ce3bef0e2508879e7"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_gdbm.cpython-312.so",
+              "sha256": "1046ec595304fdddcf4eafc2303b000748fe96d9d932d0d2c5462caec3300bf8"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_xxinterpchannels.cpython-312.so",
+              "sha256": "6d220134919c3bcb32f4b17aef09f78b390e8d93171b3b954ba93604a8432895"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_jp.cpython-312.so",
+              "sha256": "a868ad3e0bb9845137d5c718b59027f4b8d01cf3d185afc66041f4dae18fd6c2"
+            },
+            {
+              "path": "usr/lib/libgdbm.so",
+              "sha256": "38a4de2bf30accf30a5c304e334cfc8711418fa49237d38664336493e5b3ba67"
+            },
+            {
+              "path": "usr/lib/libtinfo.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libhistory.so",
+              "sha256": "468e6ce7dab018cdccc240eb45cd2b4df9a23f6422632091931d638b157aef78"
+            },
+            {
+              "path": "usr/lib/libpython3.12.so",
+              "sha256": "a8de2cd4edf05bda5211291475225effde8ac84713e99b8954ea0a482403c7d6"
+            },
+            {
+              "path": "usr/lib/libncurses.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libpanel.so",
+              "sha256": "814c16152f5bccc4977c69c1054904df9881579b1bb15418c6166e1e0806f291"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Protocol/_scrypt.abi3.so",
+              "sha256": "532a8254827e98eb7084ae295fd296c8e3c69452bbc67ebbe4800afa8b1cb2de"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_ed25519.abi3.so",
+              "sha256": "18d36ae51e3f283ae44182fdcd6379d6503aaace7fea9eab2785f2b897f04106"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_curve25519.abi3.so",
+              "sha256": "e73df87b8a42ac6aceba8816b5f73dc3f0fe173947784366b31d1b5bfee8475f"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_ed448.abi3.so",
+              "sha256": "6d3b5cde1f1bb4ac8c642102cf1e3d61f0e0dac51894df0215fcbaa293e14fd9"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_curve448.abi3.so",
+              "sha256": "b038dff2673dd11107c4e13cb941f1344da614050c6d4bc2fc4ff40c6b4eca9d"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_ec_ws.abi3.so",
+              "sha256": "849c46f893ae9fc6b0b0d8d6a7b2e312e749f753869a932204b443d09188981d"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Util/_strxor.abi3.so",
+              "sha256": "af4ba7ec99db9d049cbc45ea625709780238283d24e590c464a0661268a7e5d3"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Util/_cpuid_c.abi3.so",
+              "sha256": "bbcd3295af045900edde0697dc74254c75c76d9927d5378f0f86b2b1d590f839"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Math/_modexp.abi3.so",
+              "sha256": "e611de844316904d86f1c6afd3f8a6b48b2477a474eb59dae3869b49b72e2141"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_MD4.abi3.so",
+              "sha256": "a120c5b48a10d9e0c764dd20f337c8df2c728337b9f0a3de16c734b5fe9ad029"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA384.abi3.so",
+              "sha256": "fc0e597cfc73338b4dc173bcb416cde6d86ee4b8f75031deac383896406d2612"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_MD2.abi3.so",
+              "sha256": "27ab6058255489429425bd1ff4954646d453c76ce117a805f32103724c13134d"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_poly1305.abi3.so",
+              "sha256": "1c654052642a599edd7484b8abf1e89b7b80fea9476594b0348173b17c967974"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_keccak.abi3.so",
+              "sha256": "2077e5746eda5d01bfb3cf01d9dde9799842f24e625a49a16921eec57e3d5bfc"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA1.abi3.so",
+              "sha256": "da95284e9d8244aa690d9c491fbe9b6d001fe3bdabd89ee99d7f4673e587eb0e"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_BLAKE2b.abi3.so",
+              "sha256": "594bab0898acc150e4e5be7ab2c69e32c5f7cde91433116d80066ba87f7fae25"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA256.abi3.so",
+              "sha256": "6175ff6447e41ba9cfdc44b2dde33bd2f1c3d3101ed8fdad84cc4730cdd9cd69"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA224.abi3.so",
+              "sha256": "4decf98d253717b9061c3c1ef73820c81a7eadc903e3ac4f44421a96bcee2e1b"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_BLAKE2s.abi3.so",
+              "sha256": "e79d82fc67af50e2dee1e4715226baf2d4f76ebd91e713ffe6b2bb05a70ef064"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA512.abi3.so",
+              "sha256": "7db5c028a200cd706ce04078a441ad0cf8f25cfb8cbbf69b29145d1843d47d54"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_RIPEMD160.abi3.so",
+              "sha256": "a702a99ebb58060ca4fe5413cba7c1596dd1870bbcd2bb5a589de3e25bede9f7"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_ghash_portable.abi3.so",
+              "sha256": "d2ecaaf2a0c324b46f78965e045421053477b481dccf29499390e47852af7488"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_MD5.abi3.so",
+              "sha256": "4cf924b2c07b4e04b3bf31fd30755b9f91dd6934d54eee37df58ca96fc5b7eb1"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_arc2.abi3.so",
+              "sha256": "b406f8653e4807b0e61065709f9b86905db5e2716d83b7a05b8aaf7ce9fb3f57"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_eksblowfish.abi3.so",
+              "sha256": "36fa3dd87a22500d41f28a627b8a772177c926fa289ce47fa6896abdaad48f1b"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_blowfish.abi3.so",
+              "sha256": "5876b91bb4dfcf9ad5abce708795482fd6a0f86ba47b319deda980d67c9103b3"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ecb.abi3.so",
+              "sha256": "f523ed29fbc3b65caa621ff92330fd7ad400b6b7c495e89c283180b6163b7cf2"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_cbc.abi3.so",
+              "sha256": "1c5d185ebe177309c945b9e1d367b7a3a495b6d64d04ef8625bc60c73fa53307"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_cast.abi3.so",
+              "sha256": "831d6194d6adab602871bf5ba7394a91dea517ecc68e4c3ddb7e732ca89fb706"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_chacha20.abi3.so",
+              "sha256": "16a131d595c53dc66418177955758cb1e4bbe5c75fcb4a52e79bff5c3d785ae7"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_ARC4.abi3.so",
+              "sha256": "357767aaef314e1dd2379b7a4a0dca0ebb77c6e3139e3c46bd6d67dcae6e89e8"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_des3.abi3.so",
+              "sha256": "2dec1333c17d6ec7f8ffb5f869379eb190902a17d48a2cf873170a69ae2accfa"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ctr.abi3.so",
+              "sha256": "e9322f4778ffa9b8e46f64e5e13b807f1ec77443e9704b4e542f7e087f818710"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ocb.abi3.so",
+              "sha256": "5e607433ac3ba262b34fa0bdebce35a4f5733110481d33ee4b8fbb77af2691fe"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_des.abi3.so",
+              "sha256": "64794119c70ec438fc297bb3806cd3438c672d35631016d8b6667d5e0946f9f1"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ofb.abi3.so",
+              "sha256": "62291c945201923360c0672e06aaf67279790b0a6c9b0ed68c4465cb20a21cd2"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_pkcs1_decode.abi3.so",
+              "sha256": "f4d4276689868591600fd257b9e9fbc0a6aa42eb53478f76121b12aed73c0289"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_cfb.abi3.so",
+              "sha256": "52fe80bf594baee6d25bc7a3f774207cda98d7da85ac9b995b7894b3c95759dd"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_aes.abi3.so",
+              "sha256": "5cca9816984f79f3350f15f2c17f419ed3abc29498bf3c625e4ce8739eface76"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_Salsa20.abi3.so",
+              "sha256": "0fa4a27c6fdcbcf07f122e0ba257b9b044c084db405de910a49af38c20e57274"
+            }
+          ]
+        }
+      ],
+      "ffmpeg_gpl_enabled": true,
+      "ffmpeg_version3_enabled": true,
+      "ffmpeg_nonfree_enabled": false
+    },
+    {
+      "abi": "x86_64",
+      "apk": "clipnest-v1.4.0-alpha.1-android-x86_64-debug.apk",
+      "apk_sha256": "ae793e7a05270152f393a71e278c25cdd6c588720babb432a50396a88a60166f",
+      "containers": [
+        {
+          "name": "libffmpeg.zip.so",
+          "sha256": "79a442979bfc0363fcdd7e47f75daf022891e84fc01f3fdd866af785d22321ef",
+          "shared_object_paths": 113,
+          "notice_or_package_metadata_paths": [],
+          "files": [
+            {
+              "path": "usr/lib/libswscale.so",
+              "sha256": "8ac0b788369ce46f2281b0afb2e4056a56c2f23398596cfa48e3e370ead0915d"
+            },
+            {
+              "path": "usr/lib/libavformat.so",
+              "sha256": "b65d6c7abc59b42490497a03de3a4ef2501ee66e5451248f534c1375af27f510"
+            },
+            {
+              "path": "usr/lib/libass.so",
+              "sha256": "5a3a5f4b5279604fd13f27acd32384a30a34353a338721499dd5fe48d0bdd313"
+            },
+            {
+              "path": "usr/lib/libz.so",
+              "sha256": "46864e8d25ddd80dc43da8562fa96acef6190fbf91ad99951981265f07287eea"
+            },
+            {
+              "path": "usr/lib/libffi.so",
+              "sha256": "65d0338bb40ea17aa8a6cfd3d2291e5429deb3c5bdc96e094aafc6319e0c9eca"
+            },
+            {
+              "path": "usr/lib/libtheoradec.so",
+              "sha256": "0a2f7b9fed7a92324cc673e1c50056c90d74f82bbd64dcff87685c1131067f15"
+            },
+            {
+              "path": "usr/lib/libx264.so",
+              "sha256": "d1c8befdcb30d8ab6ac4450124f25859e02372e861dfef2862763cbcb7cfac8c"
+            },
+            {
+              "path": "usr/lib/libmediandk.so",
+              "sha256": "73b38f7ed9e94c7740995fc30a59d40be26fabf3bef5f95c73a17433da5033f3"
+            },
+            {
+              "path": "usr/lib/libv4l1.so",
+              "sha256": "07a39a2f0d71926f797139fd82b4a47446c944c4bde6aac2b4c6e92717a96076"
+            },
+            {
+              "path": "usr/lib/libgme.so",
+              "sha256": "576cad33969e7b4f43cac972bf1e7ca9b6079ee4828de52f099dafa6be916418"
+            },
+            {
+              "path": "usr/lib/libv4l2rds.so",
+              "sha256": "d4b70edfd351a49b4491e5b98708bcf1277e896558206b066330a87b4c9f2911"
+            },
+            {
+              "path": "usr/lib/libglib-2.0.so",
+              "sha256": "0555b9c18782838ba696f39f9ab253c105bce121f4c38c806691b0d6fb1b2b11"
+            },
+            {
+              "path": "usr/lib/librav1e.so",
+              "sha256": "fffb8fea16ecfede6898cd8f04af4fd9103f26dc4fb3a7e8f2706372cab0637a"
+            },
+            {
+              "path": "usr/lib/libxvidcore.so",
+              "sha256": "30bdc41a63fdb96d1c6394487f7414fb8f0bd104c89942438575164d55b69413"
+            },
+            {
+              "path": "usr/lib/liblzma.so",
+              "sha256": "a42feea4600eeecda8ac5f20390c97e1b82ad95b51c3e1e212d1fbe736632c15"
+            },
+            {
+              "path": "usr/lib/libandroid-glob.so",
+              "sha256": "658f8b6ab1c7342068187529ab77c9a5b2f8664b54d1c8c20a271857073cdc8d"
+            },
+            {
+              "path": "usr/lib/libout123.so",
+              "sha256": "16137faeea164155f50d3068c396efa3751c98c0393c323d944b665490716c1f"
+            },
+            {
+              "path": "usr/lib/libfftw3f_threads.so",
+              "sha256": "3519239d71cff48ee937dd7349820b14abcad03b7deddb3629d7997489cb4e5f"
+            },
+            {
+              "path": "usr/lib/liblcms2.so",
+              "sha256": "2e0d5b221a0c314cac42223f6681abc9f51e29d12efaf71cc001450bf368fdd2"
+            },
+            {
+              "path": "usr/lib/libnettle.so",
+              "sha256": "c96cd936d9b4a4765062c2c9424c516ab200f24d94f7a050e64a8d56e677f055"
+            },
+            {
+              "path": "usr/lib/libvpx.so",
+              "sha256": "c940e5facb4d60dfc52d57558b0ba1ba3a92cf57dbb6b06e636db227b37e8e39"
+            },
+            {
+              "path": "usr/lib/libsrt.so",
+              "sha256": "2af8d6058aeae8e39538fa90d81dad45728457906977e4ead7e49b7494f2c196"
+            },
+            {
+              "path": "usr/lib/libogg.so",
+              "sha256": "5052b287771fb5ffa6924d65bf8a689ff788a9201255b7d9b6a07edc57e9d017"
+            },
+            {
+              "path": "usr/lib/v4l1compat.so",
+              "sha256": "df2544ca3ae1a77887e9379a9dcbd7b1358b60506321eff926f03f8f4a2971b6"
+            },
+            {
+              "path": "usr/lib/libpcre2-16.so",
+              "sha256": "2c8b6c6c1997bb58842065f234b4e67be8fdd9ec4819a1dea8f8e2f3b29f8141"
+            },
+            {
+              "path": "usr/lib/libfftw3f.so",
+              "sha256": "12556f7973d97306dafe11ab808c645d67f03668c92abee56c4fc0da013a60cb"
+            },
+            {
+              "path": "usr/lib/libharfbuzz-cairo.so",
+              "sha256": "a1c566de6a341e85eca4cff457cea46406ab96dfc295fb99d653e8ba8bdb53d1"
+            },
+            {
+              "path": "usr/lib/libmp3lame.so",
+              "sha256": "b840ee3e2ddaa61459368357a9e6fbc882c09d439c1b7614a6827fcf77805d31"
+            },
+            {
+              "path": "usr/lib/libfftw3_threads.so",
+              "sha256": "3f8aaf5b9d0e29f02bc5fd0dc61c731b29a167e05790a1baaa24703a35a6e358"
+            },
+            {
+              "path": "usr/lib/libfftw3l_threads.so",
+              "sha256": "dc5e847d790dfab593fd4f14ac39aa4260b0226d6fe03480ea695c8f84b74423"
+            },
+            {
+              "path": "usr/lib/libpng16.so",
+              "sha256": "89ab37c590d0e0d2dc77232153c013d1949fd0a3e9bfe855f34b2d687cbc4e95"
+            },
+            {
+              "path": "usr/lib/libsharpyuv.so",
+              "sha256": "391fdfe7104ea06d9d3ea0e3452c3dee624daccea5e50af552681fae36fc38d5"
+            },
+            {
+              "path": "usr/lib/libOpenCL.so",
+              "sha256": "2eaecf942646adc384bd74a3f26a986c61f88e5c0a3a666a665f8b7fb4d4ebb9"
+            },
+            {
+              "path": "usr/lib/libharfbuzz-subset.so",
+              "sha256": "7e4e42de5ecc737487a26a5ff77cb110dc3d709d225964e186661c667c05901e"
+            },
+            {
+              "path": "usr/lib/libwebpdecoder.so",
+              "sha256": "49946c85de1bad4a624d21491d6000697481f006e9e404347163310435c9afda"
+            },
+            {
+              "path": "usr/lib/libgobject-2.0.so",
+              "sha256": "30df714068f79a5a5a1e55e26127baaec93e049187c89afdda3001a2c2a744c1"
+            },
+            {
+              "path": "usr/lib/libv4lconvert.so",
+              "sha256": "8a2ddb64297b0aeae15e106fba75ca5808f448b6802db937a07c28de31a566e9"
+            },
+            {
+              "path": "usr/lib/libfontconfig.so",
+              "sha256": "156572ebdd9e62f04a5a889cd1de1b31bb3864a2a9e9af2d936ced1cdcc6cfc9"
+            },
+            {
+              "path": "usr/lib/libvmaf.so",
+              "sha256": "cb927dea912af53e8d4cf586ec48ed4a621b0890bbc9dfb6aff40547fbabf2ba"
+            },
+            {
+              "path": "usr/lib/libbrotlidec.so",
+              "sha256": "c10b88fc596bbb60d238043d08efcd88d91887519344fb1fd26f2e48f99661a8"
+            },
+            {
+              "path": "usr/lib/libaom.so",
+              "sha256": "656386eccc1a91b78aac8243c7022058866c5fb56de47b7700edd6e05b75ad69"
+            },
+            {
+              "path": "usr/lib/libfftw3l.so",
+              "sha256": "0c097989213662a328a9128739dc07d79855752289f46ef88c7768cec542ac96"
+            },
+            {
+              "path": "usr/lib/libzimg.so",
+              "sha256": "22678f9311141671c9f4c6855e6b4337bd1e02345be3d94d920ea7bb2e574944"
+            },
+            {
+              "path": "usr/lib/libpcre2-32.so",
+              "sha256": "3161dc278c579347fd1902e7d1cc6440d1da3b9345af298670c43f363ce6689c"
+            },
+            {
+              "path": "usr/lib/libvorbis.so",
+              "sha256": "5ed67cf9906e8b4ce46a473617235254e81ce494d8e6d1ba0b34d1513ec133dd"
+            },
+            {
+              "path": "usr/lib/libbrotlicommon.so",
+              "sha256": "a341f091ccf59b9ea3c876c0b4caabb7e5916dfac4195b462b372d95fdda5c9b"
+            },
+            {
+              "path": "usr/lib/libbz2.so",
+              "sha256": "7136a6a39c8e423501e3cefc44a552170b1e996ffd43185357640572e3d38394"
+            },
+            {
+              "path": "usr/lib/libopenmpt.so",
+              "sha256": "8d55eccb0bd9c184e6a39906368a7f88fb788ea0949820fb77f4f0404620adc3"
+            },
+            {
+              "path": "usr/lib/libgthread-2.0.so",
+              "sha256": "8fd68aec60f247f697befe3e141d2e426e50010e369c7db84ea30383c92d900f"
+            },
+            {
+              "path": "usr/lib/libavutil.so",
+              "sha256": "9f3ea37152ba764ed09bb70bf9f3ff2e41c7187165afa8d0cb52c21413509e57"
+            },
+            {
+              "path": "usr/lib/libwebp.so",
+              "sha256": "26f1bb1a0fc016def0193ee7ceee376af6d4955bb07b08112ff29cb8ee1be8b8"
+            },
+            {
+              "path": "usr/lib/libpostproc.so",
+              "sha256": "fc2def8538083151b4df2cd76c4f958e3d78f2ff22e4762ff7b3bf7d2399d4be"
+            },
+            {
+              "path": "usr/lib/libbluray.so",
+              "sha256": "4311ef240a00ce00cb8a192d15e11e9ff52325c3dcd336ad540671ae6e4d5bde"
+            },
+            {
+              "path": "usr/lib/libvorbisfile.so",
+              "sha256": "9729e06c23ee9a9c8718703a476455e4df364fffecd5060da2f721e9dbd2d161"
+            },
+            {
+              "path": "usr/lib/libssh.so",
+              "sha256": "cfc3e286a1459f15c6a43fbe8cb7ebde3aefa7fa624c48dab3d799383089e755"
+            },
+            {
+              "path": "usr/lib/libv4l2.so",
+              "sha256": "af1f572f5522f70e3f805e85335d7c8778b69dd3ae798f39eae02ff047409dce"
+            },
+            {
+              "path": "usr/lib/libgnutlsxx.so",
+              "sha256": "32dc639b1bb94b1d66ed0d2182e1eab708cc37e52a3358ae8d300b6921486780"
+            },
+            {
+              "path": "usr/lib/libgio-2.0.so",
+              "sha256": "9ade29f2d511fac8310c8bca7c15af64fa271176855e7ad0e98429c1759001f8"
+            },
+            {
+              "path": "usr/lib/libpng.so",
+              "sha256": "f8460226dfbf1e2e4cdfdfb63ee81924558ccc9685671c49ad979df5fe2920a7"
+            },
+            {
+              "path": "usr/lib/libgnutls.so",
+              "sha256": "40a19dbb5da4d82cf80bdd998deaf84eba628f175de7c67062c8eed28936b2f3"
+            },
+            {
+              "path": "usr/lib/libpcre2-8.so",
+              "sha256": "87b6dd02711bd54b3c30dc99322af5d3ce03f1dae5f697bb6a07cf471197c6cf"
+            },
+            {
+              "path": "usr/lib/libgirepository-2.0.so",
+              "sha256": "8c44836ae61c6d69542e57bd045b714ef1fa57c694adff3f11df57fa7397a3d1"
+            },
+            {
+              "path": "usr/lib/libgmodule-2.0.so",
+              "sha256": "dc112bc1dcbfa2f04231114020af5617fb79a0c1d87f3277c8b2ccdb41e0ff3b"
+            },
+            {
+              "path": "usr/lib/libOpenSLES.so",
+              "sha256": "4e1ffd5d7a77a66839bee6d3273866aace54284d505a1ea767dc5eab9402e2b8"
+            },
+            {
+              "path": "usr/lib/libgmp.so",
+              "sha256": "fdd9d33a2902ba5015b0793d4843b09e15dc65dd1f7869869ed343c4d52e931b"
+            },
+            {
+              "path": "usr/lib/libvidstab.so",
+              "sha256": "fbc093d43363707de960a9dd6dc65bf8101e88396d1f9ff08387921d23fda325"
+            },
+            {
+              "path": "usr/lib/libzmq.so",
+              "sha256": "6cbd649e585353561a096e5a5262722e419729207279f44ac7ed826f25720db5"
+            },
+            {
+              "path": "usr/lib/libsyn123.so",
+              "sha256": "2c9f4a80d47ffb64c095375135d41152d5b32213b034acd23f8207db4315c49d"
+            },
+            {
+              "path": "usr/lib/libv4l/plugins/libv4l-mplane.so",
+              "sha256": "ff06a319aef5c11b19a2ab42e2081f70dcee0e7a1894cc1b36cbb834efbe357b"
+            },
+            {
+              "path": "usr/lib/libv4l/v4l1compat.so",
+              "sha256": "40d779f6e2b4adf9a164a62eea902e733adbd978b50f275e043705de1dc76217"
+            },
+            {
+              "path": "usr/lib/libv4l/v4l2convert.so",
+              "sha256": "89426ae52b507aa74c853d86859997c09dcecd247d6dda81b3a47c6d71582699"
+            },
+            {
+              "path": "usr/lib/libopencore-amrwb.so",
+              "sha256": "321feabf73687787ec091074a1efd13d4a5deecdfb5f36c1bff079333f2ca307"
+            },
+            {
+              "path": "usr/lib/librubberband-jni.so",
+              "sha256": "e104df14a86b323d7d75bb6301d12756ef19ef211c2bf9ae2911a35299a225c8"
+            },
+            {
+              "path": "usr/lib/libsoxr.so",
+              "sha256": "2ffd4b613e61e3fe0949841f891697e1fade5297755f933f85eb8fc4aaabdc20"
+            },
+            {
+              "path": "usr/lib/libpcre2-posix.so",
+              "sha256": "58d9805bce42d983b0107bcdd382bbcc951fd0b97ad568c22518c067a5e136ec"
+            },
+            {
+              "path": "usr/lib/libsodium.so",
+              "sha256": "c3192c822f5dec759c63a076f188e3082405ff0d01c1ffe7427817ac403385b5"
+            },
+            {
+              "path": "usr/lib/libavdevice.so",
+              "sha256": "7e5eb8db46c591a15468a4c67982146b530409c4546edd6e8be71237072a446f"
+            },
+            {
+              "path": "usr/lib/libx265.so",
+              "sha256": "fb734d91eaacf46978b75fd8f8bfd56c1078b354221628d24f34e7af7d0666de"
+            },
+            {
+              "path": "usr/lib/libopus.so",
+              "sha256": "79378b18dd4c944a619037f4e84f39ba50408f3e382f40b07d42f4407d73de0d"
+            },
+            {
+              "path": "usr/lib/libdav1d.so",
+              "sha256": "ac1d4a5dbfe415bd527a4aae45a395f658b2e6e04cd21026f3ba81226468af93"
+            },
+            {
+              "path": "usr/lib/libgraphite2.so",
+              "sha256": "044b7e41b4db225e278d7b7d92bbb9f436202878e325f46e52a3e68c3c4a7b84"
+            },
+            {
+              "path": "usr/lib/libavcodec.so",
+              "sha256": "cb4b34bd54a7058d70b504899431cab5271f0a80977428d488e9111115182801"
+            },
+            {
+              "path": "usr/lib/libudfread.so",
+              "sha256": "64fa182177c054fef97ab82f22adf9ea29498429b84b7239ecfcab422c4fa481"
+            },
+            {
+              "path": "usr/lib/libharfbuzz.so",
+              "sha256": "f1ae9d22afea3fe6cf8a594bb30f9c292e52cfe0ac5232f67932e543be5c32ea"
+            },
+            {
+              "path": "usr/lib/libfftw3.so",
+              "sha256": "e6a7964e5159740ba10582e8dfb33a4134de2d092053fe298e6556ef80703bf1"
+            },
+            {
+              "path": "usr/lib/libavfilter.so",
+              "sha256": "804bba94681d6b5884ea6ca355ae4dcf63ba2a17a6b85a96756d9ab40dda5ca0"
+            },
+            {
+              "path": "usr/lib/libharfbuzz-gobject.so",
+              "sha256": "690c5b85ed5352e09636f07d5635e7b2d12ad90fa7f84ea343f8feb9d7a66763"
+            },
+            {
+              "path": "usr/lib/libsamplerate.so",
+              "sha256": "78a46f3058b7c6b04a70f94df633b60b351108e062efca05384a3529d590f769"
+            },
+            {
+              "path": "usr/lib/libgnutls-dane.so",
+              "sha256": "2bc5e1fee75595c6e638f4b6f7c18a87998c14aa6d7c56c8d629e8c49115537d"
+            },
+            {
+              "path": "usr/lib/libcharset.so",
+              "sha256": "84c0bff6f5eb5a250483ec2c0d27f0f479c4f5ab06c30bd62481f5dbf2bb2bc0"
+            },
+            {
+              "path": "usr/lib/libunistring.so",
+              "sha256": "5d3b9fc96bd378d8e5a222d16016edde52a7b9b6369f9600e09cbc69f65274e1"
+            },
+            {
+              "path": "usr/lib/libsoxr-lsr.so",
+              "sha256": "67817f0b9d513b2b33aa30fc393e8cfbd14f9c439b61ddcdaf8996ad7d690e26"
+            },
+            {
+              "path": "usr/lib/libidn2.so",
+              "sha256": "0994309401d69187edfac6e12be78bb6705ff52da3095aa52a257b29e4abb983"
+            },
+            {
+              "path": "usr/lib/libopencore-amrnb.so",
+              "sha256": "5f6559416fc5d9bbda432c352adb9d20d93f1bc62f85a94b9a25dcc85bc9a176"
+            },
+            {
+              "path": "usr/lib/libbrotlienc.so",
+              "sha256": "59b6a54021b3628d8e9f2e34450bcf6cb1573166ca4cea13b7c6c7acc6a99ffa"
+            },
+            {
+              "path": "usr/lib/libvo-amrwbenc.so",
+              "sha256": "9642dbb80434dcbc8e4de9696ac8977656bd2c3a28fa07067afed33c45bf2a45"
+            },
+            {
+              "path": "usr/lib/libmpg123.so",
+              "sha256": "5ea52a36922bbf5bd33b509778e861c8174d82df23b95792284bb02d5bd80b7e"
+            },
+            {
+              "path": "usr/lib/libwebpdemux.so",
+              "sha256": "00d57393dfe077163c5a5fd772a161837a530d15f89c90736c0e1fe10afb3234"
+            },
+            {
+              "path": "usr/lib/libtheora.so",
+              "sha256": "6a99f800f57c52787e0b7607a4da732b579cc718cd0cf1deff2d9297b8b2f363"
+            },
+            {
+              "path": "usr/lib/libxml2.so",
+              "sha256": "aae44216ea48f9e58de065fb19fbec6a0357bb2404c9a1b25042f4beb0e86cad"
+            },
+            {
+              "path": "usr/lib/v4l2convert.so",
+              "sha256": "b3a38809571d25cf394f64f53324d62df15df2cb509db0d62fd9844f45a8f4da"
+            },
+            {
+              "path": "usr/lib/libiconv.so",
+              "sha256": "90c1158ed3f93ef5b3606faa5df8fdb037ffaab658373bfe155c77871c8ae088"
+            },
+            {
+              "path": "usr/lib/libandroid.so",
+              "sha256": "5fc8c434b47ac9ffb22196b18b12a2b17e7ccf54d907f3717b85586fda3443a1"
+            },
+            {
+              "path": "usr/lib/libgmpxx.so",
+              "sha256": "fcb9cb5d4af1ea9278fa71a8911d85d98b164c88e948eed768235349fe77d922"
+            },
+            {
+              "path": "usr/lib/libfreetype.so",
+              "sha256": "6dcc1728437f260daaa373be2db73d55778c8b9d117c6b3664dbf0725289dd37"
+            },
+            {
+              "path": "usr/lib/libwebpmux.so",
+              "sha256": "b2589e55431aa8895bd45a3246053d112b75180725c80f3960f5ac2236d670c4"
+            },
+            {
+              "path": "usr/lib/libswresample.so",
+              "sha256": "0fbbf34bfc91cb9de7c6e8a1f14c2a37ed6fee19f86fd9c8cb7bb4257b631a05"
+            },
+            {
+              "path": "usr/lib/libtheoraenc.so",
+              "sha256": "c6d0b9faf067a992074067fb84b672b782af783456f293bfe01d8e8e942bb314"
+            },
+            {
+              "path": "usr/lib/libSvtAv1Enc.so",
+              "sha256": "828305d2223f1d43a7c4b9fb65790fa9ea64882dd2cbdfd52be2fbdc40dece91"
+            },
+            {
+              "path": "usr/lib/librubberband.so",
+              "sha256": "9b6e1d47185904e18484314b51334a7d6071522bfc63df54d14399486abe789c"
+            },
+            {
+              "path": "usr/lib/libvorbisenc.so",
+              "sha256": "0762fbccbd70baa9aefd965b6d390cc4b5e92e923f4473b30069cdf799a1d8d0"
+            },
+            {
+              "path": "usr/lib/libfribidi.so",
+              "sha256": "0896e68aaae33905609a38912d14dd2520e970b4dd06e485bd96f9bf71f85c44"
+            },
+            {
+              "path": "usr/lib/libhogweed.so",
+              "sha256": "2e5f9c937cc0ad59b7ae791f515928607e53c7ab07e2e500c3af4e201f1b6c76"
+            }
+          ]
+        },
+        {
+          "name": "libpython.zip.so",
+          "sha256": "27caa316e09681ada860fdb6b35c1914e541e266e674141361758ac127fe2f15",
+          "shared_object_paths": 150,
+          "notice_or_package_metadata_paths": [],
+          "files": [
+            {
+              "path": "usr/lib/libform.so",
+              "sha256": "42f305680690a32f24a190011142cf3c93e3d0928670d33e739b352d95fe1006"
+            },
+            {
+              "path": "usr/lib/libz.so",
+              "sha256": "46864e8d25ddd80dc43da8562fa96acef6190fbf91ad99951981265f07287eea"
+            },
+            {
+              "path": "usr/lib/libffi.so",
+              "sha256": "65d0338bb40ea17aa8a6cfd3d2291e5429deb3c5bdc96e094aafc6319e0c9eca"
+            },
+            {
+              "path": "usr/lib/libtermcap.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libgdbm_compat.so",
+              "sha256": "6e34cebf96c6241db6a8e7b9f3b753e7c3afa2a01040236bd2f60da39fbd50ff"
+            },
+            {
+              "path": "usr/lib/engines-3/loader_attic.so",
+              "sha256": "9caeb4a2aa365c76deae482914769bec3439bcd66ceddae9f40f0985adb898d6"
+            },
+            {
+              "path": "usr/lib/engines-3/capi.so",
+              "sha256": "b054169ff8dca7a421b810323f2f13700a9414b3c42bf20c891b51fb53cfbb40"
+            },
+            {
+              "path": "usr/lib/libtic.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libcurses.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/liblzma.so",
+              "sha256": "a42feea4600eeecda8ac5f20390c97e1b82ad95b51c3e1e212d1fbe736632c15"
+            },
+            {
+              "path": "usr/lib/libandroid-support.so",
+              "sha256": "f0f44e60090b07b3536729993fad94bb6127ff1c6f70188f5c6dab6a33b85dda"
+            },
+            {
+              "path": "usr/lib/libsqlite3.so",
+              "sha256": "5a59146ea68be003bcc44168e160974607c3dfd4804c8f0856fe779b97c6e1af"
+            },
+            {
+              "path": "usr/lib/libexpat.so",
+              "sha256": "100ea952172ab8b71339e99bbf5c7a919394a1e985212a0e35aecb729ec92d24"
+            },
+            {
+              "path": "usr/lib/libandroid-posix-semaphore.so",
+              "sha256": "e6ba93f2bdf2fa266f1a96ccae1debdd565893d3a9ca23173070b2a72bf15e6e"
+            },
+            {
+              "path": "usr/lib/libpanelw.so",
+              "sha256": "453fd99a71594fa16d57b5238d0bd2050807a794532590905c55267f46ec0d70"
+            },
+            {
+              "path": "usr/lib/libssl.so",
+              "sha256": "765238cfff0078de21e4c2dc9d832e25171fa901959082e75346910ec84e2eef"
+            },
+            {
+              "path": "usr/lib/ossl-modules/legacy.so",
+              "sha256": "e19e66672e04e5e789fd0a560cd239b8975c8eb2a73b2e92e6ae7e06f224065b"
+            },
+            {
+              "path": "usr/lib/libformw.so",
+              "sha256": "aeb8edfddce0fb2ee4005e3271c6a92065fff7e4be629364b1e8ff278ac6a23d"
+            },
+            {
+              "path": "usr/lib/libbz2.so",
+              "sha256": "7136a6a39c8e423501e3cefc44a552170b1e996ffd43185357640572e3d38394"
+            },
+            {
+              "path": "usr/lib/libmenu.so",
+              "sha256": "0ba002163e7e4843d96f9c84c88f30ac2417a6f3013414dc15f5d236ea8cbb91"
+            },
+            {
+              "path": "usr/lib/libreadline.so",
+              "sha256": "48e617ea05edc4a6c282bcfefba9fbf9c8a426982095a2aa335a81c0cd78e6e9"
+            },
+            {
+              "path": "usr/lib/libmenuw.so",
+              "sha256": "7bfd5bee830313ac18fed6293ae3ec9f9fe3bc0081d1c5fe67064638c4fb44da"
+            },
+            {
+              "path": "usr/lib/libpython3.so",
+              "sha256": "6de57555f6c0a8ab7b1cb3c3f9c7de45e4fa335356510eeef7e195ab40e980d2"
+            },
+            {
+              "path": "usr/lib/libncursesw.so",
+              "sha256": "78b0ddd615556d69be49739f365c5eb654e4272b2bf28f768626ea00d6189386"
+            },
+            {
+              "path": "usr/lib/libcrypt.so",
+              "sha256": "b0e91c252c243efd626d720adbc02331e84ca425c7b418eb65b5cf167196725f"
+            },
+            {
+              "path": "usr/lib/libcrypto.so",
+              "sha256": "5a8500343a9ea477898fb881a6c5bb97ba6774032b148ce6ea121b28cdcc04c2"
+            },
+            {
+              "path": "usr/lib/libc++_shared.so",
+              "sha256": "2e855857f80819737d25a663109fedf816a5e996a85423166806014a06593256"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_posixshmem.cpython-312.so",
+              "sha256": "d5d1f27b0509e08dd7b8188cf40ae189d91d2fed89e2aeac31508322a262c8d4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testbuffer.cpython-312.so",
+              "sha256": "9b5e27474290601003faee8db8c907493a5d46963b8cfd773a675f76cce1afea"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_multibytecodec.cpython-312.so",
+              "sha256": "21a9856ab331b248304b0223f5743a8285d499d224e3b3407d29bbbe6cba0885"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/select.cpython-312.so",
+              "sha256": "8698c26a34fa4ceb032d66b3417bab4a714b62d7aa0e153a3d24e2cf6ee5b537"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_opcode.cpython-312.so",
+              "sha256": "2dba2d8397d71bd502414ed486baa6a0f29db33b8ae80cca5bbdb0adcdc1874f"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sha3.cpython-312.so",
+              "sha256": "51f489ce64571e46afbb748add25be8e9dcefa2b185ab2280c1ea8cb849ef42f"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_dbm.cpython-312.so",
+              "sha256": "f971daaa4d583abbd51912b4f13513924e8122737f4bc1073ef4277765242d69"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_iso2022.cpython-312.so",
+              "sha256": "136971d3fcf0420c324b4c0a5375b270a01d17b952207c63c7d41814edc984a1"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_json.cpython-312.so",
+              "sha256": "943d96567a56f0083f4ed1dfd9039833fb92404a30bc37262dea6a19158be4ac"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_cn.cpython-312.so",
+              "sha256": "f05db6554a657708cc8e039aedde6b601ead665f4f275af8cc3b0057eac26fbc"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_elementtree.cpython-312.so",
+              "sha256": "a23c9be28a535e44180b68a5d49be5a6a127b117e3e8e6a226b631d96c5287ee"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_tw.cpython-312.so",
+              "sha256": "f1188c35591d4e5ca331c71459c17bffdffc014194ad32471b15c30a26108a6c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/grp.cpython-312.so",
+              "sha256": "b53d5dcff9798c0a4b517817b0c3319756251c537849a80269e4d8e89d5be943"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_bisect.cpython-312.so",
+              "sha256": "c1b3dff72569700068709692ed491380370d6d7fb61dea0c041393d7ed137de4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_ssl.cpython-312.so",
+              "sha256": "e943bb8dac726edd3b5b493e12c1c7d80ed8213e88c15c8a36ccbf4c9254a5ad"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_csv.cpython-312.so",
+              "sha256": "ae66c440e3b78e4c80777ab6eb77fb47afae174ada4ec2faf9b8c0f39534d208"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_lzma.cpython-312.so",
+              "sha256": "a42bf3ae7d7abb9e44c8b1bca6c37bbda5e00105327025f5ad497151a637f2ba"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/ossaudiodev.cpython-312.so",
+              "sha256": "a09d09f0fe117af07b41cdc54fd3b4de8585a999cb3c00343ae1ba0380f6b60e"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_contextvars.cpython-312.so",
+              "sha256": "70b0973943017efe39298a0732593898c96a5bcb6f14638f163b7fd63ace0c08"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/mmap.cpython-312.so",
+              "sha256": "feea421c71e220ade4df034d1dd8f6dbeaf9d429e792a732ef395d2c36156d6f"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_md5.cpython-312.so",
+              "sha256": "d520831d7374b7675487711d2a8ed5463c9146f1c3220770f4d5135ebbf07a14"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_kr.cpython-312.so",
+              "sha256": "b88938cff42bcde22150a8e8c4fa0956c4ba90a6318da8716ad09e9f6644d3b5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_asyncio.cpython-312.so",
+              "sha256": "efbbfc6cfa5939910c8d667cb1b739a0d704c1ba068cce6710355a29983f1b25"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_datetime.cpython-312.so",
+              "sha256": "93029b9116703865de9b0a042e14a2972c1f44b51eda92c3a41743c551f741fc"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/array.cpython-312.so",
+              "sha256": "6903d2f7951c492af382d182725da42eeba6403dd0f82e314c4f7d37e41a14a9"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/resource.cpython-312.so",
+              "sha256": "1dc6264b6234d84e8a44ac22a667a19df264e2865b93052f3e96e80492cac315"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/audioop.cpython-312.so",
+              "sha256": "00ab3fb22770ef7eae2e17198424529e8a2dd0ab72b60e8e7dc77ed3cd894e2c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/xxsubtype.cpython-312.so",
+              "sha256": "e228f9455ea06fcdf5843e13282e0468b3ce71a062c95405039743f0dbd6331f"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/fcntl.cpython-312.so",
+              "sha256": "c2935164d95c8ee8251528a876c903ff9d65c3c13e4807211f32dc84862e95f4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_hashlib.cpython-312.so",
+              "sha256": "17093c7a6fcde8c39f3b0186ff208f843af103fc9526cc15d3f72b9968b85762"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_posixsubprocess.cpython-312.so",
+              "sha256": "60ab8572cacf22bc556cb99a21026d63025aab3d807c6fe79b576d9e40ecd79f"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testcapi.cpython-312.so",
+              "sha256": "1d4c5a08dc5346442f5a5e304192b8104bc022c6e070253ff22e6f979ab1095a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_xxtestfuzz.cpython-312.so",
+              "sha256": "f8084e389073494b373f32dd24e378329095689fdd779526e508ed8b423edda6"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/syslog.cpython-312.so",
+              "sha256": "b5ffc6fe166d440fcb636913374164f517e93fdc3f6eba41e295973d3582f646"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/xxlimited_35.cpython-312.so",
+              "sha256": "fbcf6256c775885ecbcfc221ed4754a46fd1dc696972786fd16dd56544c15a27"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sha1.cpython-312.so",
+              "sha256": "1fd9c812932cd69636e07709aee08b2712d6db5132e7cda2179e64aeedfb799a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/cmath.cpython-312.so",
+              "sha256": "8a522c752db7727a58f10ab8daa788347ad122e4c0ee8b9af7165b1d31a33076"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_pickle.cpython-312.so",
+              "sha256": "b6c060d799e5cf8c0f0051d1651526d62a561d02a0c9e3303768e609d4c0a8b9"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/termios.cpython-312.so",
+              "sha256": "ef28484a15c84cfd521c480c6d710374d1a6d8c00c63728a262fccb152e0f90c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/xxlimited.cpython-312.so",
+              "sha256": "ad46bff94a38969d8a8291c1c8a97e47df5e2f3f48e993ef8a7152d7597c2170"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_curses.cpython-312.so",
+              "sha256": "1da8cc286eb0b2c55760cd9e9ac2763826514cc12d6dc9eb309f22ab85a63b26"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sha2.cpython-312.so",
+              "sha256": "f4a7b444752ea6c17924422cd47e45a0d01e9eaf592013a98c35e327e7334004"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_ctypes.cpython-312.so",
+              "sha256": "b79930998dbd16aa96c2fa58631ffc5a865bdf025b4ffc5e8f8d7f657925def4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_socket.cpython-312.so",
+              "sha256": "b372dc9ffaa178fa06b8a29d166387ac662632c75bdd1649b7683f1ff5322f19"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_xxsubinterpreters.cpython-312.so",
+              "sha256": "cea23efbdbef3ef8b44338e150825758933a72c2bb7c0799236521f98657c08c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testsinglephase.cpython-312.so",
+              "sha256": "0ff55d2511a6e16a580867785e850309ea38ae43c72dc97a785b2d21dc23b667"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_zoneinfo.cpython-312.so",
+              "sha256": "0ebec11c3191f0edb8ce06f33b0ba4faebb0aef78edfded6bd6886177c952d8a"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testimportmultiple.cpython-312.so",
+              "sha256": "0a21c987debc361690aa5d10938c2ae5d7c59ab33ecad1ef0df525bb9005f395"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/math.cpython-312.so",
+              "sha256": "a474b53d2f24fac5aeb0b7793bdadad7cae511c1313ddc17b27cca357a1149e4"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_queue.cpython-312.so",
+              "sha256": "c0fc9e1f0e4ed3810fe48f78a01efdde83a8ec94e950f4a17a704ca482c71ee5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/unicodedata.cpython-312.so",
+              "sha256": "1b2a2e6b64dddc1f6ff0e568d95aef075637ed151e16b5cddf53b717c0dc0805"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/pyexpat.cpython-312.so",
+              "sha256": "389a1d5d69d477609970a89d76c8402227cfa69475407f9df92bb156954f952c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_statistics.cpython-312.so",
+              "sha256": "84c7c46923eeec6882fe5c60fd99293a09fe6172097c434c9ac94777b8e829ee"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_decimal.cpython-312.so",
+              "sha256": "f85f67c19a407bc34f2bc032f4d7d886627835ae86d5380e7b6e651a84377852"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_lsprof.cpython-312.so",
+              "sha256": "16d5bc9a6e8407474ec8d02fdcce659a33d6367e6177772b2bf13f79b450c5b9"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_ctypes_test.cpython-312.so",
+              "sha256": "934e0d2874818cb303bc3c85e73006cadd02f2d4b4d32cf26343b35fedc7ada5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_curses_panel.cpython-312.so",
+              "sha256": "c37456747f8a60c92cb765d21b168b7a858e4672e000fb6469f3027c32e91ae9"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testclinic.cpython-312.so",
+              "sha256": "f3354abbc8f3be616ede5006af72bfd279ac7f6a5efa4574728f3c7d8c8197ce"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_multiprocessing.cpython-312.so",
+              "sha256": "0841247e28eaae82d29efc58ab4308cec499bf683e7757747ffca0fa546295f5"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_struct.cpython-312.so",
+              "sha256": "cd179efa5343305407f09446e83203f91c5285399aa18a85612c3fc43769519b"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_heapq.cpython-312.so",
+              "sha256": "c20e71ceae457621310c315bff74fe04cecd717ce51611f7f7562964b0301efe"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/readline.cpython-312.so",
+              "sha256": "17d6e3964afb89ec29a8d7436ed02c21bed352b452feb72862e347250823a277"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_random.cpython-312.so",
+              "sha256": "af826e4651593ae4062f5bf51accc3d0a33375ae21c585e4a73765de5cf90b4c"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/zlib.cpython-312.so",
+              "sha256": "7d2e9b31501ecee90b428f143de5720ef8f6909bd9b064776207759f0fa21bff"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_sqlite3.cpython-312.so",
+              "sha256": "37d8ae3f8b7a91f2977c3917b47e8144f93e35f442644fa9d61ba2828b37d7df"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_hk.cpython-312.so",
+              "sha256": "2c909202c5c20239788c0f33d3983e0b250c77d28bad08f1ff177b2f92a88b72"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_crypt.cpython-312.so",
+              "sha256": "dbe0f4856256a1f8afa10f7c4293a0ec54540374dd70f025febc2b58e8f0488e"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/binascii.cpython-312.so",
+              "sha256": "d5cf972c890bfd134a1b6abea036b6e0f1f9b3c58d9e4cd51538fd0cf7f00c26"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testinternalcapi.cpython-312.so",
+              "sha256": "6fa90a25fe3452b4238a3c03fe5b1c8be78aa333101030ab07e892af2b4af298"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_blake2.cpython-312.so",
+              "sha256": "89e76be22e33283b293cccd50e9e825ee592c4c689d97b2d152bad999e013b63"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_testmultiphase.cpython-312.so",
+              "sha256": "22bde792103bdeeb8be5663265ca0cbbd16a1ac76065acb221760bdb61169811"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_bz2.cpython-312.so",
+              "sha256": "fca08632ae5f4f50b9c866c375a0a0367de98f25b2482a49b0c0c0ffde479228"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_gdbm.cpython-312.so",
+              "sha256": "6b942cc06ec725812af7cac354a5177af03e6564a5d8d1a1b51211a5d1231147"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_xxinterpchannels.cpython-312.so",
+              "sha256": "57b28d37737b8edfd1880b60f38440f11cab261a79fc6b54498e6f86af1a44a2"
+            },
+            {
+              "path": "usr/lib/python3.12/lib-dynload/_codecs_jp.cpython-312.so",
+              "sha256": "1b5074152cdfb22148182875fe1220f81a74e8b36d6a320dfb13ef18e6d8e3f8"
+            },
+            {
+              "path": "usr/lib/libgdbm.so",
+              "sha256": "828b03aefbbe3e2404c90ab141abbb650d667e0f0240f709a31899270ac8c2eb"
+            },
+            {
+              "path": "usr/lib/libtinfo.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libhistory.so",
+              "sha256": "468e6ce7dab018cdccc240eb45cd2b4df9a23f6422632091931d638b157aef78"
+            },
+            {
+              "path": "usr/lib/libpython3.12.so",
+              "sha256": "a8de2cd4edf05bda5211291475225effde8ac84713e99b8954ea0a482403c7d6"
+            },
+            {
+              "path": "usr/lib/libncurses.so",
+              "sha256": "00c69e5431dee1607750df5e46c43bc4f5446befe8e341d0a2299b3cb6e8b9b6"
+            },
+            {
+              "path": "usr/lib/libpanel.so",
+              "sha256": "814c16152f5bccc4977c69c1054904df9881579b1bb15418c6166e1e0806f291"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Protocol/_scrypt.abi3.so",
+              "sha256": "8a6cb7ba18cb0ab37d884bf2cb241bcb3fc6566f33a1a8fa9f3ba9d4f2b57751"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_ed25519.abi3.so",
+              "sha256": "cf6f317da183783c6a366026fc022facdabe7e2566e7d2121ee15290ac59c979"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_curve25519.abi3.so",
+              "sha256": "3b4a1189aed78335dbc28ac2db678d3fff5a63aceb0d4225eaf51ba589b994c5"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_ed448.abi3.so",
+              "sha256": "1d558321c2352a823295e1b849f8b2baa86c39d37ee5b7f987aee4bbe237a39e"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_curve448.abi3.so",
+              "sha256": "ca5ba0cec3de481453ade11499b39b5d167a9a7d3ea4ca92840417cbfc17557f"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/PublicKey/_ec_ws.abi3.so",
+              "sha256": "7f9112b18a63828ce8ef40ce61fbc31eb788f055d7692582ae106ff03eeb3890"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Util/_strxor.abi3.so",
+              "sha256": "39a947767d2e8b4e92de007fdceb29e0b81ba97b6084e6317d1bf30f72843ddc"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Util/_cpuid_c.abi3.so",
+              "sha256": "5af9774c3557d249493e313399d36a64feb41ffbcac15057bd99b4f817e96bad"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Math/_modexp.abi3.so",
+              "sha256": "aaf2b37dd63556b862007c78ace4095c7efc003116e15dbd7ffefb84e47eeed6"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_MD4.abi3.so",
+              "sha256": "e7fcfef70777c31fc95d07ce90c2c2c3e45132059380aa97d883ce83539bedfe"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA384.abi3.so",
+              "sha256": "d213a892017c84da30abec7ccbf9b437cc25776171840476ac91dc1cf273e833"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_MD2.abi3.so",
+              "sha256": "e64d44ce798c8358281c38bb818c5f9a0eca3cad5aeefed35bfd3b19dac3a800"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_poly1305.abi3.so",
+              "sha256": "0e76bd32152a03080fd1b8b211a48a307d0967b060bd0cfa1b3b2653ef9e2099"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_keccak.abi3.so",
+              "sha256": "b57fe388dccbe930b966a08b95a30fc6739a54c6f8215c154f04625366a9b377"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA1.abi3.so",
+              "sha256": "93f1203b59bda8557b4e65dfc8bc06c706a1694fa7eb28c0ffac8e1b1a85ea1a"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_BLAKE2b.abi3.so",
+              "sha256": "6952b344e5ca8bc3ecbb68a31ab8ab36ba20b95f93f1d2a396315b903124bf39"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_ghash_clmul.abi3.so",
+              "sha256": "1460d38f5e80109299035084db66f50358c92faa56966939cc2ea847815d3d0c"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA256.abi3.so",
+              "sha256": "1b8da0019597fb5bccdef8532e8e98a4ccea22196a4e543f6447471dff90187a"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA224.abi3.so",
+              "sha256": "c5ff864c4264d31c6eb69b31d3970e0b3f9ddb84128b45fa14fe2b92d1d55143"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_BLAKE2s.abi3.so",
+              "sha256": "f8ad590843dd83ac40d72c0738f7c52767007bab3dec096db970c5cd29542a74"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_SHA512.abi3.so",
+              "sha256": "af83bc688b1e78fd25ed4af4d35a11d3be2b62a1a036245d2f2f6a47fae17e33"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_RIPEMD160.abi3.so",
+              "sha256": "3e6bcf37e621efa6d97a1ce0eb976155451f2387c3e8a782ffe3221b0956d104"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_ghash_portable.abi3.so",
+              "sha256": "7acb22267d397358da4c5e03dfe3fa3f1851a3771af44fad39ed4daf6f9fade0"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Hash/_MD5.abi3.so",
+              "sha256": "1b679e3661be5f3ba152d064756c6172a63a0354683fac1e2c6e1e6108a0b46e"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_arc2.abi3.so",
+              "sha256": "869384b9b3dbcc38b5eef7d71b80b86f26ef27a75fc0ce9cdeb65f507945e308"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_eksblowfish.abi3.so",
+              "sha256": "fd6301317b835d26164a4891f64e5b79d878c4c615f09ca841e7cb3d8468d568"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_blowfish.abi3.so",
+              "sha256": "428778041ddb245ee92d56352d579687c8608ab884a85db821f57afda8748461"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ecb.abi3.so",
+              "sha256": "4128c8faa939d0c65625f00aae7e44118d2592115b470f03e86c214ffdac96d9"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_cbc.abi3.so",
+              "sha256": "2de94a8b93479887b64a0f0e2e21a7a559a0c4f1b18acc98c8d6910d766548c0"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_cast.abi3.so",
+              "sha256": "7b98cfaf540228fa6f086da27ab13ffcca79db5280dc0ccee06cab3c52cabef6"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_aesni.abi3.so",
+              "sha256": "fcf16bb9f184430494d42fbf50dbb51d10dbc8165373730a3c788788445190e7"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_chacha20.abi3.so",
+              "sha256": "26ca2afb844b23fb4350f20190a7a9af826093c647b5caf924dea315cb4f24b7"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_ARC4.abi3.so",
+              "sha256": "157dbc21de3aba8088eb126e8256c27dca6026eecd5091242e79657fb6bcf781"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_des3.abi3.so",
+              "sha256": "e9171af258e068dbcf5245edc9e6c5dfd0106b5c4365e619b99710b0959db671"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ctr.abi3.so",
+              "sha256": "ab3b10d3617af8850011f391d6f0a135cc5904e1c5d6e0df18c5c68f3bf92866"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ocb.abi3.so",
+              "sha256": "641f395315c05f3daf3a7b8dfa1a80f91239de461379923d76cf6cf9490d141d"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_des.abi3.so",
+              "sha256": "7240756e5f170b27f4f8aa0d3a9c27e391acd3247b9dae291675f92dcae0f5f4"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_ofb.abi3.so",
+              "sha256": "285d90ff7df02227a51918661ff39f5624b71604ce787fc5fdd4eaaa841650eb"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_pkcs1_decode.abi3.so",
+              "sha256": "4b57515c09c6817d981a5c8a5cbb6e428801503e13de6fbb23f5b09a820c58ab"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_cfb.abi3.so",
+              "sha256": "f8c36e51e5f995cf286dcbac526ee1e27eed93c602b69577085f22a33cdfc100"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_raw_aes.abi3.so",
+              "sha256": "0b8b0f4145fe2466faed8bba8da93fe7406123b86dc719d9266001cd57eb1f2a"
+            },
+            {
+              "path": "usr/lib/python3.12/site-packages/Cryptodome/Cipher/_Salsa20.abi3.so",
+              "sha256": "aee9a5bac8f556cbd003cd90483eb8eeeedf6837e43cd62afe62f4c1eababc62"
+            }
+          ]
+        }
+      ],
+      "ffmpeg_gpl_enabled": true,
+      "ffmpeg_version3_enabled": true,
+      "ffmpeg_nonfree_enabled": false
+    }
+  ]
+}
