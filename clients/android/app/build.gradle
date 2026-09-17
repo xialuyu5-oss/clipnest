@@ -1,0 +1,53 @@
+plugins { id 'com.android.application' }
+
+android {
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    namespace 'org.clipnest.app'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'org.clipnest.app'
+        minSdk 26
+        targetSdk 36
+        versionCode 1004001
+        versionName '1.4.0-alpha.1'
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+        testInstrumentationRunnerArguments class: 'org.clipnest.app.DeviceSmokeTest'
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    packaging { jniLibs { useLegacyPackaging = true } }
+    splits {
+        abi { enable true; reset(); include 'arm64-v8a', 'x86_64'; universalApk false }
+    }
+    buildTypes {
+        debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' }
+        release { minifyEnabled false }
+    }
+    sourceSets { main { assets.srcDir layout.buildDirectory.dir('generated/clipnestAssets') } }
+}
+
+dependencies {
+    implementation 'androidx.webkit:webkit:1.14.0'
+    implementation 'io.github.junkfood02.youtubedl-android:library:0.18.1'
+    implementation 'io.github.junkfood02.youtubedl-android:ffmpeg:0.18.1'
+}
+
+tasks.register('prepareClipNestAssets', Sync) {
+    into layout.buildDirectory.dir('generated/clipnestAssets')
+    from('../../mobile-ui') { into 'ui' }
+    from('../../shared/core.js') { into 'ui' }
+    from('../../../web/assets/i18n.js') { into 'ui' }
+    from('../../../web/assets/i18n-catalogs.js') { into 'ui' }
+    from('../../../web/assets/demo-480.mp4') { into 'engine' }
+    from('../../engine') { into 'engine' }
+    from('../../../app') { include '__init__.py', 'media.py', 'safety.py'; into 'engine/app' }
+    inputs.file '../../shared/strings.json'
+    doLast {
+        def source = new groovy.json.JsonSlurper().parse(file('../../shared/strings.json'))
+        def catalogs = [:]
+        source.locales.eachWithIndex { locale, i -> catalogs[locale] = source.messages.collectEntries { key, values -> [(key):values[i]] } }
+        def out = layout.buildDirectory.file('generated/clipnestAssets/ui/mobile-i18n.js').get().asFile
+        out.text = 'Object.entries(' + groovy.json.JsonOutput.toJson(catalogs) + ').forEach(([locale, messages]) => Object.assign(window.CLIPNEST_CATALOGS[locale], messages));'
+    }
+}
+tasks.named('preBuild').configure { dependsOn 'prepareClipNestAssets' }
