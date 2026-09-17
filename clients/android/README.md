@@ -20,11 +20,11 @@ Actual emulator capture. The image shows the on-device interface; it does not de
 From this directory, set `ANDROID_HOME` to your SDK and run:
 
 ```sh
-./gradlew :app:assembleDebug
-./gradlew :app:assembleDebugAndroidTest :app:lintDebug
+sh ./gradlew :app:assembleDebug
+sh ./gradlew :app:assembleDebugAndroidTest :app:lintDebug
 ```
 
-On Windows use `gradlew.bat`. The APK is under `app/build/outputs/apk/debug/`. A debug APK is a development preview signed with a local development key, not a production Release or Play Store submission. Updates require the same signing identity.
+On Windows use `gradlew.bat`. The explicit `sh` invocation also works when an archive or browser upload does not preserve the wrapper's executable permission. The APK is under `app/build/outputs/apk/debug/`. A debug APK is a development preview signed with a local development key, not a production Release or Play Store submission. Updates require the same signing identity.
 
 Release preparation can use `:app:assembleRelease :app:bundleRelease`; those outputs are **unsigned** until an owner-controlled signing configuration is supplied. Do not commit signing keys or passwords. APK is the direct-install format; an AAB is not a directly installable app.
 
