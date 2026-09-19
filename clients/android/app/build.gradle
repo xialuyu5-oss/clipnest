@@ -9,8 +9,8 @@ android {
         applicationId 'org.clipnest.app'
         minSdk 26
         targetSdk 36
-        versionCode 1004001
-        versionName '1.4.0-alpha.1'
+        versionCode 1004002
+        versionName '1.4.0-alpha.2'
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'
         testInstrumentationRunnerArguments class: 'org.clipnest.app.DeviceSmokeTest'
     }
