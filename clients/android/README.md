@@ -6,7 +6,7 @@ The Android application is **GPL-3.0-only**, as approved for the GPL engine inte
 
 <img src="../../docs/images/android.png" alt="ClipNest Android preview on an Android 16 emulator" width="360">
 
-Actual emulator capture. The image shows the on-device interface; it does not demonstrate a live-platform download. Preview artifacts and verification scope are listed in the [release notes](../../docs/releases/v1.4.0-alpha.1.md).
+Actual emulator capture. The image shows the on-device interface; it does not demonstrate a live-platform download. Preview artifacts and verification scope are listed in the [release notes](../../docs/releases/v1.4.0-alpha.2.md).
 
 **Source preview:** local ARM64/x86_64 development APKs have been built, but public APK attachments are held pending the [native dependency distribution work](NATIVE_DISTRIBUTION.md). The build instructions below are for local development.
 
@@ -29,6 +29,8 @@ On Windows use `gradlew.bat`. The explicit `sh` invocation also works when an ar
 Release preparation can use `:app:assembleRelease :app:bundleRelease`; those outputs are **unsigned** until an owner-controlled signing configuration is supplied. Do not commit signing keys or passwords. APK is the direct-install format; an AAB is not a directly installable app.
 
 ## Behavior
+
+- Accept text links from Android's Share menu, including when ClipNest is already open. The shared link is filled in for review; analysis/download never starts automatically. The `clipnest://open` link opens the App without accepting engine commands or output paths.
 
 - Analyze a public link, choose actual available quality, review duration and indicative transfer time, explicitly confirm, then start.
 - Download into the app's private directory, with a foreground notification. Separate streams are combined locally. The final file is checked using Android's media reader.
