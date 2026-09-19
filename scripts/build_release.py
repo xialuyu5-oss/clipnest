@@ -36,6 +36,9 @@ def payload():
     paths += [ROOT / name for name in (
         '.env.example', '.dockerignore', 'Dockerfile', 'compose.yaml', 'LICENSE',
         'requirements.txt', 'requirements-tested.txt', 'start.py', 'start.bat', 'start.sh')]
+    paths += [ROOT / name for name in ('check-environment.bat', 'install-missing.bat',
+        'start-local.bat', 'start-local.sh', 'scripts/check_environment.py',
+        'scripts/setup_windows.ps1', 'docs/LOCAL_PROCESSING.md', 'docs/LOCAL_DEVICE_VALIDATION.md')]
     files = {}
     for path in paths:
         if not path.resolve().is_relative_to(ROOT):
