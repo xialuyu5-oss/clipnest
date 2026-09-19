@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src http://127.0.0.1:8000; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><title>ClipNest · Video downloader</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a class="brand" href="./">↓ ClipNest<span>.</span></a><select id="language" aria-label="Language"></select></header>
+<main><section class="hero"><p class="eyebrow" data-key="eyebrow">YOUR DEVICE. YOUR DOWNLOADS.</p><h1 data-key="title">Keep the videos you love.</h1><p class="lead" data-key="lead">Analyze, download and merge locally. Your videos never pass through a ClipNest server.</p></section>
+<section class="card environment" aria-labelledby="check-title" aria-busy="true" id="environment">
+  <div class="check-heading"><span id="status-icon" aria-hidden="true">◌</span><div><p class="eyebrow" data-key="checkLabel">BEFORE YOU START</p><h2 id="check-title"></h2></div></div>
+  <p id="check-detail" role="status" aria-live="polite"></p>
+  <ul id="checks" class="checks" aria-label="Environment"></ul>
+  <div id="installation" hidden>
+    <p id="install-detail"></p>
+    <div class="actions"><a id="pc-package" class="button" href="downloads/clipnest-local-pc.zip" data-key="installLocal">Download local component</a><a id="setup-package" class="button secondary" href="downloads/clipnest-windows-setup.zip" data-key="installMissing">Download missing-component installer</a></div>
+    <p class="hint" id="install-steps"></p>
+  </div>
+  <div class="actions"><button id="retry" class="button secondary" type="button" data-key="retry">Check again</button><a id="open-local" href="http://127.0.0.1:8000/" data-key="openDirect">Open local interface</a><a href="guide.html" data-key="guide">Installation guide</a></div>
+  <p class="hint" data-key="permissionNote">If your browser asks, allow this site to connect to the local component. This checks only this computer.</p>
+</section>
+<section class="closing"><h2 data-key="control">You stay in control</h2><p data-key="controlText">Confirm every download. Pause keeps progress; cancel deletes cache.</p><details><summary data-key="android">Everything runs on your phone</summary><p data-key="androidStatus"></p><a class="button secondary" href="clipnest://open" data-key="openApp">Open installed Android App</a><p class="hint" data-key="later"></p></details></section>
+<footer><p>Developed through <strong>OpenAI Vibe Coding</strong> · ChatGPT &amp; Codex</p><p data-key="independent"></p></footer></main>
+<noscript>Enable JavaScript to check the local environment and open ClipNest.</noscript>
+<script src="catalogs.js"></script><script src="check-catalogs.js"></script><script src="app.js"></script></body></html>
