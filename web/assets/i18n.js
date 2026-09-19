@@ -10,6 +10,18 @@
     const saved = localStorage.getItem('clipnest_language');
     if (Object.hasOwn(languages, saved)) locale = saved;
   } catch { /* The interface still works when browser storage is unavailable. */ }
+  // The environment-check website hands off only a supported locale, never
+  // a video URL, credentials or an arbitrary redirect target.
+  try {
+    const requested = new URLSearchParams(location.search).get('lang');
+    if (Object.hasOwn(languages, requested)) {
+      locale = requested;
+      try { localStorage.setItem('clipnest_language', locale); } catch {}
+      const url = new URL(location.href);
+      url.searchParams.delete('lang');
+      history.replaceState(null, '', url.pathname + url.search + url.hash);
+    }
+  } catch {}
 
   function t(key, params = {}) {
     const message = catalogs[locale]?.[key] ?? catalogs.en[key] ?? key;
