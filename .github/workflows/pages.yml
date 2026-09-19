@@ -1,0 +1,40 @@
+name: Publish ClipNest website
+
+# Publication is explicit; uploading source does not silently redeploy the site.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: clipnest-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/configure-pages@v5
+      - name: Build static website and local PC packages
+        run: python3 scripts/build_local_site.py --output dist/github-pages
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/github-pages/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
