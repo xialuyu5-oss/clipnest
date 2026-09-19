@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 import os
+from urllib.parse import urlsplit
 
 from dotenv import load_dotenv
 
@@ -10,6 +11,10 @@ ROOT = Path(__file__).resolve().parent.parent
 # otherwise ACCESS_KEY would silently come back into every yt-dlp/FFmpeg child.
 if not os.getenv('CLIPNEST_WORKER'):
     load_dotenv(ROOT / '.env')
+
+# Windows child processes can lose empty environment values. Enforce the local
+# profile after dotenv loading, rather than relying on an empty inherited key.
+LOCAL_DEVICE = os.getenv('CLIPNEST_DEVICE_ONLY') == 'true'
 
 LOG_LEVELS = ('debug', 'info', 'warning', 'error')
 
@@ -23,21 +28,28 @@ def integer(name: str, default: int, low: int, high: int) -> int:
 
 @dataclass(frozen=True)
 class Settings:
-    data_dir: Path = Path(os.getenv('DATA_DIR', str(ROOT / 'data'))).resolve()
-    access_key: str = os.getenv('ACCESS_KEY', '')
-    public_origin: str = os.getenv('PUBLIC_ORIGIN', '').rstrip('/')
-    secure_cookie: bool = os.getenv('COOKIE_SECURE', 'false').lower() == 'true'
-    proxy: str = os.getenv('YTDLP_PROXY', '')
+    local_device: bool = LOCAL_DEVICE
+    local_site_origin: str = os.getenv('LOCAL_SITE_ORIGIN', 'https://xialuyu5-oss.github.io').rstrip('/')
+    data_dir: Path = (ROOT / 'data/local-device') if LOCAL_DEVICE else Path(os.getenv('DATA_DIR', str(ROOT / 'data'))).resolve()
+    access_key: str = '' if LOCAL_DEVICE else os.getenv('ACCESS_KEY', '')
+    public_origin: str = '' if LOCAL_DEVICE else os.getenv('PUBLIC_ORIGIN', '').rstrip('/')
+    secure_cookie: bool = False if LOCAL_DEVICE else os.getenv('COOKIE_SECURE', 'false').lower() == 'true'
+    proxy: str = '' if LOCAL_DEVICE else os.getenv('YTDLP_PROXY', '')
     max_downloads: int = integer('MAX_CONCURRENT_DOWNLOADS', 2, 1, 8)
     max_queue: int = integer('MAX_QUEUE', 20, 1, 100)
     analyze_timeout: int = integer('ANALYZE_TIMEOUT_SECONDS', 90, 5, 180)
     min_free_mb: int = integer('MIN_FREE_DISK_MB', 512, 50, 16384)
     enable_demo: bool = os.getenv('ENABLE_DEMO', 'true').lower() == 'true'
-    member_login: bool = os.getenv('ENABLE_MEMBER_LOGIN', 'true').lower() == 'true'
+    member_login: bool = True if LOCAL_DEVICE else os.getenv('ENABLE_MEMBER_LOGIN', 'true').lower() == 'true'
     log_level: str = os.getenv('LOG_LEVEL', 'warning').strip().lower()
     debug_worker: bool = os.getenv('DEBUG_WORKER', 'false').lower() == 'true'
 
     def validate(self) -> None:
+        if self.local_site_origin:
+            origin = urlsplit(self.local_site_origin)
+            if (origin.scheme != 'https' or not origin.hostname or origin.username or origin.password
+                    or origin.path or origin.query or origin.fragment):
+                raise RuntimeError('LOCAL_SITE_ORIGIN must be an exact HTTPS origin without a path')
         if self.access_key and len(self.access_key) < 16:
             raise RuntimeError('ACCESS_KEY must contain at least 16 characters')
         if self.access_key and not (self.access_key.isascii() and self.access_key.isprintable()):

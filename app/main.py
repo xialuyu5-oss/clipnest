@@ -27,12 +27,13 @@ from .accounts import Accounts
 from .media import public_media
 from .process import run_worker
 from .safety import PLATFORMS, UserError, normalize_url
+from .environment import report as local_environment_report
 
 COOKIE = 'clipnest_session'
 SESSION_TTL = 86400
 ANALYSIS_TTL = 1800
 ACTIVE = {'queued', 'downloading', 'processing'}
-VERSION = '1.3.0'
+VERSION = '1.3.1'
 logger = logging.getLogger('clipnest')
 
 
@@ -334,6 +335,9 @@ def create_app(cfg: Settings = settings) -> FastAPI:
     app = FastAPI(title='ClipNest / 留影 API', version=VERSION, lifespan=lifespan,
                   docs_url=None, redoc_url=None, openapi_url=None)
     app.state.store = state
+    environment_lock = asyncio.Lock()
+    environment_cache = None
+    environment_checked = 0.0
 
     @app.exception_handler(UserError)
     async def user_error(request, exc):
@@ -343,7 +347,7 @@ def create_app(cfg: Settings = settings) -> FastAPI:
     async def protection(request: Request, call_next):
         try:
             path = request.url.path
-            if cfg.member_login and not cfg.public_origin:
+            if cfg.local_device or (cfg.member_login and not cfg.public_origin):
                 # Reject DNS rebinding and remote clients before issuing a session.
                 require_local(request)
             if path.startswith('/api/'):
@@ -408,6 +412,48 @@ def create_app(cfg: Settings = settings) -> FastAPI:
             raise UserError('此实例未启用本机会员登录。', 'ACCOUNT_DISABLED', 403)
         require_local(request)
         return request.state.session.token
+
+    @app.api_route('/local/environment', methods=['GET', 'OPTIONS'])
+    async def local_environment(request: Request):
+        # This is the only cross-origin route. Never expose a session, tasks,
+        # account state, file paths or an API proxy to the public website.
+        nonlocal environment_cache, environment_checked
+        if not cfg.local_device:
+            raise UserError('Not found.', 'NOT_FOUND', 404)
+        require_local(request)
+        origin = request.headers.get('origin', '')
+        parsed = urlsplit(origin)
+        local_origin = (parsed.scheme == 'http' and parsed.hostname in ('127.0.0.1', 'localhost', '::1')
+                        and not parsed.username and not parsed.password and not parsed.path
+                        and not parsed.query and not parsed.fragment)
+        if origin and origin != cfg.local_site_origin and not local_origin:
+            raise UserError('Origin not allowed.', 'CROSS_ORIGIN', 403)
+        headers = {'Cache-Control': 'no-store', 'Vary': 'Origin'}
+        if origin:
+            headers['Access-Control-Allow-Origin'] = origin
+        if request.method == 'OPTIONS':
+            if (request.headers.get('access-control-request-method') != 'GET'
+                    or request.headers.get('access-control-request-headers')):
+                raise UserError('Only a read-only check is allowed.', 'CROSS_ORIGIN', 403)
+            headers['Access-Control-Allow-Methods'] = 'GET'
+            headers['Access-Control-Allow-Private-Network'] = 'true'
+            return JSONResponse({}, headers=headers)
+        state.rate('local-environment', 60)
+        async with environment_lock:
+            if environment_cache is None or time.monotonic() - environment_checked > 5:
+                result = await asyncio.to_thread(local_environment_report)
+                tools = {item['name']: item['ready'] for item in result['checks']}
+                deps = dependency_status()
+                checks = [
+                    {'id': 'python', 'ready': bool(tools.get('Python'))},
+                    {'id': 'ffmpeg', 'ready': bool(tools.get('ffmpeg') and tools.get('ffprobe'))},
+                    {'id': 'javascript', 'ready': bool(tools.get('deno') or tools.get('node'))},
+                    {'id': 'extractor', 'ready': bool(deps['yt_dlp'] and deps['ejs'])},
+                ]
+                environment_cache = {'product': 'clipnest', 'protocol': 1,
+                                     'ready': all(item['ready'] for item in checks), 'checks': checks}
+                environment_checked = time.monotonic()
+        return JSONResponse(environment_cache, headers=headers)
 
     @app.get('/api/accounts/bilibili')
     async def account_status(request: Request):
