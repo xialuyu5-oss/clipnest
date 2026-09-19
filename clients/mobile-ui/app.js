@@ -4,9 +4,20 @@
   const $ = id => document.getElementById(id), core = window.ClipNestCore, i18n = window.ClipNestI18n;
   const t = (key,params) => i18n.t(key,params), api = window.ClipNestClient;
   let media=null, selected=null, jobItems=[], polling=false, working=false;
+  let analysisSequence=0;
   const states={queued:'Queued',downloading:'Downloading',processing:'Merging / checking',paused:'Paused',ready:'Ready to save',error:'Failed'};
   function node(tag,text,cls){const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n;}
   function notify(error){$('notice').textContent=error ? t('Device operation failed') + (error.code ? ' (' + error.code + ')' : '') : '';}
+  window.ClipNestSharedText=text=>{
+    try{
+      const link=core.validateLink(text);
+      analysisSequence++;media=null;selected=null;$('result').hidden=true;$('consent').checked=false;
+      if($('confirm').open)$('confirm').close();
+      $('url').value=link.url;
+      // External shares only prefill. Network work requires the user's Analyze action.
+      $('url').focus();notify();
+    }catch(error){notify(error);}
+  };
   function audio(o){return o.has_audio === true ? o.audio_codec || t('With audio') : o.has_audio === false ? t('No audio') : t('Audio unknown');}
   function renderMedia(){
     if(!media)return;
@@ -40,8 +51,9 @@
   async function refresh(){if(polling)return;polling=true;try{jobItems=(await api.call('downloads')).items;renderJobs();}finally{polling=false;}}
   async function analyze(demo){
     if(working)return;working=true;$('analyze').disabled=$('demo').disabled=true;notify();
-    try{media=await api.call(demo?'demo':'analyze',demo?{}:core.validateLink($('url').value));selected=media.options[0]?.id;$('consent').checked=false;renderMedia();}
-    catch(e){notify(e);}finally{working=false;$('analyze').disabled=$('demo').disabled=false;}
+    const sequence=++analysisSequence;
+    try{const result=await api.call(demo?'demo':'analyze',demo?{}:core.validateLink($('url').value));if(sequence!==analysisSequence)return;media=result;selected=media.options[0]?.id;$('consent').checked=false;renderMedia();}
+    catch(e){if(sequence===analysisSequence)notify(e);}finally{working=false;$('analyze').disabled=$('demo').disabled=false;}
   }
   $('analyze-form').onsubmit=e=>{e.preventDefault();analyze(false);};$('demo').onclick=()=>analyze(true);
   $('refresh').onclick=()=>refresh().catch(notify);
