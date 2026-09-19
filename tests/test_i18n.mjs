@@ -25,14 +25,16 @@ function node(attributes = {}) {
     setAttribute(name, value) { this.attributes[name] = value; },
   };
 }
-function runtime(saved, blocked = false) {
+function runtime(saved, blocked = false, search = '') {
   const nodes = [node({'data-i18n': 'Downloads'}), node({'data-i18n-aria-label': 'Interface language'})];
-  let stored = saved, events = 0;
+  let stored = saved, events = 0, replacedURL;
   const document = {documentElement: {},
     querySelectorAll: selector => nodes.filter(n => selector.slice(1, -1) in n.attributes),
     dispatchEvent: () => { events++; },
   };
   const context = {window: {CLIPNEST_CATALOGS: catalogs}, document, navigator: {language: 'ja'},
+    location: {search, href:'http://127.0.0.1:8000/'+search}, URLSearchParams, URL,
+    history: {replaceState(_state,_title,url) { replacedURL=url; }},
     CustomEvent: class { constructor(type) { this.type = type; } },
     localStorage: {
       getItem() { if (blocked) throw new Error('storage blocked'); return stored; },
@@ -40,9 +42,13 @@ function runtime(saved, blocked = false) {
     },
   };
   vm.runInNewContext(read('web/assets/i18n.js'), context);
-  return {i18n: context.window.ClipNestI18n, document, nodes, stored: () => stored, events: () => events};
+  return {i18n: context.window.ClipNestI18n, document, nodes, stored: () => stored, events: () => events, replacedURL};
 }
 const page = runtime();
+assert.equal(runtime('en', false, '?lang=zh-CN').i18n.locale, 'zh-CN');
+assert.equal(runtime('ja', false, '?lang=javascript:bad').i18n.locale, 'ja');
+assert.equal(runtime(null, true, '?lang=ar').document.documentElement.dir, 'rtl');
+assert.equal(runtime('en', false, '?lang=zh-CN&keep=yes').replacedURL, '/?keep=yes');
 assert.equal(page.i18n.locale, 'en', 'Default stays English even for a Japanese browser');
 assert.equal(page.nodes[0].textContent, 'Downloads');
 page.i18n.setLocale('ar');

@@ -342,7 +342,7 @@ def test_health_redetects_dependencies(app):
         app.state.store.dependencies['ffprobe'] = not shutil.which('ffprobe')
         assert client.get('/api/health').json()['dependencies']['ffprobe'] is bool(shutil.which('ffprobe'))
         assert app.state.store.dependencies['ffprobe'] is bool(shutil.which('ffprobe'))
-        assert client.get('/api/health').json()['version'] == '1.3.0'
+        assert client.get('/api/health').json()['version'] == '1.3.1'
 
 
 def test_periodic_cleanup_survives_an_exception(app, monkeypatch):
