@@ -165,7 +165,7 @@
     if (path === '/api/health') return {
       status: 'preview', dependencies: {}, platforms: platforms.map(p => p[0]),
       download_confirmation_required: true, file_ttl_seconds: null,
-      access_key_required: false, demo_enabled: true, version: '1.3.0',
+      access_key_required: false, demo_enabled: true, version: '1.3.1',
     };
     if (path === '/api/session') return { authenticated: true, csrf_token: 'preview-only' };
     if (path === '/api/analyze') throw apiError(t("Start the server to analyze real links, or try a demo in this offline preview."), 'PREVIEW_ONLY');
