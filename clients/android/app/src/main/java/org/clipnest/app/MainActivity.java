@@ -19,9 +19,12 @@ public final class MainActivity extends Activity {
     private String exportJob,exportRequest;
     private JavaScriptReplyProxy exportReply;
     private boolean copyingExport;
+    private String pendingSharedText;
+    private boolean pageReady;
     private TaskStore store(){return ((ClipNestApplication)getApplication()).store();}
     @Override public void onCreate(Bundle saved){
         super.onCreate(saved);
+        pendingSharedText=saved==null?sharedText(getIntent()):saved.getString("pendingSharedText");
         getWindow().getDecorView().setSystemUiVisibility(android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         if(saved!=null&&saved.containsKey("exportJob"))try{
             exportJob=saved.getString("exportJob");exportFile=store().beginExport(exportJob);
@@ -35,6 +38,9 @@ public final class MainActivity extends Activity {
         view.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
         WebViewAssetLoader assets=new WebViewAssetLoader.Builder().addPathHandler("/assets/",new WebViewAssetLoader.AssetsPathHandler(this)).build();
         view.setWebViewClient(new WebViewClient(){
+            @Override public void onPageFinished(WebView v,String url){
+                if((ORIGIN+"/assets/ui/index.html").equals(url)){pageReady=true;deliverSharedText();}
+            }
             @Override public WebResourceResponse shouldInterceptRequest(WebView v,WebResourceRequest r){
                 if(ORIGIN.equals(r.getUrl().getScheme()+"://"+r.getUrl().getHost()))return assets.shouldInterceptRequest(r.getUrl());
                 return new WebResourceResponse("text/plain","utf-8",403,"Blocked",null,new ByteArrayInputStream(new byte[0]));
@@ -55,6 +61,25 @@ public final class MainActivity extends Activity {
         });
         }else{view.loadData("<p>Please update Android System WebView to use ClipNest.</p>","text/html","UTF-8");return;}
         view.loadUrl(ORIGIN+"/assets/ui/index.html");
+    }
+    static String sharedText(Intent intent){
+        if(intent==null||!Intent.ACTION_SEND.equals(intent.getAction())||!"text/plain".equals(intent.getType()))return null;
+        try{
+            CharSequence text=intent.getCharSequenceExtra(Intent.EXTRA_TEXT);
+            if(text==null||text.length()==0||text.length()>4096)return null;
+            return text.toString();
+        }catch(RuntimeException invalid){return null;}
+    }
+    @Override protected void onNewIntent(Intent intent){
+        super.onNewIntent(intent);setIntent(intent);
+        String text=sharedText(intent);
+        if(text!=null){pendingSharedText=text;deliverSharedText();}
+    }
+    private void deliverSharedText(){
+        if(!pageReady||view==null||pendingSharedText==null)return;
+        // JSON quoting keeps shared content as data, never executable JavaScript.
+        String text=pendingSharedText;pendingSharedText=null;
+        view.evaluateJavascript("window.ClipNestSharedText("+JSONObject.quote(text)+")",null);
     }
     private void respond(JavaScriptReplyProxy reply,String id,Object result,Exception error){
         if(reply==null||isDestroyed())return;
@@ -87,6 +112,7 @@ public final class MainActivity extends Activity {
         },"clipnest-export").start();
     }
     @Override protected void onSaveInstanceState(Bundle saved){
+        if(pendingSharedText!=null)saved.putString("pendingSharedText",pendingSharedText);
         if(exportFile!=null&&!copyingExport)saved.putString("exportJob",exportJob);
         super.onSaveInstanceState(saved);
     }
