@@ -18,6 +18,14 @@ The package does not bundle system runtimes, a virtual environment, credentials 
 
 ## Install and start
 
+For personal use with all video processing on your own PC, run
+`check-environment.bat`, then `install-missing.bat` if needed, and finally
+`start-local.bat`. On macOS/Linux use `python3 scripts/check_environment.py`
+and `bash start-local.sh`; install prerequisites from their publishers.
+The Windows helper asks before each installation and requires Internet access.
+This local-device mode uses separate `data/local-device/` storage and ignores
+old hosting/proxy settings. See `docs/LOCAL_PROCESSING.md` in this package.
+
 Extract the complete archive into its own directory. On Windows, double-click `start.bat` or run:
 
 ```powershell
@@ -57,7 +65,7 @@ PowerShell: `Copy-Item .env.example .env`. Compose publishes localhost port 8000
 Compare the downloaded archive's SHA-256 with `SHA256SUMS.txt`. This detects corruption; an unsigned checksum is not a publisher identity signature.
 
 ```powershell
-Get-FileHash .\clipnest-v1.3.0-web.zip -Algorithm SHA256
+Get-FileHash .\clipnest-v1.3.1-web.zip -Algorithm SHA256
 ```
 
 On Linux use `sha256sum -c SHA256SUMS.txt` when all listed assets are present; on macOS use `shasum -a 256` for the selected file.

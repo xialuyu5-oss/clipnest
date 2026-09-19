@@ -46,6 +46,12 @@ English: Build a website that analyzes and downloads video links from X, YouTube
 
 ## 4. Final workflow / 当前用户体验
 
+2026-09-19 补充决定：网站提供服务入口和程序分发，解析、源站请求、视频下载、
+合并与缓存均在用户设备完成，不转发到 ClipNest 服务器。PC 缺失运行环境由用户
+通过补装包确认安装；Android 内置引擎。先完成 PC／Android，小程序最后处理。
+本地实现新增环境检查、Windows 在线补装工具、本机模式、Android 分享链接入口及
+静态官网。小程序平台解析目标仍保留，iOS 原生适配仍未完成。
+
 **Paste → Analyze → Choose quality → Review duration and estimate → Confirm → Track / Pause / Resume → Save.**
 
 下载预估不承诺完成时间：开始前按 1–10 MB/s 参考区间计算，进行中按实际进度更新；未知大小、额外音轨和合并阶段按其真实状态展示。取消任务清理服务器缓存；已经保存到浏览器设备的文件不会被删除。
@@ -75,3 +81,10 @@ English: Build a website that analyzes and downloads video links from X, YouTube
 - 用户暂时没有 Mac/Xcode 或 Apple Developer 会员；讨论过个人侧载，但本轮暂缓 iOS 实现。
 - 小程序的直链范围是目前已完成部分，**不是用户已经同意放弃平台分享链接解析**。完整小程序目标仍有未完成项。
 - GitHub 上传、公开 Release 仍须按用户要求在具体内容准备好后再次确认；开始开发不等于授权立即上传。
+
+## 8. 2026-09-19 网站入口修正
+
+- 用户纠正：网站不是软件下载目录。进入网站先检查本机环境，齐全后正常展示完整功能；缺少组件时才提供安装提示。
+- 当前实现：网站读取本机组件的最小环境状态，就绪后在当前标签自动进入本机完整下载界面并保留语言；页面地址会切换到本机。未就绪时列出实际缺项与补装入口。
+- 未连接不等于缺少 Python/FFmpeg：组件未启动、未安装或浏览器阻止连接时显示“无法检测”，保留首次安装和重试路径。
+- 首次安装和启动仍由用户完成；网站不会自行安装软件。公开 HTTPS 站点的浏览器本地访问授权尚待实际部署验收。Android 本轮未改动，小程序仍最后处理。

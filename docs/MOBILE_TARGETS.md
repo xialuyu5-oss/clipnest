@@ -2,6 +2,10 @@
 
 ## Confirmed decisions
 
+- 2026-09-19: prioritize the PC and Android on-device entry/install flow; defer
+  further WeChat work until after them. The website provides entry/distribution
+  only and must not relay video or perform platform extraction for clients.
+
 - Develop Web, Android and WeChat first; defer iOS implementation while preserving useful common code.
 - Android and iOS must analyze/download on the phone, without a required ClipNest service.
 - **WeChat must also run entirely on the phone.** A companion-service architecture was explicitly declined.
@@ -13,8 +17,8 @@
 
 | Component | State | Boundary |
 | --- | --- | --- |
-| Web v1.3.0 | Existing validated service and deployment archives | Host performs extraction/download/merge, then browser saves; no Web runtime change in this mobile iteration |
-| Android 1.4.0-alpha.1 | Java foreground-service app, bundled UI, native Python/yt-dlp/QuickJS/FFmpeg, persistent private tasks, system export; debug APK builds | On-device engine, no Web-server fallback; no member login; device/source acceptance and production signing remain separate gates |
+| Web v1.3.1 | Website environment detection plus complete local downloader | Static site opens the full local UI; host performs extraction/download/merge, then browser saves |
+| Android 1.4.0-alpha.2 | Java foreground-service app, bundled UI, native Python/yt-dlp/QuickJS/FFmpeg, persistent private tasks, system export; debug APK builds | On-device engine, no Web-server fallback; no member login; device/source acceptance and production signing remain separate gates |
 | WeChat 1.4.0-alpha.1 | Native Mini Program page, direct HTTPS MP4 metadata parser and downloader, resumable range checkpoints, cancellation, album export | No server; no platform share-page extraction or separate-track merge; project has no real AppID or actual WeChat device acceptance |
 | iOS | Common UI/domain/protocol architecture only | No native engine adapter, Xcode project, compiled app, signature or IPA |
 

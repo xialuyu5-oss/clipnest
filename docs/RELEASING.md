@@ -51,4 +51,15 @@ Reference: [GitHub Releases](https://docs.github.com/en/repositories/releasing-p
 
 ## Current prerelease attachment set
 
+For `v1.4.0-alpha.2`, prepare the local PC ZIP, Windows setup ZIP, static website
+ZIP, Web v1.3.1 ZIP/tar.gz, publication manifest and SHA-256 checksums (seven
+attachments). Android changes are source-only; do not add APKs. WeChat has no new
+package in this iteration. [Release notes](releases/v1.4.0-alpha.2.md).
+
+The [Pages workflow](PAGES.md) is manually triggered, with no automatic publish on
+push. Enabling Pages and running that workflow are separate external actions to
+include in the owner's final publication confirmation.
+
+### Previous release
+
 For `v1.4.0-alpha.1`, keep the reviewed Web ZIP/tar.gz unchanged and include the WeChat developer-source ZIP. `publication-manifest.json` records their checksums and embeds the two builders' payload inventories; `SHA256SUMS.txt` covers all three packages and that manifest. Android application source is in the tag, but the local APKs are excluded pending the [native distribution work](../clients/android/NATIVE_DISTRIBUTION.md). Do not substitute the owner-testing mobile manifest for this public attachment inventory.
