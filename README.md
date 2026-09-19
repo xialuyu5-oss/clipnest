@@ -6,6 +6,18 @@ ClipNest is an open-source video downloader with a self-hosted Web edition, an A
 
 [简体中文](README.zh-CN.md) · [Requirements & evolution](docs/REQUIREMENTS.md) · [Installation](docs/WEB_INSTALL.md) · [Validation](docs/TESTING.md)
 
+**Website-first local processing · v1.4.0-alpha.2:** open the website, let it check
+this computer, then continue automatically to the complete downloader when ready.
+Missing components get specific installation prompts. Windows setup installs only
+missing items after confirmation. Android adds system share-link receiving.
+Extraction, media transfers and merging stay on the user's device.
+
+[Website entry](https://xialuyu5-oss.github.io/clipnest/) · [New release notes](docs/releases/v1.4.0-alpha.2.md) · [Local setup](docs/LOCAL_PROCESSING.md)
+
+The first PC visit requires installing and starting the local component. Once
+ready, this tab switches to `127.0.0.1:8000`; the website does not host a video
+processing service. Keep the component running while using ClipNest.
+
 **Developed through OpenAI Vibe Coding, using OpenAI ChatGPT and Codex.** The user defined the goals, reviewed the experience and directed changes; AI generated and revised the code and documentation with tool-assisted testing. This is an independent project, not an official OpenAI product or endorsement.
 
 ![ClipNest Web quality selection using the project's original demo](docs/images/desktop.png)
@@ -16,8 +28,8 @@ ClipNest is an open-source video downloader with a self-hosted Web edition, an A
 
 | Edition | Where processing runs | What you can use | Current delivery |
 | --- | --- | --- | --- |
-| **Web v1.3.0** | Your computer or self-hosted server | Platform link analysis, quality selection, downloads, merging, pause/resume and browser saving | Deployment ZIP/tar.gz; requires Python, FFmpeg and a supported JS runtime |
-| **Android v1.4.0-alpha.1** | On the phone | Bundled extraction/download/merge engine, persistent tasks and system file export | Source and build instructions; local debug APKs tested on an emulator. Public APK attachments are held pending native dependency source/notices completion |
+| **Web v1.3.1** | Your computer or self-hosted server | Platform link analysis, quality selection, downloads, merging, pause/resume and browser saving | Deployment ZIP/tar.gz; requires Python, FFmpeg and a supported JS runtime |
+| **Android v1.4.0-alpha.2** | On the phone | Bundled extraction/download/merge engine, persistent tasks and system file export | Source and build instructions; local debug APKs tested on an emulator. Public APK attachments are held pending native dependency source/notices completion |
 | **WeChat v1.4.0-alpha.1** | Inside the Mini Program on the phone | Direct HTTPS MP4 metadata, download, supported-source resumption and album export | Developer-import source ZIP; not a published Mini Program. Platform share-page parsing is unfinished |
 | **iOS** | Intended to run on the phone | Shared interface, data model and native message protocol prepared for reuse | No iOS app, IPA or store entry |
 
@@ -37,7 +49,18 @@ Web and Android integrate yt-dlp extractors for **YouTube, X / Twitter, TikTok, 
 
 The Web edition additionally offers local Bilibili QR account login and light/dark themes. Member-HD completion remains unverified; other account-login flows and Android member login are not implemented.
 
-## Start the Web edition
+## Start from the website
+
+1. Open the [website entry](https://xialuyu5-oss.github.io/clipnest/).
+2. If the local component is not installed, download and extract the PC package.
+3. On Windows, run `install-missing.bat`, confirm the missing items, then run `start-local.bat`.
+4. Return to the website. A ready environment opens the full interface automatically.
+
+A stopped component or denied browser connection is reported as **not checked**,
+not as proof of missing software. Allow the site's local connection if prompted.
+The local component uses default port 8000. [Details and alternate systems](docs/LOCAL_PROCESSING.md).
+
+## Run the Web edition directly
 
 Install **Python 3.11+**, **FFmpeg with ffprobe**, and **Deno 2.3+ or Node.js 22+** for YouTube. Make them available on your system PATH. Extract the Web deployment archive or this repository, then run:
 
@@ -80,14 +103,16 @@ The first image is the responsive Web preview. The second is the separate Androi
 | Default English with major languages selectable | 12 locales, remembered selection and Arabic RTL |
 | Fix cramped controls; show time remaining; allow pause/resume; delete cache on cancel | Responsive control sizing, ETA and download lifecycle controls |
 | Remove 60-minute retention and restart expiry | Persistent tasks and files until user deletion; interrupted work restores paused |
+| Keep platform processing and video traffic on the user device | Static website entry plus local PC component; Android keeps its engine in the App |
+| Check the environment on website entry, show the complete tool when ready | Automatic local detection, precise missing-component prompts and same-tab handoff |
 | Add independent mobile editions and preserve useful iOS reuse | Android on-device engine; shared modules; limited pure-device WeChat implementation; iOS deferred |
 
 Fixed limits and timed expiry were earlier implementation choices, **not original user requirements**. The WeChat share-page and merge gaps remain unfinished work, not an agreed removal of those goals. [Full edited requirements history →](docs/REQUIREMENTS.md)
 
 ## What has been verified
 
-- **Web:** 114 Python tests, frontend/i18n checks, real local HTTP and HLS resumption, responsive browser flows and extracted deployment-package startup on Windows.
-- **Android:** ARM64/x86_64 builds, APK signature verification and three Android 16 x86_64 emulator integration tests, including bundled yt-dlp loopback download and FFmpeg remux with audio/video validation.
+- **Web:** 134 Python regression tests including environment/discovery checks, frontend/i18n checks, real local HTTP and HLS resumption, responsive browser flows and extracted deployment-package startup on Windows.
+- **Android:** ARM64/x86_64 builds, APK signature verification and four Android 16 x86_64 emulator integration tests, including bundled yt-dlp loopback download and FFmpeg remux with audio/video validation.
 - **Shared/WeChat:** 12-language catalogs, actual MP4 fixture metadata, HTTP Range checkpoint/resumption and byte identity, changed-source rejection and cancellation tests. wx-specific fallback/album calls use adapters in these tests.
 
 **Not yet verified:** all platforms' current live links, real member-HD, Android physical-phone/background/large-file behavior, WeChat Developer Tools or real-device behavior, Docker, macOS or public hosting. Emulator and fixture results do not establish those scenarios. Android public binary distribution additionally needs matching native dependency source and notices. [Evidence and reproduction](docs/TESTING.md) · [Mobile gaps](docs/MOBILE_TARGETS.md)
@@ -96,6 +121,7 @@ Fixed limits and timed expiry were earlier implementation choices, **not origina
 
 ```text
 app/                Web service, extraction workers, accounts and media probing
+site/               Static website environment check and install guidance
 web/                Responsive interface, editable translations and original demos
 clients/android/    Android application and build configuration (GPL-3.0-only)
 clients/engine/     Android worker using the Web's reusable media logic

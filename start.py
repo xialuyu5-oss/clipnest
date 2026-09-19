@@ -21,9 +21,12 @@ def main():
     parser.add_argument('--port', type=int, default=8000)
     parser.add_argument('--no-browser', action='store_true')
     parser.add_argument('--update', action='store_true', help='更新 Python 依赖和解析引擎')
+    parser.add_argument('--local-device', action='store_true', help='Use only this device: loopback, separate task storage, no configured download proxy')
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         raise SystemExit('端口必须位于 1–65535。')
+    if args.local_device:
+        configure_local_device(args.host)
     os.chdir(ROOT)
     location = ROOT / '.venv'
     python = location / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
@@ -50,6 +53,8 @@ def main():
         print('\n提示：缺少 ' + ', '.join(missing) + '。页面可打开，但完整下载需要先安装 FFmpeg。')
     if not shutil.which('deno') and not shutil.which('node'):
         print('提示：YouTube 需要 Deno >= 2.3 或 Node >= 22。请安装受支持的运行环境。')
+    if args.local_device:
+        print('Local device mode: analysis, downloads and files stay on this computer. No ClipNest relay.')
     host = '127.0.0.1' if args.host == '0.0.0.0' else args.host
     if ':' in host and not host.startswith('['):
         host = '[' + host + ']'
@@ -65,6 +70,19 @@ def main():
                                 '--workers', '1', '--no-proxy-headers'])
     except KeyboardInterrupt:
         return 0
+
+
+def configure_local_device(host):
+    if host not in ('127.0.0.1', 'localhost', '::1'):
+        raise SystemExit('Local device mode requires a loopback host.')
+    # Explicit environment values prevent a previous hosting .env from changing
+    # the local mode's origin, cookies, proxy or storage location.
+    os.environ.update({
+        'CLIPNEST_DEVICE_ONLY': 'true',
+        'PUBLIC_ORIGIN': '', 'COOKIE_SECURE': 'false', 'ACCESS_KEY': '',
+        'ENABLE_MEMBER_LOGIN': 'true', 'YTDLP_PROXY': '',
+        'DATA_DIR': str(ROOT / 'data' / 'local-device'),
+    })
 
 
 if __name__ == '__main__':

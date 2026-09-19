@@ -2,6 +2,19 @@
 
 This repository starts from the consolidated v1.3.0 source. The entries below describe the local development history; they do not imply that older versions exist as Git tags or GitHub releases.
 
+## 1.4.0-alpha.2 / Web 1.3.1 — 2026-09-19
+
+- Website-first environment detection: automatically enter the complete local
+  downloader when ready, show verified missing components, and keep unreachable
+  environments explicitly unknown.
+- Added user-confirmed Windows prerequisite installation, local-only launchers,
+  minimal read-only discovery and language-preserving handoff.
+- Android accepts shared links and supports opening the installed App; receipt
+  never automatically analyzes or downloads a video.
+- Added static website packaging and an explicitly triggered Pages workflow.
+  Android binary distribution remains pending; WeChat and iOS are unchanged.
+- [Release contents and limits](docs/releases/v1.4.0-alpha.2.md).
+
 ## 1.4.0-alpha.1 mobile preview — 2026-09-17
 
 - Added an Android application with bundled on-device Python/yt-dlp, QuickJS and FFmpeg, a local origin-restricted interface, foreground downloads, persistent tasks and system file export.
