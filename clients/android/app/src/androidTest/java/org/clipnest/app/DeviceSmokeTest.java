@@ -49,6 +49,32 @@ public class DeviceSmokeTest extends InstrumentationTestCase {
         store.call(method,args,(result,error)->{if(error!=null)future.completeExceptionally(error);else future.complete((JSONObject)result);});
         return future.get(150,TimeUnit.SECONDS);
     }
+    public void testShareRequiresUserAction() throws Exception {
+        for(int i=0;i<100&&!"true".equals(javascript("!!window.ClipNestSharedText"));i++)Thread.sleep(100);
+        int before=call("downloads",new JSONObject()).getJSONArray("items").length();
+        Intent share=new Intent(Intent.ACTION_SEND).setType("text/plain")
+            .putExtra(Intent.EXTRA_TEXT,"Watch this https://www.youtube.com/watch?v=abc");
+        getInstrumentation().runOnMainSync(()->activity.onNewIntent(share));
+        getInstrumentation().waitForIdleSync();
+        assertEquals("\"https://www.youtube.com/watch?v=abc\"",javascript("document.getElementById('url').value"));
+        assertEquals("true",javascript("document.getElementById('result').hidden"));
+        assertEquals(before,call("downloads",new JSONObject()).getJSONArray("items").length());
+        javascript("document.getElementById('demo').click()");
+        for(int i=0;i<100&&"true".equals(javascript("document.getElementById('result').hidden"));i++)Thread.sleep(100);
+        assertEquals("false",javascript("document.getElementById('result').hidden"));
+        javascript("document.getElementById('consent').checked=true;document.getElementById('start').click()");
+        assertEquals("true",javascript("document.getElementById('confirm').open"));
+        getInstrumentation().runOnMainSync(()->activity.onNewIntent(share));
+        assertEquals("false",javascript("document.getElementById('confirm').open"));
+        assertEquals("true",javascript("document.getElementById('result').hidden"));
+        assertEquals("false",javascript("document.getElementById('consent').checked"));
+        Intent injection=new Intent(Intent.ACTION_SEND).setType("text/plain")
+            .putExtra(Intent.EXTRA_TEXT,"\");window.shareInjected=true;//");
+        getInstrumentation().runOnMainSync(()->activity.onNewIntent(injection));
+        assertEquals("false",javascript("!!window.shareInjected"));
+        assertNull(MainActivity.sharedText(new Intent(Intent.ACTION_SEND).setType("image/png").putExtra(Intent.EXTRA_TEXT,"https://vimeo.com/1")));
+        assertNull(MainActivity.sharedText(new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT,new String(new char[4097]))));
+    }
     public void testNativeEngineAndLocalMedia() throws Exception {
         JSONObject capabilities=call("capabilities",new JSONObject());assertTrue(capabilities.getBoolean("onDevice"));
         try {call("analyze",TaskStore.json("url","https://example.com/not-a-platform"));fail("Unsupported source accepted");}
