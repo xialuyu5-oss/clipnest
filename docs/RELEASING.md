@@ -6,6 +6,13 @@ Keep application source, editable language catalogs, requirements/feature histor
 
 Generated previews, duplicate launch shortcuts, release archives, installed runtimes, downloaded user media and signing secrets are not source assets. Dockerfile/Compose are environment recipes and remain source-controlled; a built image is a separate artifact.
 
+The product preview's editable templates live under `site/preview/`, translations
+and concise introductions under `docs/i18n/`, and genuine interface captures under
+`docs/images/`. `scripts/build_showcase.py --write-introductions` regenerates the
+Markdown introductions from the shared 12-language catalog. The website builder
+adds the rendered preview and standalone demo under `/preview/`; generated HTML
+and packaged media remain build output rather than duplicate source files.
+
 ## Platform matrix
 
 | Target | Intended deliverable | Current state |

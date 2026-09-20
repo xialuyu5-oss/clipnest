@@ -71,6 +71,31 @@ directly by that computer and saved through the local browser interface. Keep
 the launcher open during downloads. A website cannot start a missing local
 service merely by linking to localhost.
 
+### Using an existing local VPN proxy
+
+Some VPN clients resolve public domains to virtual `198.18.x.x` addresses
+(Fake-IP). ClipNest still rejects these addresses on direct connections. If
+analysis reports this condition, use the HTTP proxy listening address shown in
+your already running VPN client:
+
+```bat
+start-local.bat --local-proxy http://127.0.0.1:PORT
+```
+
+On macOS/Linux, use `sh start-local.sh --local-proxy http://127.0.0.1:PORT`.
+Replace `PORT` with the actual listening port; there is no universal default.
+Restart the local component with this option, then retry analysis. Stop or pause
+active downloads before restarting. Launching without the option uses direct
+connections again.
+
+The option is available only in local-device mode and accepts an explicit
+loopback proxy address. Remote/LAN proxy hosts, credentials and URL paths are
+rejected. It does not import the old hosting `YTDLP_PROXY` setting or modify
+Windows/VPN/DNS settings. The selected local proxy may route traffic according to
+the user's VPN configuration; the ClipNest website does not relay it. Private
+destination checks remain enabled. Environment readiness checks report installed
+components, not whether a particular platform is reachable.
+
 ## Android
 
 The App bundles its extraction and media-processing engines; users do not install

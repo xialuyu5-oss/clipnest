@@ -1,0 +1,192 @@
+{
+  "youtube": {
+    "file": "web/assets/platforms/youtube.png",
+    "page": "https://www.youtube.com/",
+    "source": "https://www.youtube.com/s/desktop/b0f1b2cc/img/favicon_144x144.png",
+    "retrieved": "2026-09-20",
+    "sha256": "e39dc3d8c2f82ad2375132a8efcf521c232d5e2cf08abeb9bebe1ad94afb2157",
+    "width": 144,
+    "height": 144,
+    "bytes": 5020
+  },
+  "x": {
+    "file": "web/assets/platforms/x.png",
+    "page": "https://x.com/",
+    "source": "https://x.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "cc4939af5d16855f2bea8322dbf33461ebc6bfd092fa3e2291d87d3d83ebd8ed",
+    "width": 32,
+    "height": 32,
+    "bytes": 549
+  },
+  "tiktok": {
+    "file": "web/assets/platforms/tiktok.png",
+    "page": "https://www.tiktok.com/",
+    "source": "https://www.tiktok.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "d0d48654b83875f95e62ef0744e31de50aa9913c031eeee4a20f407485be3595",
+    "width": 32,
+    "height": 32,
+    "bytes": 842
+  },
+  "instagram": {
+    "file": "web/assets/platforms/instagram.webp",
+    "page": "https://www.instagram.com/",
+    "source": "https://static.cdninstagram.com/rsrc.php/yr/r/rzWiSjZRxk5.webp",
+    "retrieved": "2026-09-20",
+    "sha256": "5ea73220ab5bda046e21d3f0cba26eafadeb3cc2bbd07a91978774048c84b6ee",
+    "width": 32,
+    "height": 32,
+    "bytes": 900
+  },
+  "facebook": {
+    "file": "web/assets/platforms/facebook.ico",
+    "page": "https://www.facebook.com/",
+    "source": "https://static.xx.fbcdn.net/rsrc.php/y1/r/ay1hV6OlegS.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "8924f44d76426a340b105cbdc5b93678c6b772e847b393f2568d94847c0d8d80",
+    "width": 60,
+    "height": 60,
+    "bytes": 20366
+  },
+  "vimeo": {
+    "file": "web/assets/platforms/vimeo.png",
+    "page": "https://vimeo.com/",
+    "source": "https://f.vimeocdn.com/cms/images/apple-icon.png",
+    "retrieved": "2026-09-20",
+    "sha256": "4486eec06fe30b6f365deaaf14cc4c5d23eb041624539fa5309e1f410bd2780a",
+    "width": 180,
+    "height": 180,
+    "bytes": 7915
+  },
+  "bilibili": {
+    "file": "web/assets/platforms/bilibili.ico",
+    "page": "https://www.bilibili.com/",
+    "source": "https://www.bilibili.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "2681561eb24e7435fea1acf26f3af95e4efc9f7d451587b58bef62f030f337e9",
+    "width": 32,
+    "height": 32,
+    "bytes": 4286
+  },
+  "dailymotion": {
+    "file": "web/assets/platforms/dailymotion.png",
+    "page": "https://www.dailymotion.com/",
+    "source": "https://static.neon-ssr.dailymotion.com/neon-seo-ssr/static/favicons/android-icon-192x192.12ce02f3a914dc2f3d6d.png",
+    "retrieved": "2026-09-20",
+    "sha256": "ba0996ac69a275431c93b038087fd009676f2b81a38607caac5ce5ed8a353f67",
+    "width": 192,
+    "height": 192,
+    "bytes": 6824
+  },
+  "reddit": {
+    "file": "web/assets/platforms/reddit.png",
+    "page": "https://www.reddit.com/",
+    "source": "https://www.reddit.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "3fcb0febd3450b5edbd536a86dbfe6dd7bad6bd39d3976801b069e14d15da5d3",
+    "width": 32,
+    "height": 32,
+    "bytes": 2441
+  },
+  "twitch": {
+    "file": "web/assets/platforms/twitch.png",
+    "page": "https://www.twitch.tv/",
+    "source": "https://assets.twitch.tv/assets/favicon-32-e29e246c157142c94346.png",
+    "retrieved": "2026-09-20",
+    "sha256": "4d87b8e63982e6f22b71048d310922e0c23858d3df0f7f3f0b362e7db7b25abb",
+    "width": 32,
+    "height": 32,
+    "bytes": 382
+  },
+  "douyin": {
+    "file": "web/assets/platforms/douyin.ico",
+    "page": "https://www.douyin.com/",
+    "source": "https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "e67348e3ab54fa207e1ce4be78e8399d1b73a794d819a17d8656ea2b17a1109d",
+    "width": 32,
+    "height": 32,
+    "bytes": 4286
+  },
+  "xiaohongshu": {
+    "file": "web/assets/platforms/xiaohongshu.png",
+    "page": "https://www.rednote.com/",
+    "source": "https://www.rednote.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "273adad3ded2d0ee7a6d035ba0f5ff08a0430bd2daea4509535d487b0bf4be97",
+    "width": 96,
+    "height": 96,
+    "bytes": 4223
+  },
+  "weibo": {
+    "file": "web/assets/platforms/weibo.ico",
+    "page": "https://weibo.com/",
+    "source": "https://weibo.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "b86c00f90f8b742d1fb477034fb1916832857b8ac8a77f34a9c2904f3051194a",
+    "width": 32,
+    "height": 32,
+    "bytes": 10134
+  },
+  "ixigua": {
+    "file": "web/assets/platforms/ixigua.ico",
+    "page": "https://www.ixigua.com/",
+    "source": "https://sf1-cdn-tos.douyinstatic.com/obj/eden-cn/lpqpflo/ixigua_favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "9dc931b0a63aad53fcd73837054a73b6418d862e11e2a699ddc3a3bc657d25bd",
+    "width": 32,
+    "height": 32,
+    "bytes": 4286
+  },
+  "acfun": {
+    "file": "web/assets/platforms/acfun.ico",
+    "page": "https://www.acfun.cn/",
+    "source": "https://cdn.aixifan.com/ico/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "45912eb39ed2e2010516a2bb07d8c226d2ff531e42fd977892ee900c4cc4a7e9",
+    "width": 32,
+    "height": 32,
+    "bytes": 4286
+  },
+  "xinpianchang": {
+    "file": "web/assets/platforms/xinpianchang.ico",
+    "page": "https://www.xinpianchang.com/",
+    "source": "https://www.xinpianchang.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "a9c54034643ae79623a9b9f8944a7f5ece023653e9413a863b56db3db3a3e0db",
+    "width": 32,
+    "height": 32,
+    "bytes": 4286
+  },
+  "ted": {
+    "file": "web/assets/platforms/ted.ico",
+    "page": "https://www.ted.com/",
+    "source": "https://www.ted.com/favicon.ico",
+    "retrieved": "2026-09-20",
+    "sha256": "7a2ded0f0d33d925c0f615c6fbbac4b2bf49dea19bca3d10e74f2dba5f25a36e",
+    "width": 48,
+    "height": 48,
+    "bytes": 18094
+  },
+  "pinterest": {
+    "file": "web/assets/platforms/pinterest.png",
+    "page": "https://www.pinterest.com/",
+    "source": "https://s.pinimg.com/webapp/logo_transparent_144x144-3da7a67b.png",
+    "retrieved": "2026-09-20",
+    "sha256": "5410764149903d1db37bbd92d37aa6e08ff4c129bd13d7d9e65762312d4da774",
+    "width": 144,
+    "height": 144,
+    "bytes": 3352
+  },
+  "niconico": {
+    "file": "web/assets/platforms/niconico.png",
+    "page": "https://www.nicovideo.jp/",
+    "source": "https://resource.video.nimg.jp/web/images/favicon_uni/144.png?re",
+    "retrieved": "2026-09-20",
+    "sha256": "5ceb5d856c83cc2843f29b80ec90e99823a693c5c1fbb1e55008873c80a814b3",
+    "width": 144,
+    "height": 144,
+    "bytes": 3399
+  }
+}

@@ -2,7 +2,40 @@
 
 Recorded baseline: **v1.3.0, 2026-09-17**. This document distinguishes code checks, local real-engine tests and live-platform acceptance.
 
-## Recorded results
+## Local platform update — 2026-09-20 (unreleased)
+
+- Publication presentation checks: the 12-language product preview passed desktop
+  and 320px layout checks for every locale, English default, Arabic RTL, image
+  decoding and Chinese language handoff into the standalone interface. Saving its
+  original 480p demo produced bytes identical to the bundled fixture. No browser
+  page errors or external requests were observed. Three current interface images
+  were captured from that original-demo flow, without account or platform media.
+- `python -m pytest tests -q`: **226 passed**, with the two existing third-party
+  deprecation warnings. New checks cover dedicated extractor routing, short links,
+  access query parameters, full Ixigua IDs, domain lookalikes, thumbnail hosts,
+  Web/Android policy consistency and byte-preserving logo packaging. Local proxy
+  checks cover loopback-only validation, explicit launcher propagation, stale
+  hosting-setting isolation, Fake-IP error mapping and private-address rejection
+  outside the single configured proxy endpoint.
+- Frontend and shared-client regressions passed. Internationalization checks passed
+  for all 12 Web locales and 330 keys per locale.
+- `scripts/build_preview.py` and `scripts/check_preview.py` passed: 19 decoded local
+  brand icons, desktop/light/dark, 320px modal minimum sizes, Chinese names, Arabic
+  RTL and the existing original-demo save/delete flow. No browser page errors.
+- Public metadata checks did **not** establish live compatibility for the nine new
+  platforms. Douyin requested fresh cookies; the other eight checks were stopped
+  by the existing network guard in this environment. [Exact scope](PLATFORMS.md).
+- A subsequent local VPN fix was verified through the running service's session
+  and `/api/analyze` routes: the public Captain America X video
+  `719944021058060289` returned HTTP 200, duration 3.17 seconds, and 720p/360p/180p
+  options with frame rates and audio codecs. This used the existing local HTTP
+  proxy with the address guard enabled. No full video download was started; the
+  user's screenshot URL and the nine added platforms were not revalidated by
+  this check. An older Star Wars sample returned unavailable.
+- No new Android APK/device acceptance, WeChat platform parsing, iOS implementation
+  or GitHub/Pages/Release publication is claimed for this update.
+
+## Earlier recorded results
 
 | Check | Result and scope |
 | --- | --- |
@@ -44,7 +77,7 @@ The check opens the standalone preview, saves a bundled original demo in the tes
 
 ## Still unverified
 
-- Current real URLs on all 10 integrated platforms, including separate-track downloads on each.
+- Current real URLs on all 19 integrated platforms, including separate-track downloads on each.
 - Completed Bilibili member authorization, actual member-only HD, and official app album recognition.
 - Real-platform pause/resume across expired source links and all source-specific protocols.
 - Ordinary phone/LAN network access and public deployment.
