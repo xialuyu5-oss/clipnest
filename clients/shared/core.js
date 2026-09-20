@@ -12,6 +12,12 @@
     TikTok: ['tiktok.com'], Instagram: ['instagram.com'], Facebook: ['facebook.com', 'fb.watch'],
     Vimeo: ['vimeo.com'], Bilibili: ['bilibili.com', 'b23.tv'],
     Dailymotion: ['dailymotion.com', 'dai.ly'], Reddit: ['reddit.com', 'redd.it'], Twitch: ['twitch.tv'],
+    Douyin: ['douyin.com', 'iesdouyin.com'], Xiaohongshu: ['xiaohongshu.com', 'xhslink.com'],
+    Weibo: ['weibo.com', 'weibo.cn', 't.cn'], Ixigua: ['ixigua.com'],
+    AcFun: ['acfun.cn'], Xinpianchang: ['xinpianchang.com'], TED: ['ted.com'],
+    Pinterest: ['pinterest.com', 'pinterest.jp', 'pinterest.co.uk', 'pinterest.ca',
+      'pinterest.de', 'pinterest.fr', 'pinterest.com.au', 'pin.it'],
+    Niconico: ['nicovideo.jp', 'nico.ms'],
   };
   function fail(code) { const error = new Error(code); error.code = code; throw error; }
   function number(value) { const n = Number(value); return Number.isFinite(n) && n > 0 ? n : 0; }
