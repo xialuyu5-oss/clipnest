@@ -46,9 +46,16 @@ with sync_playwright() as p:
     page.screenshot(path=str(out/'clipnest-result.png'),full_page=True)
     page.locator('[data-dialog="platforms-dialog"]').first.click()
     results['platform_count']=page.locator('.platform-item').count()
+    page.wait_for_function('Array.from(document.querySelectorAll(".platform-badge img")).every(i => i.complete && i.naturalWidth > 0)')
+    results['bundled_platform_logos']=page.locator('.platform-badge img').evaluate_all('images => images.length === 19 && images.every(i => i.src.startsWith("data:image/") && i.naturalWidth > 0)')
+    results['platform_modal_no_overflow']=page.locator('#platforms-dialog').evaluate('d => d.scrollWidth <= d.clientWidth')
+    page.screenshot(path=str(out/'clipnest-platforms.png'))
     page.keyboard.press('Escape')
     page.locator('#theme-button').click()
     results['dark_theme']=page.locator('html').get_attribute('data-theme')=='dark'
+    page.locator('[data-dialog="platforms-dialog"]').first.click()
+    page.screenshot(path=str(out/'clipnest-platforms-dark.png'))
+    page.keyboard.press('Escape')
     page.evaluate("scrollTo(0,0)")
     page.wait_for_timeout(500)
     page.screenshot(path=str(out/'clipnest-dark.png'),full_page=True)
@@ -65,6 +72,16 @@ with sync_playwright() as p:
     results['mobile_result_no_overflow']=m.evaluate('document.documentElement.scrollWidth <= innerWidth')
     m.set_viewport_size({'width':320,'height':740})
     results['320px_no_overflow']=m.evaluate('document.documentElement.scrollWidth <= innerWidth')
+    m.select_option('#language-select','zh-CN')
+    m.locator('[data-dialog="platforms-dialog"]').first.click()
+    results['localized_platform_names']=m.locator('.platform-item h3').all_text_contents().count('小红书') == 1
+    results['320px_platform_modal_no_overflow']=m.locator('#platforms-dialog').evaluate('d => d.scrollWidth <= d.clientWidth')
+    results['platform_logos_keep_size']=m.locator('.platform-badge').evaluate_all('badges => badges.every(b => b.getBoundingClientRect().width >= 44)')
+    m.screenshot(path=str(out/'clipnest-platforms-mobile.png'))
+    m.keyboard.press('Escape')
+    m.select_option('#language-select','ar')
+    m.locator('[data-dialog="platforms-dialog"]').first.click()
+    results['rtl_platform_modal_no_overflow']=m.locator('#platforms-dialog').evaluate('d => d.scrollWidth <= d.clientWidth')
     browser.close()
 results['page_errors']=errors
 (out/'clipnest-browser-tests.json').write_text(json.dumps(results,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -73,5 +90,5 @@ print(json.dumps(results,ensure_ascii=False,indent=2))
 assert not errors, errors
 assert all(value for key, value in results.items() if key != 'page_errors'), results
 assert results['quality_count'] == 3
-assert results['platform_count'] == 10
+assert results['platform_count'] == 19
 assert results['browser_saved_bytes'] == (ROOT / 'web/assets/demo-480.mp4').stat().st_size

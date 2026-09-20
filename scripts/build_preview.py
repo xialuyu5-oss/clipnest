@@ -9,16 +9,17 @@ from build_i18n import main as build_i18n
 ROOT = Path(__file__).resolve().parent.parent
 
 
-def main():
-    build_i18n()
+def build_html():
     web = ROOT / 'web'
     mapping = {}
     sizes = {}
-    for file in (web / 'assets').iterdir():
-        if file.suffix not in ('.svg', '.mp4'):
+    media_types = {'.svg': 'image/svg+xml', '.mp4': 'video/mp4', '.png': 'image/png',
+                   '.ico': 'image/x-icon', '.webp': 'image/webp'}
+    for file in (web / 'assets').rglob('*'):
+        if not file.is_file() or file.suffix not in media_types:
             continue
-        mime = 'video/mp4' if file.suffix == '.mp4' else 'image/svg+xml'
-        mapping['/assets/' + file.name] = f'data:{mime};base64,' + base64.b64encode(file.read_bytes()).decode()
+        mime = media_types[file.suffix]
+        mapping['/' + file.relative_to(web).as_posix()] = f'data:{mime};base64,' + base64.b64encode(file.read_bytes()).decode()
         if file.suffix == '.mp4':
             sizes[file.stem.split('-')[-1]] = file.stat().st_size
     html = (web / 'index.html').read_text(encoding='utf-8')
@@ -41,8 +42,13 @@ def main():
     js = '\n'.join((web / path).read_text(encoding='utf-8')
                    for path in ('assets/i18n-catalogs.js', 'assets/i18n.js', 'app.js')).replace('</script', '<\\/script')
     html = html.replace('</body>', '<script>' + prelude + js + '</script></body>')
+    return html
+
+
+def main():
+    build_i18n()
     dest = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'ClipNest-界面预览.html'
-    dest.write_text(html, encoding='utf-8')
+    dest.write_text(build_html(), encoding='utf-8')
     print(dest)
 
 

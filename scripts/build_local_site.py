@@ -10,6 +10,7 @@ import zipfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_release import ROOT, payload, version
+from build_showcase import payload as showcase_payload
 
 
 def archive(files, prefix=''):
@@ -52,6 +53,7 @@ def main():
     ).encode()
     setup['LICENSE'] = (ROOT / 'LICENSE').read_bytes()
     files = {name: (ROOT / 'site' / name).read_bytes() for name in ('index.html', 'style.css', 'app.js', 'catalogs.js', 'check-catalogs.js')}
+    files.update(showcase_payload())
     files['.nojekyll'] = b''
     files['LICENSE'] = (ROOT / 'LICENSE').read_bytes()
     files['downloads/clipnest-local-pc.zip'] = archive(web, 'ClipNest/')

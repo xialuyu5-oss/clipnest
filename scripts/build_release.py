@@ -31,13 +31,14 @@ def version():
 def payload():
     paths = list((ROOT / 'app').glob('*.py'))
     paths += [p for p in (ROOT / 'web').rglob('*') if p.is_file()
-              and p.suffix in {'.html', '.css', '.js', '.svg', '.mp4'}
+              and p.suffix in {'.html', '.css', '.js', '.svg', '.mp4', '.png', '.ico', '.webp'}
               and 'locales' not in p.relative_to(ROOT / 'web').parts]
     paths += [ROOT / name for name in (
         '.env.example', '.dockerignore', 'Dockerfile', 'compose.yaml', 'LICENSE',
         'requirements.txt', 'requirements-tested.txt', 'start.py', 'start.bat', 'start.sh')]
     paths += [ROOT / name for name in ('check-environment.bat', 'install-missing.bat',
-        'start-local.bat', 'start-local.sh', 'scripts/check_environment.py',
+        'start-local.bat', 'start-local.sh', 'docs/ASSETS.md', 'docs/platform-logos.json',
+        'scripts/check_environment.py',
         'scripts/setup_windows.ps1', 'docs/LOCAL_PROCESSING.md', 'docs/LOCAL_DEVICE_VALIDATION.md')]
     files = {}
     for path in paths:
@@ -46,7 +47,7 @@ def payload():
         name = path.relative_to(ROOT).as_posix()
         data = path.read_bytes()
         # Normalize text so archives do not depend on a checkout's newline mode.
-        if path.suffix not in {'.mp4'}:
+        if path.suffix not in {'.mp4', '.png', '.ico', '.webp'}:
             data = data.replace(b'\r\n', b'\n')
             if path.suffix == '.bat':
                 data = data.replace(b'\n', b'\r\n')
