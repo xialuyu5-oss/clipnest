@@ -2,6 +2,7 @@
 (() => {
   const locales=['en','zh-CN','zh-TW','ja','ko','es','fr','de','pt','ru','ar','hi'];
   const rows={
+    preview:['Product preview','项目预览','專案預覽','画面プレビュー','프로젝트 미리보기','Vista previa','Aperçu du projet','Projektvorschau','Prévia do projeto','Обзор проекта','معاينة المشروع','परियोजना प्रीव्यू'],
     checkLabel:['LOCAL ENVIRONMENT','本机环境','本機環境','ローカル環境','로컬 환경','ENTORNO LOCAL','ENVIRONNEMENT LOCAL','LOKALE UMGEBUNG','AMBIENTE LOCAL','ЛОКАЛЬНАЯ СРЕДА','البيئة المحلية','स्थानीय परिवेश'],
     checkingTitle:['Checking your computer…','正在检查本机环境…','正在檢查本機環境…','この端末を確認しています…','이 컴퓨터를 확인하는 중…','Comprobando tu equipo…','Vérification de votre ordinateur…','Computer wird geprüft…','Verificando seu computador…','Проверяем компьютер…','جارٍ فحص الكمبيوتر…','आपके कंप्यूटर की जाँच हो रही है…'],
     checkingDetail:['When everything is ready, the full downloader opens automatically in this tab.','环境齐全后，将在当前标签页自动进入完整下载界面。','環境齊全後，將在目前分頁自動進入完整下載介面。','準備が整うと、このタブで全機能の画面を自動的に開きます。','준비가 완료되면 이 탭에서 전체 다운로드 화면이 자동으로 열립니다.','Cuando esté listo, se abrirá automáticamente el descargador completo en esta pestaña.','Une fois prêt, le téléchargeur complet s’ouvre automatiquement dans cet onglet.','Sobald alles bereit ist, öffnet sich der vollständige Downloader in diesem Tab.','Quando estiver pronto, o downloader completo abrirá nesta aba.','Когда всё готово, в этой вкладке автоматически откроется полный интерфейс.','عند اكتمال التجهيز، تفتح واجهة التنزيل الكاملة تلقائيًا في هذا التبويب.','सब तैयार होने पर पूरा डाउनलोड इंटरफ़ेस इसी टैब में खुलेगा।'],
