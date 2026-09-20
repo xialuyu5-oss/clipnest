@@ -21,7 +21,8 @@ def main():
     sys.path.insert(0, payload['engine_zip'])
     import yt_dlp
     from app.media import build_media
-    from app.safety import normalize_url, network_guard, friendly_error, UserError, is_short_link
+    from app.safety import (ALLOWED_EXTRACTORS, normalize_url, network_guard,
+                            friendly_error, UserError, resolve_short_link)
 
     class Logger:
         def debug(self, message): pass
@@ -49,9 +50,7 @@ def main():
                    'ffmpeg_location': payload['ffmpeg'], 'quiet': True,
                    'remote_components': [], 'enable_file_urls': False,
                    'skip_unavailable_fragments': False, 'geo_bypass': False,
-                   'allowed_extractors': ['youtube.*', 'twitter.*', 'tiktok.*', 'instagram.*',
-                                          'facebook.*', 'vimeo.*', 'bilibili.*', 'bili.*',
-                                          'dailymotion.*', 'reddit.*', 'twitch.*'],
+                   'allowed_extractors': list(ALLOWED_EXTRACTORS),
                    'progress_hooks': [progress], 'postprocessor_hooks': [postprocess]}
         if payload['mode'] == 'download':
             directory = Path(payload['directory']).resolve()
@@ -60,12 +59,7 @@ def main():
                             'merge_output_format': payload['container'],
                             'outtmpl': str(directory / 'media.%(ext)s')})
         with network_guard(), yt_dlp.YoutubeDL(options) as engine:
-            if is_short_link(url):
-                from yt_dlp.networking import Request
-                with engine.urlopen(Request(url, extensions={'timeout': 15})) as response:
-                    url, platform = normalize_url(str(response.url))
-                if is_short_link(url):
-                    raise UserError('Use the full video page URL.', 'SHORT_LINK_FAILED')
+            url, platform = resolve_short_link(engine, url)
             info = engine.extract_info(url, download=False)
             media = build_media(info, platform, url)
             if payload['mode'] == 'analyze':
