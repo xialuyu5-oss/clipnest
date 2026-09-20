@@ -7,11 +7,11 @@
   <meta name="description" content="Download from multiple platforms in the quality you choose." data-i18n-content="Download from multiple platforms in the quality you choose.">
   <title data-i18n="ClipNest · Keep your favorite moments">ClipNest · Keep your favorite moments</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/style.css?v=1.3.1">
-  <link rel="stylesheet" href="/member.css?v=1.3.1">
-  <script defer src="/assets/i18n-catalogs.js?v=1.3.1"></script>
-  <script defer src="/assets/i18n.js?v=1.3.1"></script>
-  <script defer src="/app.js?v=1.3.1"></script>
+  <link rel="stylesheet" href="/style.css?v=1.3.1-platforms.2">
+  <link rel="stylesheet" href="/member.css?v=1.3.1-platforms.2">
+  <script defer src="/assets/i18n-catalogs.js?v=1.3.1-platforms.2"></script>
+  <script defer src="/assets/i18n.js?v=1.3.1-platforms.2"></script>
+  <script defer src="/app.js?v=1.3.1-platforms.2"></script>
 </head>
 <body>
 <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@
           <div class="url-control"><svg class="icon input-link"><use href="#i-link"/></svg><input id="video-url" name="url" type="text" inputmode="url" placeholder="Paste a video link" autocomplete="off" spellcheck="false" maxlength="4096" aria-describedby="input-note" data-i18n-placeholder="Paste a video link"><button id="clear-input" class="icon-button clear-input" type="button" hidden aria-label="Clear link" data-i18n-aria-label="Clear link"><svg class="icon"><use href="#i-close"/></svg></button></div>
           <div class="analyze-actions"><button id="paste-button" class="paste-button" type="button"><svg class="icon"><use href="#i-paste"/></svg><span data-i18n="Paste">Paste</span></button><button class="primary-button analyze-button" id="analyze-button" type="submit"><span data-i18n="Analyze video">Analyze video</span><svg class="icon"><use href="#i-arrow"/></svg></button></div>
         </form>
-        <div class="platform-row"><span class="platform-label"><span data-i18n="Works with">Works with</span></span><div class="platform-chips"><span class="platform-chip"><span class="platform-logo youtube">▶</span>YouTube</span><span class="platform-chip"><span class="platform-logo x-logo">𝕏</span>X / Twitter</span><span class="platform-chip"><span class="platform-logo tiktok">♪</span>TikTok</span><span class="platform-chip extra-platform"><span class="platform-logo instagram">◎</span>Instagram</span><span class="platform-chip extra-platform"><span class="platform-logo bilibili">▣</span><span data-i18n="Bilibili">Bilibili</span></span><button class="more-platforms" type="button" data-dialog="platforms-dialog"><span data-i18n="More">More</span> <svg class="icon"><use href="#i-chevron"/></svg></button></div></div>
+        <div class="platform-row"><span class="platform-label"><span data-i18n="Works with">Works with</span></span><div class="platform-chips"><span class="platform-chip"><img class="platform-logo" src="/assets/platforms/youtube.png" width="20" height="20" alt="">YouTube</span><span class="platform-chip"><img class="platform-logo" src="/assets/platforms/x.png" width="20" height="20" alt="">X / Twitter</span><span class="platform-chip"><img class="platform-logo" src="/assets/platforms/tiktok.png" width="20" height="20" alt="">TikTok</span><span class="platform-chip extra-platform"><img class="platform-logo" src="/assets/platforms/instagram.webp" width="20" height="20" alt="">Instagram</span><span class="platform-chip extra-platform"><img class="platform-logo" src="/assets/platforms/bilibili.ico" width="20" height="20" alt=""><span data-i18n="Bilibili">Bilibili</span></span><button class="more-platforms" type="button" data-dialog="platforms-dialog"><span data-i18n="More">More</span> <svg class="icon"><use href="#i-chevron"/></svg></button></div></div>
         <div class="input-bottom"><p id="input-note"><svg class="icon"><use href="#i-shield"/></svg><span data-i18n="Only download content you own or may use. Signing in does not remove DRM.">Only download content you own or may use. Signing in does not remove DRM.</span></p><button class="text-button" id="demo-button" type="button"><svg class="icon"><use href="#i-play"/></svg> <span data-i18n="Try a demo">Try a demo</span></button></div>
         <div id="analyze-error" class="inline-error" role="alert" hidden></div>
         <div id="analyzing" class="analyzing" role="status" hidden><span class="spinner"></span><div><strong><span data-i18n="Reading video details and formats">Reading video details and formats</span></strong><small><span data-i18n="Contacting the source platform. No full video is being downloaded yet.">Contacting the source platform. No full video is being downloaded yet.</span></small></div></div>

@@ -13,15 +13,29 @@
     qrExpires: 0, qrPolling: false, pendingDownload: null,
   };
   const platforms = [
-    ['YouTube', 'youtube.com · youtu.be', '▶'], ['X / Twitter', 'x.com · twitter.com', '𝕏'],
-    ['TikTok', 'tiktok.com', '♪'], ['Instagram', 'instagram.com', '◎'],
-    ['Facebook', 'facebook.com · fb.watch', 'f'], ['Vimeo', 'vimeo.com', 'v'],
-    ['哔哩哔哩', 'bilibili.com · b23.tv', '▣'], ['Dailymotion', 'dailymotion.com · dai.ly', 'd'],
-    ['Reddit', 'reddit.com · redd.it', 'r'], ['Twitch', 'twitch.tv', '▱'],
+    ['YouTube', 'youtube.com · youtu.be', 'youtube.png'],
+    ['X / Twitter', 'x.com · twitter.com', 'x.png'],
+    ['TikTok', 'tiktok.com', 'tiktok.png'],
+    ['Instagram', 'instagram.com', 'instagram.webp'],
+    ['Facebook', 'facebook.com · fb.watch', 'facebook.ico'],
+    ['Vimeo', 'vimeo.com', 'vimeo.png'],
+    ['Bilibili', 'bilibili.com · b23.tv', 'bilibili.ico'],
+    ['Dailymotion', 'dailymotion.com · dai.ly', 'dailymotion.png'],
+    ['Reddit', 'reddit.com · redd.it', 'reddit.png'],
+    ['Twitch', 'twitch.tv', 'twitch.png'],
+    ['Douyin', 'douyin.com', 'douyin.ico'],
+    ['Xiaohongshu', 'xiaohongshu.com · xhslink.com', 'xiaohongshu.png'],
+    ['Weibo', 'weibo.com · weibo.cn', 'weibo.ico'],
+    ['Ixigua', 'ixigua.com', 'ixigua.ico'],
+    ['AcFun', 'acfun.cn', 'acfun.ico'],
+    ['Xinpianchang', 'xinpianchang.com', 'xinpianchang.ico'],
+    ['TED', 'ted.com', 'ted.ico'],
+    ['Pinterest', 'pinterest.com · pin.it', 'pinterest.png'],
+    ['Niconico', 'nicovideo.jp · nico.ms', 'niconico.png'],
   ];
 
   function platformLabel(name) {
-    return name === '哔哩哔哩' || name === 'Bilibili' ? t('Bilibili') : name;
+    return t(name === '哔哩哔哩' ? 'Bilibili' : name);
   }
   function errorMessage(code, fallback = 'The request could not be completed. Check your input and try again.') {
     const messages = {
@@ -82,6 +96,7 @@
       NOT_AVAILABLE: 'This video was removed or is not available.',
       NETWORK_ERROR: 'The source platform could not be reached. Check the server\'s network connection.',
       UNSAFE_TARGET: 'The network target or proxy configuration was rejected.',
+      LOCAL_PROXY_REQUIRED: 'Your VPN uses virtual DNS addresses. Restart ClipNest with its local proxy option, then try again.',
       PROXY_CONFIG: 'The network target or proxy configuration was rejected.',
       TIMEOUT: 'Processing timed out. Please try again.',
       // Catch-all codes: friendly_error() fallback, worker crash and unexpected server failure.
@@ -854,8 +869,13 @@
   for (const [name, domain, logo] of platforms) {
     const card = el('article', 'platform-item'), body = el('div');
     const heading = el('h3', '', name);
-    if (name === '哔哩哔哩') i18n.text(heading, 'Bilibili');
-    body.append(heading, el('p', '', domain)); card.append(el('span', '', logo), body); $('#platforms-grid').append(card);
+    i18n.text(heading, name);
+    const badge = el('span', 'platform-badge'), image = el('img');
+    image.alt = ''; image.width = 32; image.height = 32;
+    setImage(image, '/assets/platforms/' + logo);
+    badge.append(image);
+    body.append(heading, el('p', '', domain));
+    card.append(badge, body); $('#platforms-grid').append(card);
   }
   const languageSelect = $('#language-select');
   for (const nav of document.querySelectorAll('.main-nav > .nav-item')) {

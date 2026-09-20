@@ -164,3 +164,17 @@ html[data-theme="dark"]{--bg:#15231d;--surface:#1d2d24;--side:#19271f;--text:#e0
 .job-detail{font-size:14px;color:var(--secondary);margin-top:6px;overflow-wrap:anywhere}
 .job-meta{flex-wrap:wrap}
 @media(max-width:520px){.url-control{flex-basis:100%;min-inline-size:100%}.job-body{flex-basis:calc(100% - 72px)}.analyze-actions{width:100%}}
+
+/* Keep the source brands recognizable, with room for names and share domains. */
+.platform-chip .platform-logo{display:block;flex:0 0 20px;width:20px;height:20px;object-fit:contain;background:#fff;border-radius:3px}
+#platforms-dialog{width:min(840px,calc(100vw - 24px));padding:28px}
+#platforms-dialog .modal-intro{font-size:14px;line-height:1.8}
+.platforms-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
+.platform-item{min-width:0;min-height:82px;padding:14px;gap:12px}
+.platform-item>div{min-width:0}
+.platform-item>.platform-badge{flex:0 0 44px;width:44px;height:44px;border-radius:10px;background:#fff;border:1px solid #e8ece7}
+.platform-badge img{display:block;width:32px;height:32px;object-fit:contain}
+.platform-item h3{font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.platform-item p{font-size:12px;line-height:1.6;color:var(--secondary);overflow-wrap:anywhere;direction:ltr;text-align:start}
+#platforms-dialog .notice{font-size:13px}
+@media(max-width:520px){#platforms-dialog{padding:20px}.platform-item{min-height:78px}.platforms-grid{grid-template-columns:1fr}}
