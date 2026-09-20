@@ -1,6 +1,22 @@
 const assert = require('node:assert/strict');
 const core = require('../clients/shared/core.js');
 assert.equal(core.validateLink('watch https://www.youtube.com/watch?v=abc').platform, 'YouTube');
+for (const [link, platform] of [
+  ['https://v.douyin.com/example/', 'Douyin'],
+  ['https://www.xiaohongshu.com/explore/6411cf99000000001300b6d9?xsec_token=A%2BB%3D', 'Xiaohongshu'],
+  ['https://xhslink.com/a/example', 'Xiaohongshu'],
+  ['https://m.weibo.cn/status/4189191225395228', 'Weibo'],
+  ['https://www.ixigua.com/6996881461559165471', 'Ixigua'],
+  ['https://www.acfun.cn/v/ac35457073', 'AcFun'],
+  ['https://www.xinpianchang.com/a11766551', 'Xinpianchang'],
+  ['https://www.ted.com/talks/example', 'TED'],
+  ['https://pin.it/example', 'Pinterest'],
+  ['https://nico.ms/sm8628149', 'Niconico'],
+]) assert.equal(core.validateLink(link).platform, platform);
+for (const domains of Object.values(core.platforms)) {
+  for (const domain of domains) assert.throws(() => core.validateLink('https://' + domain + '.evil.test/video/1'));
+}
+assert.ok(core.validateLink('https://xiaohongshu.com/explore/123?xsec_token=A%2BB%3D').url.includes('xsec_token=A%2BB%3D'));
 for (const u of ['https://youtube.com.evil.test/watch?v=a','https://evil@youtube.com/watch?v=a', 'https://youtube.com:123/watch?v=a','https://127.0.0.1/video','https://youtube.com\\@evil.test/a']) {
   assert.throws(() => core.validateLink(u));
 }
