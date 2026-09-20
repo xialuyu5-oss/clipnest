@@ -15,7 +15,8 @@ import traceback
 from .config import ROOT
 from .media import build_media, number
 from .probe import DEFAULT_BUDGET_SECONDS, fill_format_metadata, stream_details
-from .safety import UserError, friendly_error, is_short_link, network_guard, normalize_url
+from .safety import (ALLOWED_EXTRACTORS, UserError, friendly_error, network_guard,
+                     normalize_url, resolve_short_link)
 
 # Opt-in diagnostics: forwards yt-dlp warnings/errors and tracebacks to stderr, which the
 # parent logs at DEBUG level. May include source URLs; keep off unless troubleshooting.
@@ -64,9 +65,7 @@ def common_options(payload: dict) -> dict:
         'enable_file_urls': False, 'allow_unplayable_formats': False,
         'skip_unavailable_fragments': False, 'hls_prefer_native': True,
         'check_formats': False, 'windowsfilenames': True,
-        'allowed_extractors': ['youtube.*', 'twitter.*', 'tiktok.*', 'instagram.*',
-                               'facebook.*', 'vimeo.*', 'bilibili.*', 'bili.*',
-                               'dailymotion.*', 'reddit.*', 'twitch.*'],
+        'allowed_extractors': list(ALLOWED_EXTRACTORS),
     }
 
 
@@ -89,31 +88,6 @@ def inspect_file(path: Path) -> dict:
             'codec': video.get('codec_name'), 'duration': duration,
             'fps': details['fps'], 'audio_codec': details['audio'],
             'has_audio': any(s.get('codec_type') == 'audio' for s in info.get('streams', []))}
-
-
-def resolve_short_link(ydl, url: str) -> tuple[str, str]:
-    """Expand share short links (b23.tv, fb.watch) that no allowed extractor claims.
-
-    Runs inside network_guard, so every hop is subject to the private-address checks.
-    Only the final destination is accepted, and only if it is a supported platform URL.
-    """
-    from yt_dlp.networking import Request
-    from yt_dlp.networking.exceptions import RequestError
-
-    url, platform = normalize_url(url)
-    if not is_short_link(url):
-        return url, platform
-    try:
-        with ydl.urlopen(Request(url, extensions={'timeout': 15})) as response:
-            final = str(response.url or '')
-    except RequestError:
-        raise UserError('短链接无法展开，请检查链接是否有效以及服务器网络。', 'SHORT_LINK_FAILED')
-    if not final or is_short_link(final):
-        raise UserError('短链接没有指向具体的视频页面，请粘贴视频详情页的原始链接。', 'SHORT_LINK_FAILED')
-    try:
-        return normalize_url(final)
-    except UserError:
-        raise UserError('短链接指向了不支持的地址，请粘贴视频详情页的原始链接。', 'UNSUPPORTED_SITE')
 
 
 def fill_replay_duration(ydl, info: dict) -> None:

@@ -4,6 +4,7 @@ import os
 from urllib.parse import urlsplit
 
 from dotenv import load_dotenv
+from .safety import local_proxy_url
 
 ROOT = Path(__file__).resolve().parent.parent
 # Worker subprocesses inherit the parent's already-loaded environment minus the
@@ -34,7 +35,8 @@ class Settings:
     access_key: str = '' if LOCAL_DEVICE else os.getenv('ACCESS_KEY', '')
     public_origin: str = '' if LOCAL_DEVICE else os.getenv('PUBLIC_ORIGIN', '').rstrip('/')
     secure_cookie: bool = False if LOCAL_DEVICE else os.getenv('COOKIE_SECURE', 'false').lower() == 'true'
-    proxy: str = '' if LOCAL_DEVICE else os.getenv('YTDLP_PROXY', '')
+    proxy: str = (local_proxy_url(os.getenv('CLIPNEST_LOCAL_PROXY', '')) if LOCAL_DEVICE
+                  else os.getenv('YTDLP_PROXY', ''))
     max_downloads: int = integer('MAX_CONCURRENT_DOWNLOADS', 2, 1, 8)
     max_queue: int = integer('MAX_QUEUE', 20, 1, 100)
     analyze_timeout: int = integer('ANALYZE_TIMEOUT_SECONDS', 90, 5, 180)
@@ -45,6 +47,11 @@ class Settings:
     debug_worker: bool = os.getenv('DEBUG_WORKER', 'false').lower() == 'true'
 
     def validate(self) -> None:
+        if self.local_device:
+            try:
+                local_proxy_url(self.proxy)
+            except ValueError as error:
+                raise RuntimeError(str(error)) from None
         if self.local_site_origin:
             origin = urlsplit(self.local_site_origin)
             if (origin.scheme != 'https' or not origin.hostname or origin.username or origin.password
