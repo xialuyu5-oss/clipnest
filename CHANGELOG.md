@@ -2,6 +2,26 @@
 
 This repository starts from the consolidated v1.3.0 source. The entries below describe the local development history; they do not imply that older versions exist as Git tags or GitHub releases.
 
+## Unreleased — 2026-09-20
+
+- Added 12-language project introductions, current interface screenshots and a
+  static product preview with an installation-free original-demo interface.
+- Added an explicit local-device proxy startup option for VPNs using virtual DNS
+  addresses. Private-address checks remain enabled, and the translated error now
+  identifies this configuration issue instead of a generic unsafe-target failure.
+- Added dedicated extractor routing for Douyin, Xiaohongshu, Weibo, Ixigua,
+  AcFun, Xinpianchang, TED, Pinterest and Niconico in Web and Android source.
+- Shared the guarded short-link expansion policy between both workers, retained
+  access query parameters, and fixed an upstream Ixigua URL-pattern issue that
+  could truncate the video ID.
+- Replaced the platform modal's character symbols and homepage chips with 19
+  locally bundled official website icons, with provenance and separate brand rights.
+- Added responsive cards with fixed minimum icon sizes, translated platform names,
+  and image-preserving offline/PC/Web packaging.
+- [Validation and remaining platform restrictions](docs/PLATFORMS.md).
+  Existing Release attachments remain earlier builds; the website builder includes
+  the current PC package and product preview from its selected source commit.
+
 ## 1.4.0-alpha.2 / Web 1.3.1 — 2026-09-19
 
 - Website-first environment detection: automatically enter the complete local

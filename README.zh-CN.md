@@ -4,6 +4,8 @@
 
 [网站入口](https://xialuyu5-oss.github.io/clipnest/) · [新版说明](docs/releases/v1.4.0-alpha.2.md) · [本机安装说明](docs/LOCAL_PROCESSING.md)
 
+**当前源码更新（2026-09-20）：**新增九个平台接入、19 个官网图标，以及本机 VPN 代理启动选项。使用这些改动可运行当前源码或当前网站部署生成的 PC 包；现有 alpha.2 Release 附件仍是此前构建。[更新记录](CHANGELOG.md) · [本机代理设置](docs/LOCAL_PROCESSING.md#using-an-existing-local-vpn-proxy)
+
 首次使用需要安装并启动本机组件。检测就绪后，当前标签会切换到 `127.0.0.1:8000` 的完整界面；使用期间保持组件运行。网站不提供视频中转处理服务。小程序仍最后处理。
 
 **粘贴链接，选择清晰度，确认后下载。**
@@ -12,11 +14,24 @@ ClipNest 是一个开源视频下载项目，包含自托管 Web 版、在手机
 
 [English](README.md) · [需求演进](docs/REQUIREMENTS.md) · [安装说明](docs/WEB_INSTALL.md) · [验证记录](docs/TESTING.md)
 
+[**在线交互预览**](https://xialuyu5-oss.github.io/clipnest/preview/?lang=zh-CN) · [12 种语言的项目介绍](docs/i18n/zh-CN.md)
+
+[English](README.md) · 简体中文 · [繁體中文](docs/i18n/zh-TW.md) · [日本語](docs/i18n/ja.md) · [한국어](docs/i18n/ko.md) · [Español](docs/i18n/es.md) · [Français](docs/i18n/fr.md) · [Deutsch](docs/i18n/de.md) · [Português](docs/i18n/pt.md) · [Русский](docs/i18n/ru.md) · [العربية](docs/i18n/ar.md) · [हिन्दी](docs/i18n/hi.md)
+
 **本项目代码由 OpenAI Vibe Coding 开发，使用 OpenAI ChatGPT 和 Codex。** 用户提出目标、审阅体验并决定修改方向；AI 生成和修订代码、文档，并通过工具辅助测试。这是独立项目，不代表 OpenAI 官方产品、认证或背书。
 
-![ClipNest Web 原创演示与清晰度选择](docs/images/desktop.png)
+![ClipNest Web 原创演示与清晰度选择](docs/images/desktop-20260920.png)
 
-*Web v1.3.0。截图使用项目原创演示素材，不代表真实平台下载验收。*
+*2026-09-20 当前源码的真实界面截图。使用项目原创演示素材，不代表真实平台下载验收。在线预览无需安装，仅提供这一原创素材的操作演示。*
+
+<details>
+<summary>19 个平台与官网图标</summary>
+
+![ClipNest 平台列表](docs/images/platforms-20260920.png)
+
+接入解析器不等于所有当前链接均可用，详见[验证范围与限制](docs/PLATFORMS.md)。
+
+</details>
 
 ## 先选版本
 
@@ -39,7 +54,7 @@ ClipNest 是一个开源视频下载项目，包含自托管 Web 版、在手机
 
 实际存储空间、源站行为和手机运行环境仍会影响下载。下载前耗时采用明确标注的 **1–10 MB/s 参考速度**，不是实测网速，也不承诺完成时间。[下载原理 →](docs/ARCHITECTURE.md)
 
-Web 和 Android 接入 **YouTube、X / Twitter、TikTok、Instagram、Facebook、Vimeo、Bilibili、Dailymotion、Reddit、Twitch** 的 yt-dlp 解析器。接入不等于每条链接已验证可用；来源权限、地区、风控、接口变化和 DRM 均可能影响结果。TikTok 与抖音不同，本版未接入抖音。小程序当前仅接受 MP4 直链。
+当前 Web 和 Android 源码接入 **YouTube、X / Twitter、TikTok、Instagram、Facebook、Vimeo、Bilibili、Dailymotion、Reddit、Twitch、抖音、小红书、微博、西瓜视频、AcFun、新片场、TED、Pinterest、Niconico** 的 yt-dlp 解析器。接入不等于每条链接已验证可用；来源权限、地区、风控、接口变化和 DRM 均可能影响结果。TikTok 与抖音分别处理。小程序当前仅接受 MP4 直链。[链接范围、验证记录和限制](docs/PLATFORMS.md)。
 
 Web 另有本机 B站扫码登录和深浅主题；真实会员高清下载尚未完成验收，其他平台及 Android 的会员登录未实现。
 
@@ -78,7 +93,7 @@ Dockerfile 和 Compose 已提供，但尚未验证镜像构建运行。公开 Gi
 <details>
 <summary>手机网页与独立 Android 预览截图</summary>
 
-<img src="docs/images/mobile.png" alt="手机网页的原创演示格式选择" width="320">
+<img src="docs/images/mobile-20260920.png" alt="手机网页的原创演示格式选择" width="320">
 <img src="docs/images/android.png" alt="Android 16 模拟器中实际运行的独立应用" width="320">
 
 前图是响应式 Web，后图是独立 Android 应用。尚无微信小程序或 iOS 的实机截图。
@@ -101,7 +116,7 @@ Dockerfile 和 Compose 已提供，但尚未验证镜像构建运行。公开 Gi
 
 ## 已验证与未验证
 
-- **Web：**134 项 Python 回归测试（含环境检测）、前端及多语言检查；真实本地 HTTP/HLS 续传；响应式浏览器流程；Windows 解压部署包启动。
+- **Web：**226 项 Python 回归测试（含环境检测、平台路由与本机代理）、前端及多语言检查；真实本地 HTTP/HLS 续传；响应式浏览器流程；此前 Windows 解压部署包启动。当前源码已通过显式本机代理，从真实网页接口取得一个公开 X 样本的格式列表。
 - **Android：**ARM64/x86_64 构建、APK 签名校验、Android 16 x86_64 模拟器 4 项集成测试，包含安装包内 yt-dlp 下载本地 HTTP 素材及 FFmpeg 合并后的音画检查。
 - **共通／小程序：**12 语言、真实 MP4 素材元信息、HTTP Range 续传和字节一致性、来源变化拒绝及取消清理。微信原生下载退路和相册调用仍使用适配器测试。
 

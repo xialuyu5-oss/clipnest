@@ -10,6 +10,8 @@ import threading
 import venv
 import webbrowser
 
+from app.safety import local_proxy_url
+
 ROOT = Path(__file__).resolve().parent
 
 
@@ -21,12 +23,15 @@ def main():
     parser.add_argument('--port', type=int, default=8000)
     parser.add_argument('--no-browser', action='store_true')
     parser.add_argument('--update', action='store_true', help='更新 Python 依赖和解析引擎')
-    parser.add_argument('--local-device', action='store_true', help='Use only this device: loopback, separate task storage, no configured download proxy')
+    parser.add_argument('--local-device', action='store_true', help='Use only this device: loopback and separate task storage')
+    parser.add_argument('--local-proxy', default='', help='Explicit loopback proxy for local-device mode; e.g. http://127.0.0.1:PORT')
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         raise SystemExit('端口必须位于 1–65535。')
+    if args.local_proxy and not args.local_device:
+        parser.error('--local-proxy requires --local-device')
     if args.local_device:
-        configure_local_device(args.host)
+        configure_local_device(args.host, args.local_proxy)
     os.chdir(ROOT)
     location = ROOT / '.venv'
     python = location / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
@@ -55,6 +60,8 @@ def main():
         print('提示：YouTube 需要 Deno >= 2.3 或 Node >= 22。请安装受支持的运行环境。')
     if args.local_device:
         print('Local device mode: analysis, downloads and files stay on this computer. No ClipNest relay.')
+        if args.local_proxy:
+            print('Using the explicitly selected local network proxy.')
     host = '127.0.0.1' if args.host == '0.0.0.0' else args.host
     if ':' in host and not host.startswith('['):
         host = '[' + host + ']'
@@ -72,15 +79,20 @@ def main():
         return 0
 
 
-def configure_local_device(host):
+def configure_local_device(host, proxy=''):
     if host not in ('127.0.0.1', 'localhost', '::1'):
         raise SystemExit('Local device mode requires a loopback host.')
+    try:
+        proxy = local_proxy_url(proxy)
+    except ValueError as error:
+        raise SystemExit(str(error)) from None
     # Explicit environment values prevent a previous hosting .env from changing
     # the local mode's origin, cookies, proxy or storage location.
     os.environ.update({
         'CLIPNEST_DEVICE_ONLY': 'true',
         'PUBLIC_ORIGIN': '', 'COOKIE_SECURE': 'false', 'ACCESS_KEY': '',
         'ENABLE_MEMBER_LOGIN': 'true', 'YTDLP_PROXY': '',
+        'CLIPNEST_LOCAL_PROXY': proxy,
         'DATA_DIR': str(ROOT / 'data' / 'local-device'),
     })
 

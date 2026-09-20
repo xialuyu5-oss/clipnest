@@ -6,6 +6,10 @@ ClipNest is an open-source video downloader with a self-hosted Web edition, an A
 
 [简体中文](README.zh-CN.md) · [Requirements & evolution](docs/REQUIREMENTS.md) · [Installation](docs/WEB_INSTALL.md) · [Validation](docs/TESTING.md)
 
+[**Interactive preview**](https://xialuyu5-oss.github.io/clipnest/preview/) · [Introductions in 12 languages](docs/i18n/en.md)
+
+English · [简体中文](README.zh-CN.md) · [繁體中文](docs/i18n/zh-TW.md) · [日本語](docs/i18n/ja.md) · [한국어](docs/i18n/ko.md) · [Español](docs/i18n/es.md) · [Français](docs/i18n/fr.md) · [Deutsch](docs/i18n/de.md) · [Português](docs/i18n/pt.md) · [Русский](docs/i18n/ru.md) · [العربية](docs/i18n/ar.md) · [हिन्दी](docs/i18n/hi.md)
+
 **Website-first local processing · v1.4.0-alpha.2:** open the website, let it check
 this computer, then continue automatically to the complete downloader when ready.
 Missing components get specific installation prompts. Windows setup installs only
@@ -14,15 +18,30 @@ Extraction, media transfers and merging stay on the user's device.
 
 [Website entry](https://xialuyu5-oss.github.io/clipnest/) · [New release notes](docs/releases/v1.4.0-alpha.2.md) · [Local setup](docs/LOCAL_PROCESSING.md)
 
+**Current source update — 2026-09-20:** nine additional platform integrations,
+19 official website icons, and an explicit local VPN proxy option. To use these
+changes, run the current source or the PC package built by the current website
+deployment. Existing alpha.2 Release attachments remain earlier builds. [Changes](CHANGELOG.md) ·
+[Local VPN setup](docs/LOCAL_PROCESSING.md#using-an-existing-local-vpn-proxy)
+
 The first PC visit requires installing and starting the local component. Once
 ready, this tab switches to `127.0.0.1:8000`; the website does not host a video
 processing service. Keep the component running while using ClipNest.
 
 **Developed through OpenAI Vibe Coding, using OpenAI ChatGPT and Codex.** The user defined the goals, reviewed the experience and directed changes; AI generated and revised the code and documentation with tool-assisted testing. This is an independent project, not an official OpenAI product or endorsement.
 
-![ClipNest Web quality selection using the project's original demo](docs/images/desktop.png)
+![ClipNest Web quality selection using the project's original demo](docs/images/desktop-20260920.png)
 
-*Web v1.3.0. This screenshot uses the bundled original demo; it is not evidence of a live platform download.*
+*Actual interface capture from the current source, 2026-09-20. The bundled original demo is not evidence of a live platform download. The interactive preview works without installation and only uses this demo.*
+
+<details>
+<summary>19 platform integrations and their official icons</summary>
+
+![ClipNest platform list](docs/images/platforms-20260920.png)
+
+Extractor integration does not guarantee every current link works. [Test scope and restrictions](docs/PLATFORMS.md).
+
+</details>
 
 ## Choose an edition
 
@@ -45,7 +64,7 @@ processing service. Keep the component running while using ClipNest.
 
 Device/server storage and source/platform runtime constraints still apply. Pre-download time ranges use a labeled **1–10 MB/s reference**, not a speed test. Files already exported are not deleted when their task is removed. See [how downloading works](docs/ARCHITECTURE.md).
 
-Web and Android integrate yt-dlp extractors for **YouTube, X / Twitter, TikTok, Instagram, Facebook, Vimeo, Bilibili, Dailymotion, Reddit and Twitch**. Integration is not universal compatibility: permissions, geography, anti-bot checks, changing sites and DRM can prevent a download. TikTok is not Douyin. The WeChat preview accepts direct MP4 links only.
+The current Web and Android source integrates yt-dlp extractors for **YouTube, X / Twitter, TikTok, Instagram, Facebook, Vimeo, Bilibili, Dailymotion, Reddit, Twitch, Douyin, Xiaohongshu, Weibo, Ixigua, AcFun, Xinpianchang, TED, Pinterest and Niconico**. Integration is not universal compatibility: permissions, geography, anti-bot checks, changing sites and DRM can prevent a download. TikTok and Douyin are separate integrations. The WeChat preview accepts direct MP4 links only. [Accepted links, test evidence and limits](docs/PLATFORMS.md).
 
 The Web edition additionally offers local Bilibili QR account login and light/dark themes. Member-HD completion remains unverified; other account-login flows and Android member login are not implemented.
 
@@ -86,7 +105,7 @@ English is the default. Choose **English, 简体中文, 繁體中文, 日本語,
 <details>
 <summary>Web on a phone and the native Android preview</summary>
 
-<img src="docs/images/mobile.png" alt="Responsive Web interface with original demo formats" width="320">
+<img src="docs/images/mobile-20260920.png" alt="Responsive Web interface with original demo formats" width="320">
 <img src="docs/images/android.png" alt="Actual Android 16 emulator capture of the on-device app" width="320">
 
 The first image is the responsive Web preview. The second is the separate Android application. No WeChat or iOS screenshot is implied.
@@ -111,7 +130,7 @@ Fixed limits and timed expiry were earlier implementation choices, **not origina
 
 ## What has been verified
 
-- **Web:** 134 Python regression tests including environment/discovery checks, frontend/i18n checks, real local HTTP and HLS resumption, responsive browser flows and extracted deployment-package startup on Windows.
+- **Web:** 226 Python regression tests including environment/discovery, platform routing and local-proxy checks; frontend/i18n checks; real local HTTP and HLS resumption; responsive browser flows and earlier extracted deployment-package startup on Windows. The current source also returned formats for a public X sample through an explicitly selected local proxy.
 - **Android:** ARM64/x86_64 builds, APK signature verification and four Android 16 x86_64 emulator integration tests, including bundled yt-dlp loopback download and FFmpeg remux with audio/video validation.
 - **Shared/WeChat:** 12-language catalogs, actual MP4 fixture metadata, HTTP Range checkpoint/resumption and byte identity, changed-source rejection and cancellation tests. wx-specific fallback/album calls use adapters in these tests.
 
