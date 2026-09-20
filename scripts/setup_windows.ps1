@@ -34,6 +34,22 @@ function Get-ClipNestInstallPlan {
     if (-not $Checks[3].Ready -and -not $Checks[4].Ready) { 'OpenJS.NodeJS.LTS' }
 }
 
+function Show-ClipNestDownloadOptions {
+    Write-Host 'Official download instructions (open these yourself if WinGet is unavailable):'
+    Write-Host 'Python 3.11+: https://www.python.org/downloads/'
+    Write-Host 'FFmpeg + ffprobe: https://ffmpeg.org/download.html'
+    Write-Host 'Node.js 22+: https://nodejs.org/en/download'
+    Write-Host 'Or Deno 2.3+: https://docs.deno.com/runtime/getting_started/installation/'
+}
+
+function Invoke-ClipNestPackageInstall {
+    param([string]$InstallerPath, [string]$Package)
+    & $InstallerPath install --id $Package --exact --source winget
+    if ($LASTEXITCODE -ne 0) {
+        throw "Installation did not complete: $Package. Resolve the displayed error before retrying."
+    }
+}
+
 function Invoke-ClipNestSetup {
     $checks = @(Get-ClipNestEnvironment)
     $packages = @(Get-ClipNestInstallPlan $checks)
@@ -41,25 +57,41 @@ function Invoke-ClipNestSetup {
         [pscustomobject]@{ready=($packages.Count -eq 0); checks=$checks; packages=$packages} | ConvertTo-Json -Depth 4
         return
     }
-    Write-Host 'ClipNest environment check (runs locally)'
+    Write-Host 'ClipNest environment check (offline; nothing installed by checking)'
     $checks | Format-Table Name,Ready,Detail -AutoSize | Out-Host
     Write-Host 'Deno OR Node is needed, not both.'
-    if ($packages.Count -eq 0) { Write-Host 'Ready. Start ClipNest using start-local.bat.'; return }
+    if ($packages.Count -eq 0) {
+        Write-Host 'System prerequisites are ready. Nothing downloaded or installed.'
+        Write-Host 'Next: extract the separate ClipNest PC package and run start-local.bat.'
+        Write-Host 'Project dependencies (yt-dlp / EJS) are separate; the launcher asks before downloading them.'
+        return
+    }
     Write-Host ('Missing / incompatible components: ' + ($packages -join ', '))
+    Show-ClipNestDownloadOptions
     if (-not $InstallMissing) {
         Write-Host 'Nothing installed. Run install-missing.bat to review and install the components.'
         return
     }
     $winget = Get-Command winget -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
-    if (-not $winget) { throw 'WinGet is unavailable. Use the publisher links in README.md / docs/LOCAL_PROCESSING.md.' }
-    Write-Host 'This downloads third-party installers using WinGet and may request administrator approval.'
-    Write-Host 'Installed working components will be left alone. Review any publisher agreements shown.'
-    foreach ($package in $packages) {
-        if ((Read-Host "Install $package now? Type Y to proceed") -notmatch '^[Yy]$') { continue }
-        & $winget.Source install --id $package --exact --source winget
-        if ($LASTEXITCODE -ne 0) { throw "Installation did not complete: $package. Resolve the displayed error before retrying." }
+    if (-not $winget) {
+        Write-Host 'WinGet is unavailable. Nothing downloaded or installed. Use the official links above.'
+        return
     }
-    Write-Host 'Close this window, reopen check-environment.bat and verify PATH/version detection.'
+    Write-Host 'Only a Y answer permits downloading and installing that item from the WinGet source.'
+    Write-Host 'Enter or N skips it. Windows may ask for administrator permission. Review publisher agreements.'
+    $installed = 0
+    foreach ($package in $packages) {
+        $answer = Read-Host "Download AND install $package now? [y/N]"
+        if ($answer -notmatch '^[Yy]$') {
+            Write-Host "Skipped $package. No download or installation requested for this item."
+            continue
+        }
+        Invoke-ClipNestPackageInstall -InstallerPath $winget.Source -Package $package
+        $installed++
+    }
+    if ($installed -eq 0) { Write-Host 'Nothing downloaded or installed.'; return }
+    Write-Host 'Close this window, reopen check-environment.bat and verify the new PATH/version results.'
+    Write-Host 'An installer exit code is not a successful environment check. Do not continue until the recheck passes.'
 }
 
 if ($MyInvocation.InvocationName -ne '.') {
